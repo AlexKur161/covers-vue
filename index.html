@@ -1,0 +1,2488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goncharov</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link  href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <script src="/assets/js/vue.js"></script>
+</head>
+<body>
+    <div id="wraper-main">
+        <header>
+            <div class="container">
+                <div class="header">
+                    <div class="wrap-header">
+                        <div class="wrap-logo">
+                            <!-- мобильное меню -->
+                <nav class="navigation">
+                    <div class="header__logo">
+                        <a href="/index.html">
+                            <img src="/assets/img/icon/logo.svg" alt="logo">
+                        </a>
+                    </div>
+                    
+            
+                        <div class="header__menu">
+                            <nav class="nav-mobil">
+                                <div class="mobil-link" href="#">
+                                
+                                    <div class="mobil-menu-wrap">
+                                    <a href="#" class="mobil-menu-txt">Турниры</a>
+                                    </div>
+                                </div>
+                                <div class="mobil-link" href="#">
+                                
+                                    <div class="mobil-menu-wrap">
+                                    <a href="#" class="mobil-menu-txt">Лидерборд</a>
+                                </div>
+                                </div>
+                                <div class="mobil-link" href="#">
+                                
+                                    <div class="mobil-menu-wrap">
+                                    <a href="#" class="mobil-menu-txt">Режимы</a>
+                                </div>
+                            </div>
+                                <div class="mobil-link" href="#">
+                            
+                                    <div class="mobil-menu-wrap">
+                                    <a href="#" class="mobil-menu-txt">FAQ</a>
+                                </div>
+                                </div>
+                                
+                            </nav>
+                    </div>
+            
+                    <div class="header__shopping">
+                        <div class="header__button">
+                            <p class="txtmobil-question-footer">Появились вопросы? Пиши нам в <a>Discord</a></p>
+                        </div>
+                    </div>
+                    </nav>
+                    <div class="cross">
+                            <span></span>
+                    </div>
+                    <!-- мобильное меню -->
+                            <a href="">
+                            <img src="/assets/img/icon/logo.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <nav class="nav">
+                        <ul class="menu-list">
+                            <li><a href="" class="link-nav">Онлайн Конструктор</a></li>
+                            <li><a href="" class="link-nav">Магазин на Avito</a></li>
+                            <li><a href="" class="link-nav">FAQ</a></li>
+                            <li><a href="" class="link-nav">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <a href="https://wa.me/79895201212" target="_blank" class="wrap-whatsapp btn-hov-green">
+                        <img class="img-wrap-whatsapp" src="/assets/img/icon/whatsapp.svg" alt="">
+                        <p class="txt-wrap-whatsapp">Whatsapp</p>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="main-block" class="main-bg">
+                <div class="container">
+                    <h1 class="main-title">Пошив модельных авточехлов
+                        под заказ для вашего автомобиля
+                    </h1>
+                    <div class="wrap-garant">
+                            <div class="mini-garant">
+                                <img class="img-garant" src="/assets/img/icon/konst.svg" alt="konst">
+                                <p class="txt-garant">Выберите дизайн на конструкторе</p>
+                            </div>
+                            <div class="mini-garant">
+                                <img class="img-garant" src="/assets/img/icon/star.svg" alt="star">
+                                <p class="txt-garant txt-garant2">Гарантия 5&nbsp;лет</p>
+                            </div>
+                    </div>
+                    <div class="photo-whatsapp">
+                        <img class="photo-whatsapp-img" src="/assets/img/icon/line-sapp.svg" alt="">
+                        <p class="photo-whatsapp-txt">Получите фотографии чехлов
+                            именно на&nbsp;вашем автомобиле на&nbsp;WhatsApp, заполнив форму ниже</p>
+                    </div>
+                    <form class="main-form" action="">
+                        <div class="wrap-select-form">
+                        <select @change="testik" v-model="selected" class="sel-form" name="" id="">
+                            <option disabled selected value="">Марка</option>
+                            <option v-for="brand in brandAuto" class="opt-form" :value="brand.title">{{brand.title}}</option>
+                        </select>
+                        </div>
+                        <div class="wrap-select-form">
+                        <select class="sel-form" name="" id="">
+                            <option disabled selected class="opt-form" value="">модель</option>
+                            <option v-for="model in selected2.modelAuto" class="opt-form" :value="model">{{model}}</option>
+                        </select>
+                        </div>
+                        <input placeholder="Телефон" class="tel-form" class="" type="tel">
+                        <button class="btn-form btn-hov">
+                            <p class="btn-txt-form">Получить фото</p>
+                            <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                        </button>
+                    </form>
+                </div>
+            </section>
+            <section class="sec-calculator">
+                <div class="container">
+                    <h2 class="mini-main-title gallery-main-title">3D онлайн-конструктор чехлов</h2>
+                    <div class="model-auto-wrap">
+                        <div class="wrap-select-form model-select-form">
+                            <select class="sel-form-model" name="" id="">
+                                <option class="opt-form" value="">Выберите марку авто</option>
+                                <option class="opt-form" value="">мэрс</option>
+                                <option class="opt-form" value="">мазда</option>
+                                <option class="opt-form" value="">ниссан</option>
+                                <option class="opt-form" value="">мерен</option>
+                                <option class="opt-form" value="">бимв</option>
+                            </select>
+                            </div>
+                            <div class="wrap-select-form model-select-form">
+                            <select class="sel-form-model" name="" id="">
+                                <option class="opt-form" value="">Выберите модель авто</option>
+                                <option class="opt-form" value="">мэрс</option>
+                                <option class="opt-form" value="">мазда</option>
+                                <option class="opt-form" value="">ниссан</option>
+                                <option class="opt-form" value="">мерен</option>
+                                <option class="opt-form" value="">бимв</option>
+                            </select>
+                            </div>
+                    </div>
+                    <div class="wrap-calculator">
+                        <div class="mini-wrap-calculator">
+                            <div class="wrap-eko">
+                                <div class="wrap-number-step">
+                                    <p class="number-step-txt">01</p>
+                                    <p class="number-step-tipe">Выберите тип экокожи</p>
+                                </div>
+                                <div class="wrap-eko-tipe">
+                                    <button @click="skinshow(classic)" class="eko-tipe" :class="{active: classic.show}">
+                                        <p class="eko-tipe-txt">Classic</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">Ы
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Классическая искусственная кожа</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"><span>Истирание:</span>30 000 циклов по Мартиндейлу</p>
+                                                <p class="txt-mini-tooltip"><span>Состав:</span>Классическая искусственная кожа 0,8 мм +  ППУ (поролон) 3 мм</p>
+                                                <p class="txt-mini-tooltip"><span>Гарантия:</span> 1 год</p>
+                                                <p class="txt-mini-tooltip"><span> Базовая стоимость:</span> 8 290 ₽</p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </button>
+                                    <button @click="skinshow(premium)" class="eko-tipe" :class="{active: premium.show}">
+                                        <p class="eko-tipe-txt">Premium</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Износостойкая классическая экокожа Arigon Plus, премиум качества</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"><span>Истирание:</span> 65 000 циклов
+                                                    по Мартиндейлу</p>
+                                                <p class="txt-mini-tooltip"><span>Состав:</span> Эко-кожа 0,8 мм + ППУ (поролон 5 мм), более прочные и объемные авточехлы</p>
+                                                <p class="txt-mini-tooltip"><span>Гарантия:</span> 3 года</p>
+                                                <p class="txt-mini-tooltip"><span> Базовая стоимость:</span> 9 690 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </button>
+                                    <button @click="skinshow(exclusive)" class="eko-tipe" :class="{active: exclusive.show}">
+                                        <p class="eko-tipe-txt">Exclusive</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Классическая экокожа Italia высшей категории</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"> Ближе всего к натуральной коже</p>
+                                                <p class="txt-mini-tooltip"><span>Истирание:</span> 100 000 циклов по&nbsp;Мартиндейлу</p>
+                                                <p class="txt-mini-tooltip"><span>Состав:</span> Экокожа + ППУ (поролон) 5 мм</p>
+                                                <p class="txt-mini-tooltip">Очень прочные объемные чехлы за&nbsp;счет
+                                                     толщины кожи и&nbsp;поролона</p>
+                                                <p class="txt-mini-tooltip"><span>Гарантия:</span> 5 лет</p>
+                                                <p class="txt-mini-tooltip"><span> Базовая стоимость:</span> 21 200 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </button>
+                                </div>
+                                <div v-if="classic.show || premium.show" class="color-step">
+                                    <button :disabled="bodyColor.disabled" @click="showSelected(bodyColor)" v-for="bodyColor in bodyColors" :style=" { background: bodyColor.background } " class="col-auto black">
+                                        <svg v-if="bodyColor.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                            <rect width="10" height="10" rx="5" fill="#FAC300"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div v-if="exclusive.show" class="color-step">
+                                    <button :disabled="bodyColor.disabled" @click="showSelected(bodyColor)" v-for="bodyColor in bodyColorsExclusive" :style=" { background: bodyColor.background } " class="col-auto black">
+                                        <svg v-if="bodyColor.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                            <rect width="10" height="10" rx="5" fill="#FAC300"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="wrap-eko">
+                                <div class="wrap-number-step">
+                                    <p class="number-step-txt">02</p>
+                                    <p class="number-step-tipe">Центральная вставка</p>
+                                </div>
+                                <div class="wrap-eko-tipe">
+                                    <button @click="skinType('smooth')" class="eko-tipe" :class="{active: smooth}">
+                                        <p class="eko-tipe-txt">Гладкая</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">Ы
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Классическая искусственная кожа центральных частей сидений переднего и заднего ряда
+                                                без&nbsp;перфорации.</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip">Усиливает конструкцию – гладкая кожа меньше тянется.</p>
+                                                <p class="txt-mini-tooltip">Дольше сохраняет внешний вид.</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span>0 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </button>
+                                    <button @click="skinType('convex')" class="eko-tipe" :class="{active: convex}">
+                                        <p class="eko-tipe-txt">Выпуклая</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Дополнительная опция
+                                               </h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"> Добавляется поролон 10 мм в&nbsp;центральные части сидений переднего и&nbsp;заднего ряда</p>
+                                                <p class="txt-mini-tooltip"> Очень красивый внешний вид сидений за&nbsp;счет объёма</p>
+                                                <p class="txt-mini-tooltip"> Усиливает прочность сидений в&nbsp;3&nbsp;раза</p>
+                                                <p class="txt-mini-tooltip">  Препятствует растяжению перфорации</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 1 750 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                                    <button :disabled="!premiumPerf" @click="skinType('perforation')" class="eko-tipe" :class="{active: perforation & premiumPerf}">
+                                        <p class="eko-tipe-txt">Перфорация</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Стандартная опция</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"> Центральные части сидений переднего и&nbsp;заднего ряда</p>
+                                                <p class="txt-mini-tooltip"> Выполнены из&nbsp;перфорированной классической искусственной кожи</p>
+                                                <p class="txt-mini-tooltip"> Недостаток&nbsp;&mdash; растягивается со&nbsp;временем под весом тела</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 0 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                                </div>
+                                <div v-if="classic.show || premium.show" class="color-step">
+                                    <button :disabled="central.disabled" @click="centralInsertShow(central)" v-for="central in centralInsert" :style=" { background: central.background } " class="col-auto black">
+                                        <svg v-if="central.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                            <rect width="10" height="10" rx="5" fill="#FAC300"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div v-if="exclusive.show" class="color-step">
+                                    <button :disabled="bodyColor.disabled" @click="showSelected(bodyColor)" v-for="bodyColor in bodyColorsExclusive" :style=" { background: bodyColor.background } " class="col-auto black">
+                                        <svg v-if="bodyColor.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                            <rect width="10" height="10" rx="5" fill="#FAC300"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="check-wrap">
+                                    <div class="check-mini-wrap">
+                                        <div class="check-feik">
+                                            <input class="check-insert" type="checkbox" name="" id="alka">
+                                            <label class="check-insert-lbl" for="alka"></label>
+                                        </div>
+                                        <p class="check-wrap-txt">Алькантара</p>
+                                    </div>
+                                    <div class="check-mini-wrap">
+                                        <div class="tooltip-wrap">
+                                        <svg class="svg-top" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"></path></svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Дополнительная опция</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"> Алькантара&nbsp;&mdash; искусственная замша, бархатистый износостойкий материал</p>
+                                                <p class="txt-mini-tooltip">Центральные части сидений переднего и&nbsp;заднего ряда</p>
+                                                <p class="txt-mini-tooltip"> Выполнены из алькантары</p>
+                                                <p class="txt-mini-tooltip"><span>Истирание:</span> 50 000 циклов по&nbsp;Мартиндейлу</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 1 400 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="color-step color-step-incomplete">
+                                    <button @click="showAlcantara(alcantara)" v-for="alcantara in alcantaraArray" :style=" { background: alcantara.background } " class="col-auto black">
+                                        <svg v-if="alcantara.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                            <rect width="10" height="10" rx="5" fill="#FAC300"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                            <div class="wrap-eko">
+                                <div class="wrap-number-step">
+                                    <p class="number-step-txt">03</p>
+                                    <p class="number-step-tipe">Горизонтальная строчка</p>
+                                </div>
+                                <div class="wrap-eko-tipe">
+                                    <button @click="insertOneTu('one')" class="eko-tipe" :class="{ active: insertOne }">
+                                        <p class="eko-tipe-txt">Одна</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Стандартная опция</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip">На&nbsp;центральные части сидений переднего и&nbsp;заднего ряда</p>
+                                                <p class="txt-mini-tooltip">наносятся горизонтальные строчки одинарной нитью</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 0 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                                    <button @click="insertOneTu('tu')" class="eko-tipe" :class="{ active: insertTu }">
+                                        <p class="eko-tipe-txt">Две</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Дополнительная опция</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip">На&nbsp;центральные части сидений переднего и&nbsp;заднего ряда</p>
+                                                <p class="txt-mini-tooltip">наносятся горизонтальные строчки двойной армированной нитью</p>
+                                                <p class="txt-mini-tooltip">Добавляет эстетический внешний вид и&nbsp;дополнительную прочность</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 600 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                                </div>
+                                <div class="check-wrap check-wrap2">
+                                    <div class="check-mini-wrap">
+                                        <div class="check-feik">
+                                            <input v-model="imgStitchesShow" class="check-insert" type="checkbox" name="" id="strin">
+                                            <label class="check-insert-lbl" for="strin"></label>
+                                        </div>
+                                        <p class="check-wrap-txt">Добавить двойную строчку сбоку</p>
+                                    </div>
+                                    <div class="check-mini-wrap">
+                                        <div class="tooltip-wrap">
+                                        <svg class="svg-top" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"></path></svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Дополнительная опция</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip">По&nbsp;всему периметру сидений и&nbsp;подголовников переднего и&nbsp;заднего ряда</p>
+                                                <p class="txt-mini-tooltip">Наносятся двойные цветные строчки толстыми армированными нитями</p>
+                                                <p class="txt-mini-tooltip">Добавляет эстетический внешний вид и&nbsp;дополнительную прочность швов</p>
+                                                <p class="txt-mini-tooltip">Цвет нити можно выбрать из представленной палитры</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 1 500 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="color-step">
+                                    <button @click="showStitches(stitches)" v-for="stitches in doubleStitches" :style=" { background: stitches.background } " class="col-auto black">
+                                        <svg v-if="stitches.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                            <rect width="10" height="10" rx="5" fill="#FAC300"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="constructor-img-calculator">
+                            
+                                <div class="images-calculator">
+                                    <img src="/assets/img/calculator/default.png" alt="" class="calc-img">
+                                    <img :src="`/assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertOne & smooth" :src="`/assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertTu & smooth" :src="`/assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertOne & convex" :src="`/assets/img/calculator/convexOne/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertTu & convex" :src="`/assets/img/calculator/convexTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertOne & smooth & perforation" :src="`/assets/img/calculator/perforation/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertTu & smooth & perforation" :src="`/assets/img/calculator/perforation-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertOne & convex & perforation" :src="`/assets/img/calculator/perforation-convex/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertTu & convex & perforation" :src="`/assets/img/calculator/perforation-convex-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="imgStitchesShow" :src="`/assets/img/calculator/stitches/stitches-${imgStitches}.png`" alt="" class="calc-img-body">
+                                    <img v-if="showAdditionally" :src="`/assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
+                                </div>
+                            
+                        </div>
+                        <div class="mini-wrap-calculator">
+                            <div class="wrap-eko">
+                                <div class="wrap-number-step">
+                                    <p class="number-step-txt">04</p>
+                                    <p class="number-step-tipe">Дополнительно</p>
+                                </div>
+                                <!-- <div class="wrap-additionally">
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">До центра 2D ромб</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">Ы
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Дополнительная опция</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip">На&nbsp;центральные части сидений переднего и&nbsp;заднего ряда
+                                                    Наносятся строчки в&nbsp;виде ромбов, нитью средней толщины</p>
+                                                <p class="txt-mini-tooltip">Добавляет эстетический внешний вид и&nbsp;дополнительную прочность</p>
+                                                <p class="txt-mini-tooltip">Спинки отстрочены ромбом на 2/3 высоты сиденья</p>
+                                                <p class="txt-mini-tooltip">Отстрочку ромбом подголовника можно убрать по запросу</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 2 800 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">Полностью 2D ромб</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Дополнительная опция</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip">На&nbsp;центральные части сидений переднего и&nbsp;заднего ряда
+                                                    Наносятся строчки в&nbsp;виде ромбов, нитью средней толщины</p>
+                                                <p class="txt-mini-tooltip">Добавляет эстетический внешний вид и&nbsp;дополнительную прочность</p>
+                                                <p class="txt-mini-tooltip">Спинки отстрочены ромбом на всю высоту сиденья до подголовников</p>
+                                                <p class="txt-mini-tooltip">Отстрочку ромбом подголовника можно убрать по запросу</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 3 000 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">До центра 3D ромб</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Дополнительная опция</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip">На&nbsp;центральные части сидений переднего и&nbsp;заднего ряда добавляется поролон 10 мм</p>
+                                                <p class="txt-mini-tooltip">Наносятся строчки в&nbsp;виде ромбов толстой нитью</p>
+                                                <p class="txt-mini-tooltip">Добавляет роскошный внешний вид, эффект 3D&nbsp;и&nbsp;дополнительную прочность</p>
+                                                <p class="txt-mini-tooltip">Спинки отстрочены ромбом на 2/3 высоты сиденья </p>
+                                                <p class="txt-mini-tooltip">Отстрочку ромбом подголовника можно убрать по запросу</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 3 800 </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">Полностью 3D ромб</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Дополнительная опция</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip">На&nbsp;центральные части сидений переднего и&nbsp;заднего ряда добавляется поролон 10 мм</p>
+                                                <p class="txt-mini-tooltip">Наносятся строчки в&nbsp;виде ромбов толстой нитью</p>
+                                                <p class="txt-mini-tooltip">Добавляет роскошный внешний вид, эффект 3D&nbsp;и&nbsp;дополнительную прочность</p>
+                                                <p class="txt-mini-tooltip">Спинки отстрочены ромбом на всю ширину сиденья до подголовников</p>
+                                                <p class="txt-mini-tooltip">Отстрочку ромбом подголовника можно убрать по запросу</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 4 000 </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">Анаконда соты</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Анаконда соты</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 3750 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">Анаконда ромб</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Анаконда ромб</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 3750 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">Соты классик</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Соты классик</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 4700 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">Соты овал</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Соты овал</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 4700 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">Бугатти 2 линии</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Бугатти 2 линии</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 5500 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">Бугатти</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Бугатти</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 4550 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="eko-tipe">
+                                        <p class="eko-tipe-txt">Треугольники</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">Треугольники</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 3000 ₽ </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                </div> -->
+                                <div class="wrap-additionally">
+                                    <button @click="additionallyTipe(addit)" v-for="addit in additionally" class="eko-tipe" :class="{ active: addit.selected }">
+                                        <p class="eko-tipe-txt">{{addit.name}}</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">Ы
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">{{addit.tooltipTitle}}</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p v-for="tooltip in addit.tooltipTxt" class="txt-mini-tooltip">{{tooltip.title}}</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> {{addit.price}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+
+
+                                </div>
+                                <div class="color-step">
+                                    <button @click="additionallyColorSwitch(additional)" v-for="additional in additionallyColor" :style=" { background: additional.background } " class="col-auto black">
+                                        <svg v-if="additional.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                            <rect width="10" height="10" rx="5" fill="#FAC300"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="wrap-eko wrap-eko-embroidery">
+                                <div class="check-wrap embroidery-check">
+                                    <div class="check-mini-wrap">
+                                        <div class="check-feik">
+                                            <input class="check-insert" type="checkbox" name="" id="embroidery">
+                                            <label class="check-insert-lbl" for="embroidery"></label>
+                                        </div>
+                                        <p class="check-wrap-txt">Добавить свою вышивку</p>
+                                    </div>
+                                    <div class="check-mini-wrap">
+                                        <div class="tooltip-wrap">
+                                        <svg class="svg-top" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"></path></svg>
+                                        <div class="tooltip tooltip-left">
+                                            <h3 class="tooltip-title">Дополнительная опция</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p class="txt-mini-tooltip">Разработаем и&nbsp;нанесем цветную компьютерную вышивку по эскизам клиента</p>
+                                                <p class="txt-mini-tooltip">Вышивается на&nbsp;спинках сидений переднего ряда</p>
+                                                <p class="txt-mini-tooltip">Добавляет эстетический внешний вид</p>
+                                                <p class="txt-mini-tooltip">Подчеркивает индивидуальность автомобиля</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> 2 100 ₽</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="wrap-eko wrap-eko-final">
+                                <p class="txt-price">Цена за комплект - 5 мест</p>
+                                <p class="final-price">{{price}} ₽</p>
+                            </div>
+                            <button class="btn-form btn-hov"><p class="btn-txt-form">Оставить заявку</p><img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="skin-sec">
+                <div class="container">
+                    <h2 class="mini-main-title ">Выберите свой тип кожи</h2>
+                    <div class="wrap-skin">
+                        <div class="mini-wrap-skin">
+                                <div class="bg-wrap-skin bg-wrap-skin1">
+                                    <div class="choice-skin">
+                                        <img src="/assets/img/icon/choice-line.svg" alt="choice">
+                                        <p class="txt-choice-skin">ткань Жаккард</p>
+                                    </div>
+                                    <div class="price-skin">
+                                        <p class="price-txt">
+                                            ОТ 6 990  ₽
+                                        </p>
+                                        <div class="price-skin-mini">
+                                            <p class="txt-skin-mini">Характеристики</p>
+                                            <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-info-skin">
+                                <div class="info-wrap-skin">
+                                    <ul>
+                                        <li class="li-info-skin">Материал</li>
+                                    </ul>
+                                    <p class="info-wrap-txt">Жаккард</p>
+                                    <p class="info-wrap-txt">+ ППУ (поролон) 3 мм</p>
+                                    <ul class="list-info-skin">
+                                        <li class="li-info-skin">Истирание</li>
+                                    </ul>
+                                    <p class="info-wrap-txt">20 000 циклов</p>
+                                    <ul class="list-info-skin">
+                                        <li class="li-info-skin">Гарантия</li>
+                                    </ul>
+                                    <p class="info-wrap-txt">1 год</p>
+                                    
+                                </div>
+                            <div class="btn-wrap-skin">
+                                <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
+                                    <p class="challenge-popup-txt">Оставить заявку</p>
+                                    <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                </button >
+                            </div>
+                        </div>
+                        </div>
+                        <div class="mini-wrap-skin">
+                            <div class="bg-wrap-skin bg-wrap-skin2">
+                                <div class="choice-skin">
+                                    <img src="/assets/img/icon/choice-yellow.svg" alt="choice">
+                                    <p class="txt-choice-skin">Classic</p>
+                                </div>
+                                <div class="price-skin">
+                                    <p class="price-txt">
+                                        ОТ 8 290  ₽
+                                    </p>
+                                    <div class="price-skin-mini">
+                                        <p class="txt-skin-mini">Характеристики</p>
+                                        <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-info-skin">
+                            <div class="info-wrap-skin">
+                                <ul>
+                                    <li class="li-info-skin">Материал</li>
+                                </ul>
+                                <p class="info-wrap-txt">Классическая экокожа 0,8 мм</p>
+                                <p class="info-wrap-txt">+ ППУ (поролон) 3 мм</p>
+                                <ul class="list-info-skin">
+                                    <li class="li-info-skin">Истирание</li>
+                                </ul>
+                                <p class="info-wrap-txt">30 000 циклов</p>
+                                <ul class="list-info-skin">
+                                    <li class="li-info-skin">Гарантия</li>
+                                </ul>
+                                <p class="info-wrap-txt">1 год</p>
+                                
+                            </div>
+                        <div class="btn-wrap-skin">
+                            <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
+                                <p class="challenge-popup-txt">Оставить заявку</p>
+                                <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                            </button >
+                        </div>
+                    </div>
+                        </div>
+
+                        <div class="mini-wrap-skin">
+                            <div class="bg-wrap-skin bg-wrap-skin3">
+                                <div class="choice-skin">
+                                    <img src="/assets/img/icon/choice-line.svg" alt="choice">
+                                    <p class="txt-choice-skin">Premium</p>
+                                </div>
+                                <div class="price-skin">
+                                    <p class="price-txt">
+                                        ОТ 9 690  ₽
+                                    </p>
+                                    <div class="price-skin-mini">
+                                        <p class="txt-skin-mini">Характеристики</p>
+                                        <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-info-skin">
+                            <div class="info-wrap-skin">
+                                <ul>
+                                    <li class="li-info-skin">Материал</li>
+                                </ul>
+                                <p class="info-wrap-txt">Экокожа</p>
+                                <p class="info-wrap-txt">+ ППУ (поролон) 5 мм</p>
+                                <ul class="list-info-skin">
+                                    <li class="li-info-skin">Истирание</li>
+                                </ul>
+                                <p class="info-wrap-txt">65 000 циклов</p>
+                                <ul class="list-info-skin">
+                                    <li class="li-info-skin">Гарантия</li>
+                                </ul>
+                                <p class="info-wrap-txt">3 года</p>
+                                
+                            </div>
+                        <div class="btn-wrap-skin">
+                            <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
+                                <p class="challenge-popup-txt">Оставить заявку</p>
+                                <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                            </button >
+                        </div>
+                    </div>
+                        </div>
+
+                        <div class="mini-wrap-skin">
+                            <div class="bg-wrap-skin bg-wrap-skin4">
+                                <div class="choice-skin">
+                                    <img src="/assets/img/icon/choice-line.svg" alt="choice">
+                                    <p class="txt-choice-skin">Exclusive</p>
+                                </div>
+                                <div class="price-skin">
+                                    <p class="price-txt">
+                                        ОТ 21 200  ₽
+                                    </p>
+                                    <div class="price-skin-mini">
+                                        <p class="txt-skin-mini">Характеристики</p>
+                                        <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-info-skin">
+                            <div class="info-wrap-skin">
+                                <ul>
+                                    <li class="li-info-skin">Материал</li>
+                                </ul>
+                                <p class="info-wrap-txt">Экокожа</p>
+                                <p class="info-wrap-txt">+ ППУ (поролон) 5 мм</p>
+                                <ul class="list-info-skin">
+                                    <li class="li-info-skin">Истирание</li>
+                                </ul>
+                                <p class="info-wrap-txt">100 000 циклов</p>
+                                <ul class="list-info-skin">
+                                    <li class="li-info-skin">Гарантия</li>
+                                </ul>
+                                <p class="info-wrap-txt">5 лет</p>
+                                
+                            </div>
+                        <div class="btn-wrap-skin">
+                            <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
+                                <p class="challenge-popup-txt">Оставить заявку</p>
+                                <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="car-studio">
+                <div class="container">
+                    <h2 class="mini-main-title main-studio-title">О&nbsp;Goncharov car studio</h2>
+                    <div class="car-studio-wrap">
+                        <div class="studio-mini-wrap">
+                            <div class="car-studio-info">
+                                <p class="title-studio-info title-studio-aft">30</p>
+                                <p class="txt-studio-info">Городов по&nbsp;России получили чехлы</p>
+                            </div>
+                            <div class="car-studio-info">
+                                <p class="title-studio-info title-studio-aft">100</p>
+                                <p class="txt-studio-info">Моделей чехлов в&nbsp;наличии</p>
+                            </div>
+                            <div class="car-studio-info">
+                                <p class="title-studio-info">2021</p>
+                                <p class="txt-studio-info">Создание нашего производства</p>
+                            </div>
+                            <div class="car-studio-info">
+                                <p class="title-studio-info">5<span class="yellow-studio-info">/5</span></p>
+                                <p class="txt-studio-info">Звёзд по&nbsp;отзывам на&nbsp;Авито</p>
+                            </div>
+                            <div class="car-studio-info">
+                                <p class="title-studio-info">5<span class="yellow-studio-info yellow-studio-lower"> лет</span></p>
+                                <p class="txt-studio-info">Гарантии на&nbsp;наши товары</p>
+                            </div>
+                            <a class="link-avito" target="_blank" href="https://www.avito.ru/user/231c414734af85a44e2f2cded0a59b2a/profile">
+                                <div class="car-studio-info avito-studio-info">
+                                    <div href="#" class="avito-link"></div>
+                                    <p class="avito-studio-txt">Магазин</p>
+                                    <div class="avito-wrap-mini">
+                                        <p class="avito-studio-txt">на</p>
+                                        <img src="/assets/img/icon/avito.svg" alt="" class="avito-studio-img">
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                        </div>
+                        <div class="studio-mini-wrap2">
+                                <img class="women-img" src="/assets/img/bg/women.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="our-works">
+                <div class="container">
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                            <img class="img-swipe" src="/assets/img/bg/main-work.png">
+                    </div>
+                    <div class="swiper-slide">
+                            <img class="img-swipe" src="/assets/img/bg/main-work2.png">
+                    </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev">
+                       
+                    </div>
+                    <div class="swiper-button-next">
+                       
+                    </div>
+                
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+                <div class="swiper-navigation">
+                    <button id="swiperPrev"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <g clip-path="url(#clip0_950_864)">
+                        <path d="M9 3L11.1 5.175L5.775 10.5L24 10.5L24 13.5L5.775 13.5L11.1 18.825L9 21L-7.86805e-07 12L9 3Z" fill="black"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_950_864">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg></button>
+                    <button id="swiperNext"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18" fill="none">
+                        <path d="M15 18L12.9 15.825L18.225 10.5H0V7.5H18.225L12.9 2.175L15 0L24 9L15 18Z" fill="black"/>
+                        </svg></button>
+                  </div>
+                <button class="btn-form btn-hov btn-youtube">
+                    <p class="btn-txt-form">Смотреть видео-отзыв</p>
+                    <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                </button>
+            </div>
+            </section>
+            <section class="sec-gallery">
+                <div class="container">
+                    <h2 class="mini-main-title gallery-main-title">наше Производство</h2>
+                <div class="gallery-wrap">
+                    <div class="gallery-mini-wrap">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery1.jpg">
+                            <img src="assets/img/gallery/mini-gallery1.jpg">
+                        </a>
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery2.jpg">
+                            <img src="assets/img/gallery/mini-gallery2.jpg">
+                        </a>
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery3.jpeg">
+                            <img src="assets/img/gallery/mini-gallery3.jpg">
+                        </a>
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery4.jpeg">
+                            <img src="assets/img/gallery/mini-gallery4.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <section class="discount-sec">
+                <div class="container">
+                    <div class="wrap-discount">
+                        <div class="mini-wrap-dissount">
+                            <h3 class="title-discount">Скидка 5%</h3>
+                            <p class="txt-wrap-discount">при заказе с сайта до 27 ноября</p>
+                        </div>
+                        <div class="mini-wrap-dissount">
+                            <button @click="showBtn" class="btn-form dissount-btn btn-hov">
+                                <p class="btn-txt-form">Оставить заявку</p>
+                                <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="delivery-sec">
+                <div class="container">
+                    <h2 class="mini-main-title">Условия оплаты и доставки</h2>
+                    <div class="delivery-wrap">
+                        <div class="delivery-wrap-mini">
+                            <img src="/assets/img/icon/cd.svg" alt="" class="delivery-img">
+                            <p class="delivery-txt delivery-txt1">Доставка СДЭК или&nbsp;Почта России</p>
+                        </div>
+                        <div class="delivery-wrap-mini">
+                            <img src="/assets/img/icon/pred.svg" alt="" class="delivery-img">
+                            <p class="delivery-txt delivery-txt2">50% предоплата, далее&nbsp;50% по&nbsp;факту получения чехла (наложенный платёж)</p>
+                        </div>
+                        <div class="delivery-wrap-mini">
+                            <img src="/assets/img/icon/cal.svg" alt="" class="delivery-img">
+                            <p class="delivery-txt delivery-txt3">Максимальный срок готовности товара - 14 дней</p>
+                        </div>
+                        <div class="delivery-wrap-mini">
+                            <img src="/assets/img/icon/contact.svg" alt="" class="delivery-img">
+                            <p class="delivery-txt delivery-txt4">Предоставляем контакты установщиков по&nbsp;всем городам&nbsp;РФ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="contact-sec">
+                <div class="container">
+                    <div class="wrap-contact">
+                        <div class="wrap-mini-contact">
+                            <h2 class="mini-main-title">Контакты</h2>
+                            <div class="phone-contact-wrap">
+                                <a href="tel:89895201212">
+                                <img src="/assets/img/icon/phone-contact.svg" alt="" class="phone-icon">
+                                </a>
+                                <a class="phone-link" href="tel:89895201212">8 989 520 12 12</a>
+                            </div>
+                            <div class="social-contact">
+                                <a target="_blank" href="https://wa.me/79895201212">
+                                <img src="/assets/img/icon/whatsapp-contact.svg" alt="" class="social-contact-img">
+                                </a>
+                                <a target="_blank" href="https://t.me/ksksks161">
+                                <img src="/assets/img/icon/tg-contact.svg" alt="" class="social-contact-img">
+                                </a>
+                                <a target="_blank" href="https://www.avito.ru/user/231c414734af85a44e2f2cded0a59b2a/profile">
+                                <img src="/assets/img/icon/avito-contact.svg" alt="" class="social-contact-img">
+                                </a>
+                            </div>
+                            <div class="phone-contact-wrap">
+                                <img src="/assets/img/icon/geo.svg" alt="" class="phone-icon">
+                                <p class="phone-txt">г. Пенза, ул. Гагарина 11А</p>
+                            </div>
+                            <div class="phone-contact-wrap phone-contact-wrap2">
+                                <a href="mailto:goncharavto@yandex.ru">
+                                <img src="/assets/img/icon/mail.svg" alt="" class="phone-icon">
+                                </a>
+                                <a href="mailto:goncharavto@yandex.ru" class="phone-txt">goncharavto@yandex.ru</a>
+                            </div>
+                        </div>
+                        <div class="wrap-mini-contact2">
+                            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7b9f2eee0e834886c7cbd3bcfde46c389c0ab6e3d9ba77a4508eff7bd14bff28&amp;source=constructor" width="100%" height="430" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            <section class="form-sec">
+                <div class="container">
+                    <h3 class="form-sec-title">Или оставьте заявку и наш менеджер свяжется с вами</h3>
+                    <form class="main-form" action="">
+                        <div class="wrap-select-form">
+                        <select class="sel-form" name="" id="">
+                            <option class="opt-form" value="">марка</option>
+                            <option class="opt-form" value="">мэрс</option>
+                            <option class="opt-form" value="">мазда</option>
+                            <option class="opt-form" value="">ниссан</option>
+                            <option class="opt-form" value="">мерен</option>
+                            <option class="opt-form" value="">бимв</option>
+                        </select>
+                        </div>
+                        <div class="wrap-select-form">
+                        <select class="sel-form" name="" id="">
+                            <option class="opt-form" value="">модель</option>
+                            <option class="opt-form" value="">мэрс</option>
+                            <option class="opt-form" value="">мазда</option>
+                            <option class="opt-form" value="">ниссан</option>
+                            <option class="opt-form" value="">мерен</option>
+                            <option class="opt-form" value="">бимв</option>
+                        </select>
+                        </div>
+                        <input placeholder="Телефон" class="tel-form" class="" type="tel">
+                        <button class="btn-form btn-hov">
+                            <p class="btn-txt-form">Оставить заявку</p>
+                            <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                        </button>
+                    </form>
+                </div>
+            </section>
+            <div v-if="showPopap" class="popap">
+                <div class="shadow"></div>
+                    <div class="popap-body">
+                        <button @click="showBtn" class="close-popap"><img src="/assets/img/icon/close.svg" alt=""></button>
+                        <h4 class="title-popap">Оставьте заявку</h4>
+                        <p class="txt-popap">И&nbsp;наш менеджер отправит вам фото в&nbsp;течение 20&nbsp;минут</p>
+                        <form class="form-popap" action="">
+                            <div class="wrap-select-form">
+                            <select class="sel-form" name="" id="">
+                                <option class="opt-form" value="">марка</option>
+                                <option class="opt-form" value="">мэрс</option>
+                                <option class="opt-form" value="">мазда</option>
+                                <option class="opt-form" value="">ниссан</option>
+                                <option class="opt-form" value="">мерен</option>
+                                <option class="opt-form" value="">бимв</option>
+                            </select>
+                            </div>
+                            <div class="wrap-select-form">
+                            <select class="sel-form" name="" id="">
+                                <option class="opt-form" value="">модель</option>
+                                <option class="opt-form" value="">мэрс</option>
+                                <option class="opt-form" value="">мазда</option>
+                                <option class="opt-form" value="">ниссан</option>
+                                <option class="opt-form" value="">мерен</option>
+                                <option class="opt-form" value="">бимв</option>
+                            </select>
+                            </div>
+                            <input placeholder="Телефон" class="tel-form" class="" type="tel">
+                            <button class="btn-form btn-hov">
+                                <p class="btn-txt-form">Оставить заявку</p>
+                                <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                            </button>
+                        </form>
+                        <p class="minitxt-popap">Нажимая на&nbsp;кнопку, вы&nbsp;дете согласие на&nbsp;обработку ваших данных</p>
+                    </div>
+            </div>
+            <div v-if="showYoutube" class="popap">
+                <div class="shadow"></div>
+                    <div class="popap-body">
+                        <button @click="showBtn" class="close-popap"><img src="/assets/img/icon/close.svg" alt=""></button>
+                        <h4 class="title-popap">Оставьте заявку</h4>
+                        <p class="txt-popap">И&nbsp;наш менеджер отправит вам фото в&nbsp;течение 20&nbsp;минут</p>
+                        <form class="form-popap" action="">
+                            <div class="wrap-select-form">
+                            <select class="sel-form" name="" id="">
+                                <option class="opt-form" value="">марка</option>
+                                <option class="opt-form" value="">мэрс</option>
+                                <option class="opt-form" value="">мазда</option>
+                                <option class="opt-form" value="">ниссан</option>
+                                <option class="opt-form" value="">мерен</option>
+                                <option class="opt-form" value="">бимв</option>
+                            </select>
+                            </div>
+                            <div class="wrap-select-form">
+                            <select class="sel-form" name="" id="">
+                                <option class="opt-form" value="">модель</option>
+                                <option class="opt-form" value="">мэрс</option>
+                                <option class="opt-form" value="">мазда</option>
+                                <option class="opt-form" value="">ниссан</option>
+                                <option class="opt-form" value="">мерен</option>
+                                <option class="opt-form" value="">бимв</option>
+                            </select>
+                            </div>
+                            <input placeholder="Телефон" class="tel-form" class="" type="tel">
+                            <button class="btn-form btn-hov">
+                                <p class="btn-txt-form">Оставить заявку</p>
+                                <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                            </button>
+                        </form>
+                        <p class="minitxt-popap">Нажимая на&nbsp;кнопку, вы&nbsp;дете согласие на&nbsp;обработку ваших данных</p>
+                    </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-wrap">
+                    <div class="footer-logo-wrap">
+                        <a href="/index.html">
+                        <img class="footer-logo" src="/assets/img/icon/logo.svg" alt="">
+                        </a>
+                        <p class="copyright">Copyright © 2021-2022</p>
+                    </div>
+                    <div class="wrap-footer-btn">
+                        <a href="#main-block" class="footer-btn">
+                            <p class="footer-btn-txt">наверх</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" fill="none">
+                                <path class="pat-col" d="M18 9.8457L15.825 11.9457L10.5 6.6207L10.5 24.8457L7.5 24.8457L7.5 6.6207L2.175 11.9457L-6.55671e-07 9.8457L9 0.845703L18 9.8457Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+<script>
+    Vue.createApp({
+			data: () => ({
+				showPopap: false,
+                showYoutube: false,
+                selected: '',
+                selected2: '',
+                brandAuto: [
+                                {
+                                    title: 'Audi',
+                                    modelAuto: ['Audi 100 (45 кузов) C4 (1991-1994г)',
+                                                'Audi A3 (2003-2008г)',
+                                                'Audi A3 Sportback (Хэтчбек) 5-ти дверный',
+                                                'кузов 8V 2012-2020г',
+                                                'Audi A3 седан кузов 8V, 2012-2020г',
+                                                'Audi A4 B8 седан 2007-2015г',
+                                                'Audi A4 B8 универсал 2007-2015г',
+                                                'Audi A6 (45 кузов) (1994-1997г) универсал',
+                                                'Audi A6 (45 кузов) (1994-1997г) седан',
+                                                'Audi A6 (45 кузов) (1994-1997г) седан Quattro',
+                                                'Audi A6 (45 кузов) (1994-1997г) универсал Quattro',
+                                                'Audi A6 (С-4 кузов) седан 1994-1997г',
+                                                'Audi A6 (С-5 кузов) (1997-2004г)',
+                                                'Audi Q3 с 2010г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'BMW',
+                                    modelAuto: ['BMW 5 серии Е39 кузов 1995-2004г',
+                                                'BMW 318 (90 кузов) (2005-2011г)',
+                                                'BMW 320 (90 кузов) (2005-2011г)',
+                                                'BMW X1 (2009-2015г) кузов E84',
+                                                'BMW X3 F25 с 2010г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Chery',
+                                    modelAuto: ['Chery Tiggo T11 (2006-2013г) (аналог Toyota Rav4 до 2005г)',
+                                                'Chery Tiggo T11 FL (2013-2016г) (аналог Vortex Tingo с 2010г)',
+                                                'Chery Tiggo 4 с 2017г',
+                                                'Chery Tiggo 5 с 2014г',
+                                                'Не нашел свою модель'
+                                                ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Chevrolet',
+                                    modelAuto: ['Chevrolet Aveo T250 седан 2003-2012г(единый салон с Ravon Nexia R3 с2015г)',
+                                                'Chevrolet Aveo T250 Хэтчбек 2003-2012г',
+                                                'Chevrolet Aveo T300 седан 2012-2015г',
+                                                'Chevrolet Aveo T300 Хэтчбек 2012-2015г',
+                                                'Chevrolet Captiva I (2006-2014г и с 2014-2018г)',
+                                                'Chevrolet Cruze Хэтчбек (2011-2015г)',
+                                                'Chevrolet Cruze седан (2009-2015г)',
+                                                'Chevrolet Cruze универсал (2011-2015г)',
+                                                'Chevrolet Cobalt 2011-2021г (Единый салон с 2016г)',
+                                                'Chevrolet Lacetti хэтчбек, универсал (2003- по наст. время)',
+                                                'Chevrolet Lacetti седан (2003-по наст.время)',
+                                                'Chevrolet Lanos (1997-2009г) (Единый салон с Daewoo Lanos (Sens) и ZAZ Chance)',
+                                                'Chevrolet Orlando 7 мест (2010-2012г)',
+                                                'Chevrolet Orlando 7 мест (2013-2015г)',
+                                                'Chevrolet Orlando 5 мест (2010-2012г)',
+                                                'Chevrolet Orlando 5 мест (2013-2015г)',
+                                                'Chevrolet Niva до 2009г',
+                                                'Chevrolet Niva 2009-2014г Бертони',
+                                                'Chevrolet Niva 2014-2016г',
+                                                'Chevrolet Niva с 2016г',
+                                                'Chevrolet Niva с 2017г',
+                                                'Chevrolet Spark (2010-2015г)',
+                                                'Не нашел свою модель'
+                                                ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Citroen',
+                                    modelAuto: ['Citroen C4 седан с 2012г',
+                                                'Citroen C4 хэтчбек 2004-2011г',
+                                                'Citroen C4 Aircross 2012-2017г (аналог Mitsubishi ASX 2010-2013г и Peugeot 4008)',
+                                                'Citroen C5 2006г (2001-2008г) седан/лифтбэк',
+                                                'Citroen Berlingo 2е поколение',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Daewoo',
+                                    modelAuto: ['Daewoo Gentra (копия Lacetti sd)',
+                                                'Daewoo Matiz (с 1998 по наст.время)',
+                                                'Daewoo Nexia 1995-2008г',
+                                                'Daewoo Nexia 2008-2016г'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Datsun',
+                                    modelAuto: ['Datsun mi-Do хэтчбек',
+                                                'Datsun On-Do седан',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Fiat',
+                                    modelAuto: ['Fiat Albea',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Ford ',
+                                    modelAuto: ['Ford C-Max 2003-2010г (М)',
+                                                'Ford C-Max Grand с 2010г',
+                                                'Ford EcoSport c 2014г',
+                                                'Ford EcoSport c 2018г',
+                                                'Ford Focus 2 (2004-2011г) Ghia',
+                                                'Ford Focus 2 (3х дверный)',
+                                                'Ford Focus 2 komfort и ambiente (2004-2011г)',
+                                                'Ford Focus 3 (Комплектация Titanium) c 2011г',
+                                                'Ford Focus 3 (Комплектация Trend Sport) c 2011г',
+                                                'Ford Focus 3 (Комплектация Trend) c 2011г',
+                                                'Ford Fiesta (2008-2013г)',
+                                                'Ford Fiesta (2015-2019г) седан, хэтчбек',
+                                                'Ford Fussion (2002-2012г)',
+                                                'Ford Kuga 2 (2012-2017г)',
+                                                'Ford Kuga 2008-2012г (не Titanium)',
+                                                'Ford Kuga с 2017г рестайлиг-кожаный салон',
+                                                'Ford Kuga с 2017г рестайлиг-тканевый салон',
+                                                'Ford Mondeo III 2000-2007г седан (Комплектация Trend)',
+                                                'Ford Mondeo III2000-2007г седан (Комплектация Titanium)',
+                                                'Ford Mondeo IV 2007-2014г (Комплектация Trend)',
+                                                'Ford Mondeo IV 2007-2014г (Комплектация Titanium)',
+                                                'Ford Mondeo V с 2014г',
+                                                'Ford Transit',
+                                                'Ford Transit с 2015г (М), на комплектацию',
+                                                'Ford Transit custom не шьем',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Geely',
+                                    modelAuto: ['Geely Atlas I с 2016г',
+                                                'Geely Coolray',
+                                                'Geely Emgrand Кузов EC7 до 2016г ЛЮКС',
+                                                'Geely Emgrand Кузов EC7 FE-1 до 2016г',
+                                                'Geely Emgrand X7 c 2013г',
+                                                'Geely Emgrand X7 c 2019г',
+                                                'Не нашел свою модель'
+                                                ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Great Wall',
+                                    modelAuto: ['Great Wall Hover H3(H5) c 2011г',
+                                                'Great Wall Wingle 7 (пикап) с 2018г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Haval',
+                                    modelAuto: ['Haval Junion I с 2021г',
+                                                'Haval H6 2014 по наст. время',
+                                                'Haval F7/F7X',
+                                                'Не нашел свою модель'
+                                                ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Honda',
+                                    modelAuto: ['Honda Acord (2003-2008г) 7-е поколение',
+                                                'Honda Acord 8 седан 2007-2012г',
+                                                'Honda Civic 4D (2006-2011г) седан',
+                                                'Honda CR-V (1-е поколение 1995-2001г)',
+                                                'Honda CR-V (2-е поколение 2002-2006г)',
+                                                'Honda CR-V (3-е поколение 2006-2012г)',
+                                                'Honda CR-V (4-е поколение)' ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Hyundai',
+                                    modelAuto: ['Hyundai Accent (C 2000-2010г) (с 2011 по наст. время)',
+                                                'Hyundai Creta 1-е поколение 2016-2021г',
+                                                'Hyundai Creta 2-е поколение 2021г',
+                                                'Hyundai Elantra 4-е поколение 2006-2011г',
+                                                'Hyundai Elantra 5-е поколение 2011-2016г',
+                                                'Hyundai Elantra 6-е поколение 2016-2020г',
+                                                'Hyundai Elantra 7-е поколение с 2020г',
+                                                'Hyundai Getz 2022-2011г',
+                                                'Hyundai Grand Starex 8 мест',
+                                                'Hyundai H-1 с 2007г 8 мест',
+                                                'Hyundai i30 (до 2012г)',
+                                                'Hyundai i30 (2012г по наст. время)',
+                                                'Hyundai i40 седан',
+                                                'Hyundai ix35 ( c 2009 по наст. Время)',
+                                                'Hyundai Solaris I хэтчбек (2011-2017г)',
+                                                'Hyundai Solaris I седан (2011-2017г)',
+                                                'Hyundai Solaris седан (60/40) (2011-2017г)',
+                                                'Hyundai Solaris 2 с 2017г',,
+                                                'Hyundai Sonata 4 EF (1998-2014г)',,
+                                                'Hyundai Sonata 6 YF (2009-2014г)',,
+                                                'Hyundai Sonata 7 LF (2014-2019г)',,
+                                                'Hyundai Sonata NF 5 кузов (2004-2010г)',,
+                                                'Hyundai Sonata DN 8 с 2019г',
+                                                'Hyundai SantaFe 1 Classic 2001-2012г',
+                                                'Hyundai SantaFe 2 (2007-2012г)',
+                                                'Hyundai SantaFe 3 (2013-2018г)',
+                                                'Hyundai SantaFe 4 с 2019г 5 мест и 7 мест',
+                                                'Hyundai Tucson 3-поколение 2016-2021г',
+                                                'Hyundai Tucson 4-е поколение с 2021г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'KIA',
+                                    modelAuto: ['KIA Ceed 1 (2007-2012г)',
+                                                'KIA Ceed 2 (2012-2018г)',
+                                                'KIA Ceed 3/Kia XCeed 3 з.сп. 40/20/40',
+                                                'KIA Ceed 3/Kia XCeed 3 з.сп. 60/40',
+                                                'KIA Carnival 2020г 8 мест (М)',
+                                                'KIA Cerato 1-е поколение седан (2003-2008г)',
+                                                'KIA Cerato 2-е поколение седан (2009-2013г)',
+                                                'KIA Cerato3-е поколение седан (2013-2020г)',
+                                                'KIA Cerato 4-е поколение с 2018г',
+                                                'KIA Optima III 2010-2015г',
+                                                'KIA Optima IV c 2015г',
+                                                'KIA Picanto 2 (2011-2017г)',
+                                                'KIA Picanto 3 с 2017г',
+                                                'KIA Venga',
+                                               ' KIA Rio 2-е поколение седан (2005-2011г)',
+                                                'KIA Rio 2-е поколение хэтчбек (2009-2011г)',
+                                                'KIA Rio 3-е поколение седан (2011-2017г)',
+                                                'KIA Rio 3-е поколение хэтчбек (2011-2017г)',
+                                                'KIA Rio 2-е поколение седан (2009-2013г)',
+                                                'KIA Rio 4-е поколение с 2017г',
+                                                'KIA Rio X Line хэтчбек с 2017г',
+                                                'KIA Seltos с 2020г',
+                                                'KIA Sorento 1 BL 2002-2009г',
+                                                'KIA Sorento 2 до рестайлинга (2009-2012г)',
+                                                'KIA Sorento 2 рестайлинг с 2012г',
+                                                'KIA Sorento 3 PRIME (5/7 мест) с 2016 г',
+                                                'KIA Sorento 4 с 2020г',
+                                                'KIA Soul 1-е поколение (2009-2014г)',
+                                                'KIA Soul 2-е поколение с 2014г',
+                                                'KIA Soul 3-е поколение с 2019г',
+                                                'KIA Spectra (2000-2009г)',
+                                                'KIA Sportage 2 2004-2010г (КМ)',
+                                                'KIA Sportage 3 2010-2016г (SL)',
+                                                'KIA Sportage 4 2016-2022г (QL)',
+                                                'KIA Sportage 5 c 2021г',
+                                                'KIA K5 с 2020г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Lada',
+                                    modelAuto: ['ВАЗ 2107',
+                                                'ВАЗ 2108',
+                                                'ВАЗ 2109, 21099',
+                                                'ВАЗ 2110',
+                                                'ВАЗ 2111',
+                                                'ВАЗ 2112',
+                                                'ВАЗ 2113',
+                                                'ВАЗ 2114',
+                                                'ВАЗ 2115',
+                                                'ВАЗ 212113 Нива (3-х дверная) 1994-2001г',
+                                                'ВАЗ 212114 Нива (3-х дверная) 2001г',
+                                                'ВАЗ 212114 Нива (3-х дверная) 2020г',
+                                                'ВАЗ 2131 (5-ти дверная) до 2015г',
+                                                'ВАЗ 2131 (5-ти дверная) 2019г',
+                                                'ВАЗ 2170 Priora седан до 2014г',
+                                                'ВАЗ 2170 Priora седан с 2014г',
+                                                'ВАЗ 2171 Priora универсал до 2013г',
+                                                'ВАЗ 2171 Priora универсал с 2013г',
+                                                'ВАЗ 2171 Priora хэтчбек до 2013г',
+                                                'ВАЗ 2171 Priora хэтчбек с 2013г',
+                                                'ВАЗ 2190 Гранта седан или лифтбек',
+                                                'ВАЗ 2190 Гранта с 2018г',
+                                                'ВАЗ 2190 Гранта Кросс с 2019г седан,универсал',
+                                                'ВАЗ 2190 Гранта рестайлинг с 2018г седан, хэтчбек, лифтбек',
+                                                'Газель Некст (передние кресла)',
+                                                'Лада 4×4 Niva Urban / Legend 3-х дверная с 2020г',
+                                                'Лада 4×4 Niva Urban, Бронто 3-х дверная',
+                                                'Лада Niva Travel c 2021г',
+                                                'Лада Niva Urban 5-ти дверная с 2020г (М)',
+                                                'Лада Largus (5-ти местный) люкс',
+                                                'Лада Largus (5-ти местный) норма',
+                                                'Лада Largus (7-ми местный) норма',
+                                                'Лада Largus (7-ми местный) люкс, Cross',
+                                                'Лада Largus 5/7 мест / Лада Largus Cross (с 2020г)',
+                                                'Лада Largus Cross Квест 5-ти местный',
+                                                'Лада XRAY',
+                                                'Лада XRAY Cross',
+                                                'Лада Калина (седан, хэтчбек, wagon) 11193',
+                                                'Лада Калина 2 c 2013г седан, хэтчбек, универсал БОЛЬШАЯ',
+                                                'Лада Калина 2 c 2013г седан, хэтчбек, универсал МАЛЕНЬКАЯ',
+                                                'Лада Калина Cross БОЛЬШАЯ',
+                                                'Лада Калина Cross МАЛЕНЬКАЯ',
+                                                'Лада Vesta седан (cross)',
+                                                'Лада Vesta SW/SW Cross универсал',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Lexus',
+                                    modelAuto: ['Lexus NX 200',
+                                                'Lexus RX 350 c 2003-2009г джип',
+                                                'Lexus RX 350 c 2009-20015г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Lifan',
+                                    modelAuto: ['Lifan Solano (2009-2016г)',
+                                                'Lifan X-60 2011-2015г',
+                                                'Lifan X-60 с 2016г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Mazda',
+                                    modelAuto: ['Mazda 3 седан (2003-2009г)',
+                                                'Mazda 3 хэтчбек (2003-2009г)',
+                                                'Mazda 3 седан (2009-2013г) (BL)',
+                                                'Mazda 3 хэтчбек (2009-2013г)',
+                                                'Mazda 3 хэтчбек/седан с 2019г',
+                                                'Mazda 3 седан (2013-2019г) (BM)',
+                                                'Mazda 6 седан (2002-2007г)',
+                                                'Mazda 6 седан (2007-2012г)',
+                                                'Mazda 6 седан (2012-2018г) (GJ)',
+                                                'Mazda 6 седан c 2018г (GJ)',
+                                                'Mazda 6 хэтчбек (2007-2012г) спортбек',
+                                                'Mazda CX 5 2-е поколение с 2017г Актив',
+                                                'Mazda CX 5 2-е поколение с 2017г Драйв',
+                                                'Mazda CX 5 до рестайлинга (комплектация Active, Supreme) (2012-2015г)',
+                                                'Mazda CX 5 рестайлинг 2015-2017г (комплектация Active, Supreme)',
+                                                'Mazda CX 5 комплектация Drive (2012-2015г)',
+                                                'Mazda CX 7 (2006-2012г)',
+                                                'Mazda CX 30 с 2019г',
+                                                'Не нашел свою модель'
+                                                ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Mitsubishi',
+                                    modelAuto: ['Mitsubishi ASX 2010-2013г',
+                                                'Mitsubishi ASX 2014-2017г',
+                                                'Mitsubishi ASX 2017-2021г',
+                                                'Mitsubishi Galant 2004-2010г',
+                                                'Mitsubishi L200 4-е поколение 2007-2013г',
+                                                'Mitsubishi L200 4-е поколение 2013-2015г (переходная)',
+                                                'Mitsubishi L200 5-е поколение с 2015г',
+                                                'Mitsubishi Lancer IX седан (invite) 2003-2011г',
+                                                'Mitsubishi Lancer IX универсал (invite) 2003-2011г',
+                                                'Mitsubishi Lancer X спортбэк invite 2007-2012г',
+                                                'Mitsubishi Lancer X спортбэк intens 2007-2012г',
+                                                'Mitsubishi Lancer X intens 2007-2012г',
+                                                'Mitsubishi Lancer X invite 2007-2012г',
+                                                'Mitsubishi Lancer X invite+ 2012-2017г',
+                                                'Mitsubishi Outlander 3 2012-2018г',
+                                                'Mitsubishi Outlander 3 с 2018 по наст. время',
+                                                'Mitsubishi Outlander XL (аналог Peugeot 4007) 2006-2012г',
+                                                'Mitsubishi Pajero Sport 1 (1996-2008г)',
+                                                'Mitsubishi Pajero IO Pinin 1998-2008г джип',
+                                                'Mitsubishi Pajero 4 2006-2001г',
+                                                'Mitsubishi Pajero Sport 2 (2008-2015г) автомат',
+                                                'Mitsubishi Pajero Sport 2 (2008-2015г) механика',
+                                                'Mitsubishi Pajero Sport 3 с 2015г',
+                                                'Не нашел свою модель',
+                                                ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Nissan',
+                                    modelAuto: ['Nissan Almera Classic 2006-2013г',
+                                                'Nissan Almera 16 кузов седан (2000-2006г)',
+                                                'Nissan Almera 16 кузов хэтчбек(2000-2006г)',
+                                                'Nissan Almera 3 G-15 2013-2018г',
+                                                'Nissan Pathfinder 3 2005-2015г',
+                                                'Nissan Primera -12 (2001-2007г)',
+                                                'Nissan Terrano 2014-2017г Элеганс',
+                                                'Nissan Terrano 2014-2017г Комфорт',
+                                                'Nissan Terrano с 2017г',
+                                                'Nissan Tiida седан 1-е поколение (2004-2014г)',
+                                                'Nissan Tiida хэтчбек 1-е поколение (2004-2014г)',
+                                                'Nissan Teana 2(J32) (2008-2014г)',
+                                                'Nissan Teana 2(J32) (2008-2014г) задние подголовники встроенные',
+                                                'Nissan X Trail T-32 c 2015г',
+                                                'Nissan X Trail T-30 (2001-2007г)',
+                                                'Nissan X Trail T-30 (2001-2007г) (коламбия)',
+                                                'Nissan X Trail T-31 (2007-2015г)',
+                                                'Nissan Juke 2010-2019г',
+                                                'Nissan Note (2005-2014г) Е11',
+                                                'Nissan Qashkai J10 (2007-2010г), (2010-2013г)',
+                                                'Nissan Qashkai +2 (5 сидений) 2008-2013г',
+                                                'Nissan Qashkai J11 с 2014г',
+                                                'Nissan Sentra VII (B17) c 2012г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Opel',
+                                    modelAuto: ['Opel Antara 2006-2011г',
+                                                'Opel Antara 2011-2018г',
+                                                'Opel Meriva A (2003-2010г)',
+                                                'Opel Meriva B (2010-2015г)',
+                                                'Opel Zafira B (5 мест) 2005-2014г',
+                                                'Opel Zafira B (сред. сиденье, целое, сред. спинка 50/50, сред. подлокотник 7 мест) 2005-2014г',
+                                                'Opel Vectra C седан с 2002г (М)',
+                                                'Opel Corsa D (3-х дверная) 2006-2014г',
+                                                'Opel Corsa D (5-ти дверная) 2006-2014г',
+                                                'Opel Astra H (до 2006г)',
+                                                'Opel Astra H (3-х дверная) (2004-2014г) комплектация космо',
+                                                'Opel Astra H (3-х дверная) (2004-2014г) комплектация энжой',
+                                                'Opel Astra H хэтчбек (5-ти дверная) (2004-2014г) комплектация космо',
+                                                'Opel Astra H хэтчбек (5-ти дверная) (2004-2014г) комплектация энжой',
+                                                'Opel Astra H универсал (5-ти дверная) (2004-2014г) комплектация космо',
+                                                'Opel Astra H универсал(5-ти дверная) (2004-2014г) комплектация энжой',
+                                                'Opel Astra H седан комплектация космо (2004-2014г)',
+                                                'Opel Astra H седан комплектация энжой (2004-2014г)',
+                                                'Opel Astra J хэтчбек 5-ти дверный Космо (комбинированный)',
+                                                'Opel Astra J хэтчбек 5-ти дверный 2009-2016г',
+                                                'Opel Astra J 3-х дверная 2009-2016г (не спорт)',
+                                                'Opel Astra J седан 2009-2016г',
+                                                'Opel Insignia седан, хэтчбек, универсал, sport, turer 2008-2017г',
+                                                'Opel Mokka 2012-2019г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Peugeot',
+                                    modelAuto: ['Peugeot 308 (2007-2015г) только х/б',
+                                                'Peugeot 308 SW универсал с 2008г',
+                                                'Peugeot 4007 (2007-2012г)',
+                                                'Peugeot 408 с 2012г',
+                                                'Peugeot Partner 2 2008-2012г',
+                                                'Не нашел свою модель'
+                                                ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Ravon',
+                                    modelAuto: ['Ravon R4 c 2016г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Renault',
+                                    modelAuto: ['Renault Arkana c 2019г',
+                                                'Renault Duster 1-е поколение 2011-2015г',
+                                                'Renault Duster 1-е поколение 2011-2015г Privilege',
+                                                'Renault Duster 1-е поколение 2015-2017г',
+                                                'Renault Duster 1-е поколение 2017-2021г',
+                                                'Renault Duster 2-е поколение c 2021г',
+                                                'Renault Kaptur с 2016г',
+                                                'Renault Sandero 1 (спинка 60/40) 2009-2014г',
+                                                'Renault Sandero 1 (спинка цельная) 2009-2014г',
+                                                'Renault Sandero 2 с 2014г Acces, Comfort, Privilege Псп маленькая',
+                                                'Renault Sandero 2 с 2014г Stepwey',
+                                                'Renault Sandero 2 с 2014г Acces, Comfort, Privilege Псп большая',
+                                                'Renault Symbol 1 (2001-2008г)',
+                                                'Renault Duster Dakar с 2017г',
+                                                'Renault Fluence седан 2009-2016г',
+                                                'Renault Koleos 1-е поколение 2008-2016г',
+                                                'Renault Logan 1-е поколение с 2004-2014г',
+                                                'Renault Logan II / Renault Logan II Stepwey с 2014г ПСп большая.',
+                                                'Renault Logan II / Renault Logan II Stepwey с 2014г ПСп маленькая.',
+                                                'Renault Megan 2 Autentic с 2002-2009г',
+                                                'Renault Megan 2 Extreme с 2002-2009г',
+                                                'Renault Megan 3 (универсал) (гранд тур не шьем) 2009-2016г',
+                                                'Renault Megan 3 (хэтчбек) 2009-2016г',
+                                                'Не нашел свою модель'
+                                                ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Seat',
+                                    modelAuto: ['Seat Ibiza с 2008г х/б',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Skoda ',
+                                    modelAuto: ['Skoda Fabia 2 с 2007-2010г',
+                                                'Skoda Fabia 2 рестайлинг с 2010-2014г',
+                                                'Skoda Octavia A8 с 2020г',
+                                                'Skoda Rapid',
+                                                'Skoda Rapid спорт сидения',
+                                                'Skoda Superb 2-е поколение 2008-2014г',
+                                                'Skoda Superb 3-е поколение с 2015г хэтчбек',
+                                                'Skoda Yeti',
+                                                'Skoda Karoq Active',
+                                                'Skoda Karoq Ambition',
+                                                'Skoda Karoq Style',
+                                                'Skoda Kodiaq Hockey Edition 5 мест',
+                                                'Skoda Kodiaq 5 мест',
+                                                'Skoda Octavia A5 (комплектация Elegance) 2004-2013г',
+                                                'Skoda Octavia A5 (комплектация Ambiente) 2004-2013г',
+                                                'Skoda Octavia A7 2013-2020г',
+                                                'Skoda Octavia A7 Hockey Edition 2013-2020г',
+                                                'Skoda Octavia Scout A7 2013-2020г',
+                                                'Skoda Octavia Tour (не спорт) 1996-2010г',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Subaru',
+                                    modelAuto: ['Subaru Impreza 3 (2007-2011г)',
+                                                'Subaru Forester 2 (2002-2008г) (М)',
+                                                'Subaru Forester 3 (2008-2013г)',
+                                                'Subaru Forester 4 (2012-2018г) джип',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Suzuki',
+                                    modelAuto: ['Suzuki SX 4 хэтчбек 2006-2014г',
+                                                'Suzuki SX 4 II поколение с 2014г (аналог Suzuki Vitara 2015г)',
+                                                'Suzuki Grand Vitara 5-ти дверный 2005-2015г',
+                                                'Suzuki Vitara 2015г',
+                                                'Suzuki Jimmy IV с 2018г',
+                                                'Suzuki Jimmy III 1998-2018г',
+                                                'Не нашел свою модель',
+                                                ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Ssang Yong',
+                                    modelAuto: ['Ssang Yong Actyon Sport пикап',
+                                                'Ssang Yong Actyon New с 2011 по наст. время',
+                                                'Ssang Yong Kyron',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Toyota',
+                                    modelAuto: ['Toyota Auris 2006-2012г',
+                                                'Toyota Avensis T250 2003-2009г седан',
+                                                'Toyota Avensis T270 2009-2018г',
+                                                'Toyota Camry с 2006-2011г кузов XV 40 ЛЮКС',
+                                                'Toyota Camry с 2006-2011г кузов XV 40 НЕ ЛЮКС',
+                                                'Toyota Camry с 2011-2018г кузов XV 50 (2011-2014г) - XV 55 (2014-2018г)',
+                                                'Toyota Camry XV 70 кузов с 2017г',
+                                                'Toyota Corolla 2000-2007г седан Е120,Е130',
+                                                'Toyota Corolla 2007-2013г седан Е150,Е140',
+                                                'Toyota Corolla 20013-2018г седан Е160,Е170, Е180',
+                                                'Toyota Corolla с 2019г Е210 задние подголовники литые со спинкой',
+                                                'Toyota Corolla с 2018г Е210 задние подголовники отдельные',
+                                                'Toyota Highlander 2008-2013г',
+                                                'Toyota Hiliux 7-е поколение с 2005-2015г',
+                                                'Toyota Hiliux 8-е поколение с 2015г',
+                                                'Toyota Land Cruser 200 (2007-2015г)',
+                                                'Toyota Land Cruser 200 рестайлинг с 2015г',
+                                                'Toyota Land Cruser 100 (1998-2007г)',
+                                                'Toyota Land Cruser Prado 120 5-ти местный 2002-2009г',
+                                                'Toyota Land Cruser Prado 150 Standart 5 мест до рестайлинга',
+                                                'Toyota Land Cruser Prado 150 Comfort 5 мест до рестайлинга',
+                                                'Toyota Land Cruser Prado 150 Standart 5 мест рестайлинг 2018-2021г',
+                                                'Toyota Land Cruser Prado 150 Comfort 5 мест рестайлинг 2018-2021г',
+                                                'Toyota Land Cruser Prado 150 рестайлинг 2021г',
+                                                'Toyota Land Cruser 200 (2007-2015г) (М)',
+                                                'Toyota Prius XW30 с 2009-2015г',
+                                                'Toyota Fortuner II с 2015г (5-7 мест)',
+                                                'Toyota RAV-4 XA20 с 2000-2005г',
+                                                'Toyota RAV-4 XA30 с 2005-2013г',
+                                                'Toyota RAV-4 XA40 с 2015-2019г',
+                                                'Toyota RAV-4 XA50 с 2019г рестайлинг',
+                                                'Toyota Yaris II хэтчбек с 2005г',
+                                                'Toyota Verso 2 c 2012г',
+                                                'Не нашел свою модель'
+                                                ],
+                                    selected: false
+                                },
+                                {
+                                    title: 'Volkswagen',
+                                    modelAuto: ['Volkswagen Amarok (пикап) по 2016г',
+                                                'Volkswagen Crafter (передние кресла)',
+                                                'Volkswagen Golf Plus 2004-2014г',
+                                                'Volkswagen Golf 4 (1997-2004г) (единый салон с Volkswagen Bora) M',
+                                                'Volkswagen Golf 5 (2003-2009г)',
+                                                'Volkswagen Golf 6 Plus',
+                                                'Volkswagen Golf 6 (2009-2012г)',
+                                                'Volkswagen Golf 6 3-х дверный 2009-2012г',
+                                                'Volkswagen Golf 7 5-ти дверная с 2012г',
+                                                'Volkswagen Jetta с 2011 (VI поколение)',
+                                                'Volkswagen Jetta с 2018 (VII поколение)',
+                                                'Volkswagen Jetta с 2005-2011 (V поколение) (единый салон с Golf V)',
+                                                'Volkswagen Jetta 2013-2018 (VI поколение)',
+                                                'Volkswagen Iupo c 1998-2005г',
+                                                'Volkswagen Passat B6 с 2005-2010г',
+                                                'Volkswagen Passat B7 Trendline седан с 2010-2015г',
+                                                'Volkswagen Passat B5/B5+ 1996-2005г',
+                                                'Volkswagen Passat B8 седан, универсал с 2014г ЗПлVolkswagen Passat B8 седан, универсал с 2014г ЗПл+ до 2020г',
+                                                'Volkswagen Polo седан с 2010г (Trendline, Comfortline, Allstar)',
+                                                'Volkswagen Polo рестайлинг 2015г SD 60/40 в комплектации Highline',
+                                                'Volkswagen Polo хэтчбек 2009-2020г (М)',
+                                                'Volkswagen Polo лифтбек с 2020г',
+                                                'Volkswagen Touran Highline I-II 2003-2015г',
+                                                'Volkswagen Touran Trendline I-II 2003-2015г',
+                                                'Volkswagen Tiguan I 2007-2017г',
+                                                'Volkswagen Tiguan II с 2017г трансформер',
+                                                'Volkswagen Tiguan II с 2017г не трансформер',
+                                                'Volkswagen Taos 1-е поколение с 2021г',
+                                                'Volkswagen Touareg с 2011 по наст. время',
+                                                'Volkswagen Caravelle (8 мест)',
+                                                'Volkswagen Multivan T5 2003-2015г 7 мест Comfortline НЕ ТРАНСФОРМЕР',
+                                                'Volkswagen Multivan T5 2003-2015г 7 мест Comfortline ТРАНСФОРМЕР',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'ГАЗ',
+                                    modelAuto: ['ГАЗ 3110',
+                                                'ГАЗ 31105',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                },
+                                {
+                                    title: 'УАЗ',
+                                    modelAuto: ['УАЗ Patriot до 2014г',
+                                                'УАЗ Patriot до 2014г пикап',
+                                                'УАЗ Patriot с 2014г',
+                                                'УАЗ Patriot с 2020г ЛЮКС/КОМФОРТ',
+                                                'УАЗ Hunter',
+                                                'Не нашел свою модель'],
+                                    selected: false
+                                }
+                            ],
+                skinArray: [
+
+                ],
+                test: true,
+                classic: {
+                    title: 'classic',
+                    show: true,
+                    price: 8290
+                },
+                premium: {
+                    title: 'premium',
+                    show: false,
+                    price: 9690 
+                },
+                exclusive: {
+                    title: 'exclusive',
+                    show: false,
+                    price: 21200
+                },
+                bodyColors: [
+                                {
+                                    title: 'black',
+                                    background: '#111111',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'grey',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'grey-black',
+                                    background: '#7F7F7F',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'bord',
+                                    background: '#653334',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'brown',
+                                    background: '#996639',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'blue',
+                                    background: '#1068C9',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'red',
+                                    background: '#CA3537',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'white',
+                                    background: '#FFFFFF',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'white-orange',
+                                    background: '#FECB9C',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'orange',
+                                    background: '#EB6A47',
+                                    selected: false,
+                                    disabled: false
+                                }
+                            ],
+                            bodyColorsExclusive: [
+                            {
+                                    title: 'black',
+                                    background: '#111111',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'grey',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: true
+                                },
+                                {
+                                    title: 'grey-black',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: true
+                                },
+                                {
+                                    title: 'bord',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: true
+                                },
+                                {
+                                    title: 'brown',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: true
+                                },
+                                {
+                                    title: 'blue',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: true
+                                },
+                                {
+                                    title: 'red',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: true
+                                },
+                                {
+                                    title: 'white',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: true
+                                },
+                                {
+                                    title: 'white-orange',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: true
+                                },
+                                {
+                                    title: 'orange',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: true
+                                }
+                            ],
+                centralInsert: [
+                                {
+                                    title: 'black',
+                                    background: '#111111',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'grey',
+                                    background: '#BFBFBF',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'grey-black',
+                                    background: '#7F7F7F',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'bord',
+                                    background: '#653334',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'brown',
+                                    background: '#996639',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'blue',
+                                    background: '#1068C9',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'red',
+                                    background: '#CA3537',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'white',
+                                    background: '#FFFFFF',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'white-orange',
+                                    background: '#FECB9C',
+                                    selected: false,
+                                    disabled: false
+                                },
+                                {
+                                    title: 'orange',
+                                    background: '#EB6A47',
+                                    selected: false,
+                                    disabled: false
+                                }
+                            ],
+            doubleStitches: [
+                                {
+                                    title: 'black',
+                                    background: '#111111',
+                                    selected: false
+                                },
+                                {
+                                    title: 'grey',
+                                    background: '#BFBFBF',
+                                    selected: false
+                                },
+                                {
+                                    title: 'grey-black',
+                                    background: '#7F7F7F',
+                                    selected: false
+                                },
+                                {
+                                    title: 'bord',
+                                    background: '#653334',
+                                    selected: false
+                                },
+                                {
+                                    title: 'brown',
+                                    background: '#996639',
+                                    selected: false
+                                },
+                                {
+                                    title: 'blue',
+                                    background: '#1068C9',
+                                    selected: false
+                                },
+                                {
+                                    title: 'red',
+                                    background: '#CA3537',
+                                    selected: false
+                                },
+                                {
+                                    title: 'white',
+                                    background: '#FFFFFF',
+                                    selected: false
+                                },
+                                {
+                                    title: 'white-orange',
+                                    background: '#FECB9C',
+                                    selected: false
+                                },
+                                {
+                                    title: 'orange',
+                                    background: '#EB6A47',
+                                    selected: false
+                                },
+                                {
+                                    title: 'green',
+                                    background: '#008001',
+                                    selected: false
+                                },
+                                {
+                                    title: 'yellow',
+                                    background: '#FFFF00',
+                                    selected: false
+                                }
+                            ],
+                            additionallyColor: [
+                                {
+                                    title: 'black',
+                                    background: '#111111',
+                                    selected: false
+                                },
+                                {
+                                    title: 'grey',
+                                    background: '#BFBFBF',
+                                    selected: false
+                                },
+                                {
+                                    title: 'grey-black',
+                                    background: '#7F7F7F',
+                                    selected: false
+                                },
+                                {
+                                    title: 'bord',
+                                    background: '#653334',
+                                    selected: false
+                                },
+                                {
+                                    title: 'brown',
+                                    background: '#996639',
+                                    selected: false
+                                },
+                                {
+                                    title: 'blue',
+                                    background: '#1068C9',
+                                    selected: false
+                                },
+                                {
+                                    title: 'red',
+                                    background: '#CA3537',
+                                    selected: false
+                                },
+                                {
+                                    title: 'white',
+                                    background: '#FFFFFF',
+                                    selected: false
+                                },
+                                {
+                                    title: 'white-orange',
+                                    background: '#FECB9C',
+                                    selected: false
+                                },
+                                {
+                                    title: 'orange',
+                                    background: '#EB6A47',
+                                    selected: false
+                                },
+                                {
+                                    title: 'green',
+                                    background: '#008001',
+                                    selected: false
+                                },
+                                {
+                                    title: 'yellow',
+                                    background: '#FFFF00',
+                                    selected: false
+                                }
+                            ],
+            alcantaraArray: [
+                                {
+                                    title: 'black',
+                                    background: '#111111',
+                                    selected: false
+                                },
+                                {
+                                    title: 'grey',
+                                    background: '#BFBFBF',
+                                    selected: false
+                                },
+                            ],
+            additionally:[
+                                {
+                                    title: 'rhomb2d',
+                                    name: 'До центра 2D ромб',
+                                    centr: 'centralInsert',
+                                    selected: false,
+                                    tooltipTitle: 'Дополнительная опция',
+                                    tooltipTxt: [
+                                                {
+                                                    title:'На центральные части сидений переднего и заднего ряда. Наносятся строчки в виде ромбов, нитью средней толщины'
+                                                },
+                                                {
+                                                    title:'Добавляет эстетический внешний вид и&nbsp;дополнительную прочность'
+                                                },
+                                                {
+                                                    title:'Спинки отстрочены ромбом на 2/3 высоты сиденья'
+                                                },
+                                                {
+                                                    title:'Отстрочку ромбом подголовника можно убрать по запросу'
+                                                }
+                                                ],
+                                    price: ' 2 800 ₽'               
+                                },
+                                {
+                                    title: 'rhomb2dfull',
+                                    name: 'Полностью 2D ромб',
+                                    centr: 'centralInsert',
+                                    selected: false,
+                                    tooltipTitle: 'Дополнительная опция',
+                                    tooltipTxt: [
+                                                {
+                                                    title:'На центральные части сидений переднего и заднего ряда. Наносятся строчки в виде ромбов, нитью средней толщины'
+                                                },
+                                                {
+                                                    title:'Добавляет эстетический внешний вид и дополнительную прочность'
+                                                },
+                                                {
+                                                    title:'Спинки отстрочены ромбом на всю высоту сиденья до подголовников'
+                                                },
+                                                {
+                                                    title:'Отстрочку ромбом подголовника можно убрать по запросу'
+                                                }
+                                                ],
+                                    price: ' 3 000 ₽'
+                                },
+                                 {
+                                     title: 'rhomb2d',
+                                     name: 'До центра 3D ромб',
+                                     centr: 'rhomb3d',
+                                     selected: false,
+                                     tooltipTitle: 'Дополнительная опция',
+                                     tooltipTxt: [
+                                                {
+                                                    title:'На центральные части сидений переднего и заднего ряда добавляется поролон 10 мм'
+                                                },
+                                                {
+                                                    title:'Наносятся строчки в виде ромбов толстой нитью'
+                                                },
+                                                {
+                                                    title:'Добавляет роскошный внешний вид, эффект 3 и дополнительную прочность'
+                                                },
+                                                {
+                                                    title:'Спинки отстрочены ромбом на 2/3 высоты сиденья '
+                                                },
+                                                {
+                                                    title:'Отстрочку ромбом подголовника можно убрать по запросу'
+                                                }
+                                                ],
+                                    price: ' 3 800 ₽'
+                                 },
+                                 {
+                                     title: 'rhomb2dfull',
+                                     name: 'Полностью 3D ромб',
+                                     centr: 'rhomb3dfull',
+                                     selected: false,
+                                     tooltipTitle: 'Дополнительная опция',
+                                     tooltipTxt: [
+                                                {
+                                                    title:'На центральные части сидений переднего и заднего ряда добавляется поролон 10 мм'
+                                                },
+                                                {
+                                                    title:'Наносятся строчки в виде ромбов толстой нитью'
+                                                },
+                                                {
+                                                    title:'Добавляет роскошный внешний вид, эффект 3D и дополнительную прочность'
+                                                },
+                                                {
+                                                    title:'Спинки отстрочены ромбом на всю ширину сиденья до подголовников'
+                                                },
+                                                {
+                                                    title:'Отстрочку ромбом подголовника можно убрать по запросу'
+                                                }
+                                                ],
+                                    price: '4 000 ₽'
+                                },
+                                {
+                                    title: 'embroidery-anacondasot',
+                                    name: 'Анаконда соты',
+                                    centr: 'embroidery-anacondasot-centr',
+                                    selected: false,
+                                    tooltipTitle: 'Анаконда соты',
+                                    price: '3 750 ₽'
+                                },
+                                {
+                                    title: 'embroidery-anaconda',
+                                    name: 'Анаконда ромб',
+                                    centr: 'embroidery-anaconda-centr',
+                                    selected: false,
+                                    tooltipTitle: 'Анаконда ромб',
+                                    price: '3 750 ₽'
+                                },
+                                {
+                                    title: 'honeycomb-classic',
+                                    name: 'Соты классик',
+                                    centr: 'honeycomb-classic-centr',
+                                    selected: false,
+                                    tooltipTitle: 'Соты классик',
+                                    price: '4 700 ₽'
+                                },
+                                {
+                                    title: 'honeycomb-oval',
+                                    name: 'Соты овал',
+                                    centr: 'honeycomb-oval-centr',
+                                    selected: false,
+                                    tooltipTitle: 'Соты овал',
+                                    price: '4 700 ₽'
+                                },
+                                {
+                                    title: 'bugatti-2lines',
+                                    name: 'Бугатти 2 линии',
+                                    centr: 'bugatti-2lines-centr',
+                                    selected: false,
+                                    tooltipTitle: 'Бугатти 2 линии',
+                                    price: '5 500 ₽'
+                                },
+                                {
+                                    title: 'bugatti',
+                                    name: 'Бугатти',
+                                    centr: 'bugatti-centr',
+                                    selected: false,
+                                    tooltipTitle: 'Бугатти',
+                                    price: '4 550 ₽'
+                                },
+                                {
+                                    title: 'triangles',
+                                    name: 'Треугольники',
+                                    centr: 'triangles-centr',
+                                    selected: false,
+                                    tooltipTitle: 'Треугольники',
+                                    price: '3 000 ₽'
+                                },
+            ],
+            smooth: true,
+            convex: false,
+            perforation: false,
+            insertOne: true,
+            insertTu: false,
+            imgBodySrc: 'black',
+            imgStitches: 'black',
+            imgStitchesShow: false,
+            centralInsertSrc: 'black',
+            additionallySrc: '',
+            additColorSrc: 'black',
+            additionallyItem: {},
+            showAdditionally: false,
+            additionallyCentr: '/centralInsert',
+            premiumPerf: false,
+            price: 8290,
+            priceBody: '8290',
+            smoothPrice: 850,
+            alcantaraPrice: '',
+			}),
+            methods:{
+                showBtn() {
+                    this.showPopap = !this.showPopap
+                },
+                showSelected (bodyColor) {
+                    console.log(bodyColor)
+                    this.bodyColors.forEach( item => {
+                        item.selected = false
+                    });
+                    bodyColor.selected = true
+                    this.imgBodySrc = bodyColor.title
+                },
+                showStitches (stitches) {
+                    this.doubleStitches.forEach( item => {
+                        item.selected = false
+                    });
+                    stitches.selected = true
+                    this.imgStitches = stitches.title
+                    this.imgStitchesShow = true
+                },
+                showAlcantara (alcantara) {
+                    this.alcantaraArray.forEach( item => {
+                        item.selected = false
+                    });
+                    alcantara.selected = true
+                    this.imgStitches = stitches.title
+                    this.imgStitchesShow = true
+                },
+                centralInsertShow (insert) {
+                    this.centralInsert.forEach( item => {
+                        item.selected = false
+                    });
+                    insert.selected = true
+                    this.centralInsertSrc = insert.title
+                },
+                insertOneTu (btnNumber) {
+                    if(btnNumber == 'one'){
+                        this.insertTu = false
+                        this.insertOne = true
+                    }else if (btnNumber == 'tu'){
+                        this.additionally.forEach( item => {
+                        item.selected = false
+                        });
+                        this.showAdditionally = false
+                        this.additionallyItem = {}
+                        this.insertTu = true
+                        this.insertOne = false
+                    }
+                },
+                skinType (tipe) {
+                    if(tipe == 'smooth'){
+                        this.smooth = true
+                        this.convex = false
+                    }if (tipe == 'convex'){
+                        this.showAdditionally = false
+                        this.additionallyItem = {}
+                        this.additionally.forEach( item => {
+                        item.selected = false
+                        });
+                        this.smooth = false
+                        this.convex = true
+                    }if(tipe == 'perforation' & this.smooth) {
+                        this.showAdditionally = false
+                        this.additionallyCentr = '/centralInsert'
+                        this.perforationOne = 'perforation'
+                        this.perforationTu = 'perforation-2lines'
+                        this.perforation = true
+                    }if(tipe == 'perforation' & this.convex) {
+                        this.showAdditionally = false
+                        this.perforationOne = 'perforation-convex'
+                        this.perforationTu = 'perforation-2lines'
+                        this.perforation = true
+                    }
+                },
+                additionallyColorSwitch (additional) {
+                    this.additionallyColor.forEach( item => {
+                        item.selected = false
+                    });
+                    additional.selected = true
+                    this.additColorSrc = additional.title
+                },
+                additionallyTipe (addit) {
+                    this.insertOne = true
+                    this.insertTu = false
+                    this.smooth = true,
+                    this.convex = false,
+                    this.perforation = false
+                    this.additionally.forEach( item => {
+                        item.selected = false
+                    });
+                    if(this.additionallyItem == addit){
+                        addit.selected = false
+                        this.additionallyCentr = 'centralInsert'
+                        this.showAdditionally = false
+                        this.additionallyItem = {}
+                    }else{
+                        addit.selected = true
+                        this.additionallySrc = addit.title
+                        this.showAdditionally = true
+                        this.additionallyCentr = addit.centr
+                        this.additionallyItem = addit
+                    }
+                    
+                },
+                skinshow (skin) {
+                    this.greyDisabled()
+                    this.itemFirstSelect()
+                    if(skin.title == this.classic.title){
+                        this.priceBody = 8290
+                        this.premium.show = false
+                        this.exclusive.show = false
+                        this.perforation = false
+                    }
+                    if(skin.title == this.premium.title){
+                        this.priceBody = 9690
+                        this.classic.show = false
+                        this.exclusive.show = false
+                        this.premiumPerf = true
+                    }
+                    if(skin.title == this.exclusive.title){
+                        this.priceBody = 21200
+                        this.premium.show = false
+                        this.classic.show = false
+                        this.perforation = false
+                    }
+                    skin.show = true
+                },
+                greyDisabled () {
+                    let greyColor = this.centralInsert.find( grey => {
+                           return grey.title === 'grey'
+                        })
+                        let greyBodyColor = this.bodyColors.find( grey => {
+                            return grey.title === 'grey'
+                         })
+                        console.log(greyColor)
+                    if(this.premium.show == true){
+                       return [ greyColor.background = '#BFBFBF', greyColor.disabled = false, greyBodyColor.background = '#BFBFBF', greyBodyColor.disabled = false ]
+                                
+                    }else if(this.premium.show == false){
+                        return [ greyColor.background = '#e5e5e5', greyColor.disabled = true, greyBodyColor.background = '#e5e5e5', greyBodyColor.disabled = true]
+                        
+                    }
+                },
+                itemFirstSelect () {
+                    this.centralInsert.forEach( item => {
+                        item.selected = false
+                    });
+                    this.bodyColors.forEach( item => {
+                        item.selected = false
+                    });
+                    this.bodyColors[0].selected = true
+                    this.bodyColorsExclusive[0].selected = true
+                    this.centralInsert[0].selected = true
+                    this.centralInsertSrc = 'black'
+                    this.imgBodySrc = 'black'
+                },
+                testik() {
+                    console.log(this.selected)
+                        this.selected2 = this.brandAuto.find( item => {
+                        return item.title == this.selected
+                        });
+                        console.log(this.selected2)
+                }
+            },
+            computed: {
+                    calculatingPrice () {
+                        return this.price = this.priceBody
+                    }
+            }
+		}).mount('#wraper-main');
+</script>
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/hamburger.js"></script>
+    <script src="assets/js/jquery.fancybox.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
