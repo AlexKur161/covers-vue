@@ -1,16 +1,17 @@
 $(document).ready(function(){
     const cross = document.querySelector('.cross');
-
+	const mirrow = document.querySelector('.header-bg');
+	const menuMobil = document.querySelector('.diz-mobil');
+	const contactWrap = document.querySelector('.contact-wrap');
+	const wrapCross = document.querySelector('.wrap-cross')
 	if (cross) {
 		const nav = document.querySelector('nav.navigation');
 		cross.addEventListener('click', function(e) {
-			window.scrollBy({
-				top: -100,
-				behavior: 'smooth'
-			});
-			document.body.classList.toggle('locked');
 			cross.classList.toggle('cross--active');
-			nav.classList.toggle('active');
+			mirrow.classList.toggle('mirrow-height');
+			menuMobil.classList.toggle('mobil-nav');
+			contactWrap.classList.toggle('phone-wrap-mobil');
+			wrapCross.classList.toggle('wrap-cross-black');
 		});
 	}
 });
