@@ -2378,4 +2378,8 @@ border: 2px solid #FAC300;
     .tooltip-wrap {
         position: initial;
     }
+    .wrap-eko-embroidery{
+        max-height: initial;
+        overflow: initial;
+    }
 }
