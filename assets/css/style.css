@@ -701,6 +701,12 @@ height: 100%;
     max-width: 1172px;
     border-radius: 20px;
 }
+.mobil-gallery{
+    border-radius: 10px;
+}
+.gallery-mini-wrap a {
+    border-radius: 10px;
+}
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
     display: none;
 }
