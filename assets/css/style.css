@@ -1882,8 +1882,39 @@ border: 2px solid #FAC300;
     .swiper{
         max-width: 836px;
     }
+    .popap-body-youtube {
+        width: 900px;
+        height: 510px;
+    }
 }
   @media(max-width:1023px){
+    .popap-discount{
+        background: #FFFFFF;
+        border-radius: 10px;
+        width: 380px;
+        padding: 40px 38px;
+    }
+    .title-popap{
+        font-size: 28px;
+        line-height: 140%;
+    }
+    .form-popap-discount {
+        align-items: center;
+        gap: 10px;
+    }
+    .sel-form-discount{
+        width: 305px;
+    }
+    .txt-popap{
+        font-size: 16px;
+        line-height: 140%;
+        margin-bottom: 30px;
+    }
+
+    .popap-body-youtube {
+        width: 300px;
+        height: 170px;
+    }
     .container{
         max-width: 380px;
     }
@@ -2086,6 +2117,8 @@ border: 2px solid #FAC300;
         background-image: url('../img/icon/select-arrow.svg');
         height: 9px;
         width: 15px;
+        rotate: 0;
+        transition: 1s;
     }
     .number-step-txt{
         font-size: 16px;
@@ -2323,5 +2356,26 @@ border: 2px solid #FAC300;
     .rot-mobile-arrow{
         rotate: 180deg;
         transition: 1s;
+    }
+    .sel-form-discount{
+        width: 305px;
+    }
+    .btn-form-discount{
+        width: 305px;
+        font-size: 16px;
+        line-height: 140%;
+        padding: 30px 50px 30px 46px;
+        gap: 45px;
+    }
+    .sel-form-discount::after{
+        right: 20px;
+        top: 40px;
+    }
+    .tooltip {
+        left: 0px;
+        width: 100%;
+    }
+    .tooltip-wrap {
+        position: initial;
     }
 }
