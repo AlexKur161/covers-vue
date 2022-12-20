@@ -2062,18 +2062,19 @@ border: 2px solid #FAC300;
         position: relative;
         padding: 14px 20px 10px 20px;
         border-radius: 10px;
-        height: 50px;
+        max-height: 50px;
         overflow: hidden;
         transition: 1s;
     }
     .wrap-eko-full{
         overflow: initial;
-        height: auto;
+        max-height: 800px;
         transition: 1s;
     }
     .wrap-eko-final{
         overflow: initial;
         height: auto;
+        max-height: initial;
     }
     .accordion-btn{
         display: block;
@@ -2082,6 +2083,9 @@ border: 2px solid #FAC300;
         right: 20px;
         position: absolute;
         top: 19px;
+        background-image: url('../img/icon/select-arrow.svg');
+        height: 9px;
+        width: 15px;
     }
     .number-step-txt{
         font-size: 16px;
@@ -2315,5 +2319,9 @@ border: 2px solid #FAC300;
     }
     .footer{
         padding: 60px 0;
+    }
+    .rot-mobile-arrow{
+        rotate: 180deg;
+        transition: 1s;
     }
 }
