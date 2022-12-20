@@ -1356,6 +1356,7 @@ border: 2px solid #FAC300;
 }
 .tooltip-wrap{
     position: relative;
+    margin-top: 2px;
 }
 .tooltip{
     position: absolute;
