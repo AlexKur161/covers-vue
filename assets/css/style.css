@@ -1681,7 +1681,6 @@ border: 2px solid #FAC300;
             background: #fff;
             border-radius: 10px;
             width: 630px;
-            padding: 126px 35px 36px 30px;
             display: flex;
         }
         .mirrow-height{
@@ -2104,7 +2103,7 @@ border: 2px solid #FAC300;
     .wrap-eko{
         width: 380px;
         position: relative;
-        padding: 14px 20px 10px 20px;
+        padding: 14px 20px 20px 20px;
         border-radius: 10px;
         max-height: 50px;
         overflow: hidden;
@@ -2126,7 +2125,7 @@ border: 2px solid #FAC300;
         border: none;
         right: 20px;
         position: absolute;
-        top: 19px;
+        top: 23px;
         background-image: url('../img/icon/select-arrow.svg');
         height: 9px;
         width: 15px;
@@ -2401,4 +2400,35 @@ border: 2px solid #FAC300;
     .swiper-navigation-gal{
         display: flex;
     }
+    .model-auto-wrap{
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    .mini-wrap-calculator{
+        gap: 10px;
+    }
+    .mini-wrap-dop{
+        margin-top: 10px;
+    }
+    .header-bg{
+        align-items: flex-start;
+        padding-top: 20px;
+        justify-content: center;
+    }
+    .container-header{
+        margin: initial;
+    }
+    .diz-mobil{
+        opacity: 0;
+    }
+    .mobil-nav{
+        opacity: 0;
+        animation: menu 1s forwards;
+    }
+    @keyframes menu {
+            40%{opacity: 0.1;}
+            60%{opacity: 0.1;}
+            80%{opacity: 0.3;}
+            100%{opacity: 1;}
+        }
 }

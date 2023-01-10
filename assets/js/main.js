@@ -100,13 +100,6 @@ swiperPrev.addEventListener('click', () => {
 swiperNext.addEventListener('click', () => {
     swiper.slideNext();
 })
-
-
-// const specifications = document.querySelectorAll('.wrap-eko')
-// const arrow = document.querySelectorAll('.accordion-btn')
-// specifications.forEach(spec => {
-//         spec.classList.toggle('wrap-eko-full');
-// })
-// specifications.forEach(spec => {
-//     spec.classList.toggle('wrap-eko-full');
-// })
+let selector = document.getElementById("phone");
+let im = new Inputmask("+7(999)999-99-99");
+im.mask(selector)
