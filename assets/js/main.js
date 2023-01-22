@@ -100,6 +100,8 @@ swiperPrev.addEventListener('click', () => {
 swiperNext.addEventListener('click', () => {
     swiper.slideNext();
 })
-let selector = document.getElementById("phone");
+let selector = document.querySelectorAll(".mask-tel");
 let im = new Inputmask("+7(999)999-99-99");
-im.mask(selector)
+selector.forEach( inp => {
+  im.mask(inp)
+})
