@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goncharov</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link  href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <script src="/assets/js/vue.js"></script>
-    <script src="/assets/js/inputmask.min.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/inputmask.min.js"></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
                     <div class="header-flex">
                             <div class="wrap-logo">
                                 <a href="https://goncharovcar.ru/">
-                                <img src="/assets/img/icon/logo.svg" alt="">
+                                <img src="assets/img/icon/logo.svg" alt="">
                                 </a>
                             </div>
                             <nav class="nav diz-nav">
@@ -51,13 +51,13 @@
                     <div class="phone-wrap contact-wrap">
                         <div class="phone-wrap-mini">
                             <a href="https://wa.me/79895201212" target="_blank" class="wrap-whatsapp btn-hov-green">
-                                <img class="img-wrap-whatsapp" src="/assets/img/icon/whatsapp.svg" alt="">
+                                <img class="img-wrap-whatsapp" src="assets/img/icon/whatsapp.svg" alt="">
                                 <p class="txt-wrap-whatsapp">Whatsapp</p>
                             </a>
                         </div>
                         <div class="phone-wrap-mini phone-mobil-mini">
                             <a href="https://wa.me/79895201212" target="_blank" class="wrap-whatsapp btn-hov-green">
-                                <img class="img-wrap-whatsapp" src="/assets/img/icon/whatsapp.svg" alt="">
+                                <img class="img-wrap-whatsapp" src="assets/img/icon/whatsapp.svg" alt="">
                             </a>
                         </div>
                     
@@ -70,7 +70,7 @@
                 <a href="#contact" class="link-menu link-arrow move-start smoothScroll">Контакты</a>
                 <div class="phone-wrap-mini free-whatsapp">
                     <a href="https://wa.me/79895201212" target="_blank" class="wrap-whatsapp btn-hov-green free-whatsapp-link">
-                        <img class="img-wrap-whatsapp" src="/assets/img/icon/whatsapp.svg" alt="">
+                        <img class="img-wrap-whatsapp" src="assets/img/icon/whatsapp.svg" alt="">
                         <p class="txt-wrap-whatsapp">Whatsapp</p>
                     </a>
                 </div>
@@ -89,16 +89,16 @@
                     <p class="mobile-main-txt">под&nbsp;заказ для&nbsp;вашего автомобиля</p>
                     <div class="wrap-garant">
                             <div class="mini-garant">
-                                <img class="img-garant" src="/assets/img/icon/konst.svg" alt="konst">
+                                <img class="img-garant" src="assets/img/icon/konst.svg" alt="konst">
                                 <p class="txt-garant">Выберите дизайн на конструкторе</p>
                             </div>
                             <div class="mini-garant">
-                                <img class="img-garant" src="/assets/img/icon/star.svg" alt="star">
+                                <img class="img-garant" src="assets/img/icon/star.svg" alt="star">
                                 <p class="txt-garant txt-garant2">Гарантия 5&nbsp;лет</p>
                             </div>
                     </div>
                     <div class="photo-whatsapp">
-                        <img class="photo-whatsapp-img" src="/assets/img/icon/line-sapp.svg" alt="">
+                        <img class="photo-whatsapp-img" src="assets/img/icon/line-sapp.svg" alt="">
                         <p class="photo-whatsapp-txt">Получите фотографии чехлов
                             именно на&nbsp;вашем автомобиле на&nbsp;WhatsApp, заполнив форму ниже</p>
                     </div>
@@ -118,7 +118,7 @@
                         <input required placeholder="Телефон" class="tel-form mask-tel" class="" name="phonemain" type="tel">
                         <button class="btn-form btn-hov">
                             <p class="btn-txt-form">Получить фото</p>
-                            <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                            <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                         </button>
                     </form>
                 </div>
@@ -409,7 +409,7 @@
                         <div class="constructor-img-calculator">
                             
                                 <div class="images-calculator">
-                                    <img src="/assets/img/calculator/default.png" alt="" class="calc-img">
+                                    <img src="assets/img/calculator/default.png" alt="" class="calc-img">
                                     <img :src="`/assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertOne & smooth" :src="`/assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertTu & smooth" :src="`/assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
@@ -511,7 +511,7 @@
                                 <div class="constructor-img-calculator">
                                     
                                         <div class="images-calculator">
-                                            <img src="/assets/img/calculator/default.png" alt="" class="calc-img">
+                                            <img src="assets/img/calculator/default.png" alt="" class="calc-img">
                                             <img :src="`/assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertOne & smooth" :src="`/assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertTu & smooth" :src="`/assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
@@ -535,7 +535,7 @@
                                 <p class="txt-price">Цена за комплект - 5 мест</p>
                                 <p class="final-price">{{calculatingPriceTotal}} ₽</p>
                             </div>
-                            <button @click="showPopapCalc = !showPopapCalc" class="btn-form btn-hov btn-form-calc"><p class="btn-txt-form">Оставить заявку</p><img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt=""></button>
+                            <button @click="showPopapCalc = !showPopapCalc" class="btn-form btn-hov btn-form-calc"><p class="btn-txt-form">Оставить заявку</p><img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt=""></button>
                         </div>
                     </div>
                     <div class="wrap-buyer">
@@ -550,7 +550,7 @@
                         <div class="mini-wrap-skin">
                                 <div class="bg-wrap-skin bg-wrap-skin1">
                                     <div class="choice-skin">
-                                        <img src="/assets/img/icon/choice-line.svg" alt="choice">
+                                        <img src="assets/img/icon/choice-line.svg" alt="choice">
                                         <p class="txt-choice-skin">ткань Жаккард</p>
                                     </div>
                                     <div class="price-skin">
@@ -559,7 +559,7 @@
                                         </p>
                                         <div class="price-skin-mini">
                                             <p class="txt-skin-mini">Характеристики</p>
-                                            <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                            <button class="btn-skin-mini"><img src="assets/img/icon/arrow-skin.svg" alt=""></button>
                                         </div>
                                     </div>
                                 </div>
@@ -583,7 +583,7 @@
                             <div class="btn-wrap-skin">
                                 <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
                                     <p class="challenge-popup-txt">Оставить заявку</p>
-                                    <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                    <img class="challenge-popup-img" src="assets/img/icon/arrow-photo.svg" alt="">
                                 </button >
                             </div>
                         </div>
@@ -591,7 +591,7 @@
                         <div class="mini-wrap-skin">
                             <div class="bg-wrap-skin bg-wrap-skin2">
                                 <div class="choice-skin">
-                                    <img src="/assets/img/icon/choice-line.svg" alt="choice">
+                                    <img src="assets/img/icon/choice-line.svg" alt="choice">
                                     <p class="txt-choice-skin">Classic</p>
                                 </div>
                                 <div class="price-skin">
@@ -600,7 +600,7 @@
                                     </p>
                                     <div class="price-skin-mini">
                                         <p class="txt-skin-mini">Характеристики</p>
-                                        <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                        <button class="btn-skin-mini"><img src="assets/img/icon/arrow-skin.svg" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -624,7 +624,7 @@
                         <div class="btn-wrap-skin">
                             <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
                                 <p class="challenge-popup-txt">Оставить заявку</p>
-                                <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="challenge-popup-img" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button >
                         </div>
                     </div>
@@ -633,7 +633,7 @@
                         <div class="mini-wrap-skin">
                             <div class="bg-wrap-skin bg-wrap-skin3">
                                 <div class="choice-skin">
-                                    <img src="/assets/img/icon/choice-line.svg" alt="choice">
+                                    <img src="assets/img/icon/choice-line.svg" alt="choice">
                                     <p class="txt-choice-skin">Premium</p>
                                 </div>
                                 <div class="price-skin">
@@ -642,7 +642,7 @@
                                     </p>
                                     <div class="price-skin-mini">
                                         <p class="txt-skin-mini">Характеристики</p>
-                                        <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                        <button class="btn-skin-mini"><img src="assets/img/icon/arrow-skin.svg" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -666,7 +666,7 @@
                         <div class="btn-wrap-skin">
                             <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
                                 <p class="challenge-popup-txt">Оставить заявку</p>
-                                <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="challenge-popup-img" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button >
                         </div>
                     </div>
@@ -675,7 +675,7 @@
                         <div class="mini-wrap-skin">
                             <div class="bg-wrap-skin bg-wrap-skin4">
                                 <div class="choice-skin">
-                                    <img src="/assets/img/icon/choice-line.svg" alt="choice">
+                                    <img src="assets/img/icon/choice-line.svg" alt="choice">
                                     <p class="txt-choice-skin">Exclusive</p>
                                 </div>
                                 <div class="price-skin">
@@ -684,7 +684,7 @@
                                     </p>
                                     <div class="price-skin-mini">
                                         <p class="txt-skin-mini">Характеристики</p>
-                                        <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                        <button class="btn-skin-mini"><img src="assets/img/icon/arrow-skin.svg" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -708,7 +708,7 @@
                         <div class="btn-wrap-skin">
                             <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
                                 <p class="challenge-popup-txt">Оставить заявку</p>
-                                <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="challenge-popup-img" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button>
                         </div>
                     </div>
@@ -748,14 +748,14 @@
                                     <p class="avito-studio-txt">Магазин</p>
                                     <div class="avito-wrap-mini">
                                         <p class="avito-studio-txt">на</p>
-                                        <img src="/assets/img/icon/avito.svg" alt="" class="avito-studio-img">
+                                        <img src="assets/img/icon/avito.svg" alt="" class="avito-studio-img">
                                     </div>
                                     
                                 </div>
                             </a>
                         </div>
                         <div class="studio-mini-wrap2">
-                                <img class="women-img" src="/assets/img/bg/women.png" alt="">
+                                <img class="women-img" src="assets/img/bg/women.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -768,56 +768,56 @@
                     <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                            <a data-fancybox="gallery" href="/assets/img/bg/slider-work1big.jpg">
-                            <img class="mobil-gallery" src="/assets/img/bg/slider-work1.png">
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work1big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work1.png">
                             </a>
                     </div>
                     <div class="swiper-slide">
                             
-                            <a data-fancybox="gallery" href="/assets/img/bg/slider-work2big.jpg">
-                            <img class="mobil-gallery" src="/assets/img/bg/slider-work2.png">
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work2big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work2.png">
                             </a>
                     </div>
                     <div class="swiper-slide">
                             
-                            <a data-fancybox="gallery" href="/assets/img/bg/slider-work3big.jpg">
-                            <img class="mobil-gallery" src="/assets/img/bg/slider-work3.png">
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work3big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work3.png">
                             </a>
                     </div>
                     <div class="swiper-slide">
                             
-                            <a data-fancybox="gallery" href="/assets/img/bg/slider-work4big.jpg">
-                            <img class="mobil-gallery" src="/assets/img/bg/slider-work4.png">
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work4big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work4.png">
                             </a>
                     </div>
                     <div class="swiper-slide">
                             
-                            <a data-fancybox="gallery" href="/assets/img/bg/slider-work5big.jpg">
-                            <img class="mobil-gallery" src="/assets/img/bg/slider-work5.png">
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work5big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work5.png">
                             </a>
                     </div>
                     <div class="swiper-slide">
                             
-                            <a data-fancybox="gallery" href="/assets/img/bg/slider-work6big.jpg">
-                            <img class="mobil-gallery" src="/assets/img/bg/slider-work6.png">
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work6big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work6.png">
                             </a>
                     </div>
                     <div class="swiper-slide">
                             
-                            <a data-fancybox="gallery" href="/assets/img/bg/slider-work7big.jpg">
-                            <img class="mobil-gallery" src="/assets/img/bg/slider-work7.png">
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work7big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work7.png">
                             </a>
                     </div>
                     <div class="swiper-slide">
                             
-                            <a data-fancybox="gallery" href="/assets/img/bg/slider-work8big.jpg">
-                            <img class="mobil-gallery" src="/assets/img/bg/slider-work8.png">
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work8big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work8.png">
                             </a>
                     </div>
                     <div class="swiper-slide">
                             
-                            <a data-fancybox="gallery" href="/assets/img/bg/slider-work9big.jpg">
-                            <img class="mobil-gallery" src="/assets/img/bg/slider-work9.png">
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work9big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work9.png">
                             </a>
                     </div>
                     </div>
@@ -853,7 +853,7 @@
                   </div>
                 <button @click="showYoutube = !showYoutube" class="btn-form btn-hov btn-youtube">
                     <p class="btn-txt-form">Смотреть видео-отзыв</p>
-                    <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                    <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                 </button>
             </div>
             </section>
@@ -862,17 +862,17 @@
                     <h2 class="mini-main-title gallery-main-title">наше Производство</h2>
                 <div class="gallery-wrap">
                     <div class="gallery-mini-wrap">
-                        <a data-fancybox="gallery" href="/assets/img/gallery/gallery1.jpg">
-                            <img class="mobil-gallery" src="/assets/img/gallery/mini-gallery1.jpg">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery1.jpg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery1.jpg">
                         </a>
-                        <a data-fancybox="gallery" href="/assets/img/gallery/gallery2.jpg">
-                            <img class="mobil-gallery" src="/assets/img/gallery/mini-gallery2.jpg">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery2.jpg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery2.jpg">
                         </a>
-                        <a data-fancybox="gallery" href="/assets/img/gallery/gallery3.jpeg">
-                            <img class="mobil-gallery" src="/assets/img/gallery/mini-gallery3.jpg">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery3.jpeg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery3.jpg">
                         </a>
-                        <a data-fancybox="gallery" href="/assets/img/gallery/gallery4.jpeg">
-                            <img class="mobil-gallery" src="/assets/img/gallery/mini-gallery4.jpg">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery4.jpeg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery4.jpg">
                         </a>
                     </div>
                 </div>
@@ -882,23 +882,23 @@
                     <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <a data-fancybox="gallery" href="/assets/img/gallery/gallery1.jpg">
-                            <img class="mobil-gallery" src="/assets/img/gallery/mini-gallery1.jpg">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery1.jpg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery1.jpg">
                         </a>
                         </div>
                     <div class="swiper-slide">
-                        <a data-fancybox="gallery" href="/assets/img/gallery/gallery2.jpg">
-                            <img class="mobil-gallery" src="/assets/img/gallery/mini-gallery2.jpg">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery2.jpg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery2.jpg">
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a data-fancybox="gallery" href="/assets/img/gallery/gallery3.jpeg">
-                            <img class="mobil-gallery" src="/assets/img/gallery/mini-gallery3.jpg">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery3.jpeg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery3.jpg">
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a data-fancybox="gallery" href="/assets/img/gallery/gallery4.jpeg">
-                            <img class="mobil-gallery" src="/assets/img/gallery/mini-gallery4.jpg">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery4.jpeg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery4.jpg">
                         </a>
                     </div>
                     </div>
@@ -944,7 +944,7 @@
                         <div class="mini-wrap-dissount">
                             <button @click="showBtn" class="btn-form dissount-btn btn-hov">
                                 <p class="btn-txt-form">Оставить заявку</p>
-                                <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button>
                         </div>
                     </div>
@@ -955,19 +955,19 @@
                     <h2 class="mini-main-title">Условия оплаты и&nbsp;доставки</h2>
                     <div class="delivery-wrap">
                         <div class="delivery-wrap-mini">
-                            <img src="/assets/img/icon/cd.svg" alt="" class="delivery-img">
+                            <img src="assets/img/icon/cd.svg" alt="" class="delivery-img">
                             <p class="delivery-txt delivery-txt1">Доставка СДЭК или&nbsp;Почта России</p>
                         </div>
                         <div class="delivery-wrap-mini">
-                            <img src="/assets/img/icon/pred.svg" alt="" class="delivery-img">
+                            <img src="assets/img/icon/pred.svg" alt="" class="delivery-img">
                             <p class="delivery-txt delivery-txt2">50% предоплата, далее&nbsp;50% по&nbsp;факту получения чехла (наложенный платёж)</p>
                         </div>
                         <div class="delivery-wrap-mini">
-                            <img src="/assets/img/icon/cal.svg" alt="" class="delivery-img">
+                            <img src="assets/img/icon/cal.svg" alt="" class="delivery-img">
                             <p class="delivery-txt delivery-txt3">Максимальный срок готовности товара - 14 дней</p>
                         </div>
                         <div class="delivery-wrap-mini">
-                            <img src="/assets/img/icon/contact.svg" alt="" class="delivery-img">
+                            <img src="assets/img/icon/contact.svg" alt="" class="delivery-img">
                             <p class="delivery-txt delivery-txt4">Предоставляем контакты установщиков по&nbsp;всем городам&nbsp;РФ</p>
                         </div>
                     </div>
@@ -980,28 +980,28 @@
                             <h2 class="mini-main-title">Контакты</h2>
                             <div class="phone-contact-wrap">
                                 <a href="tel:89895201212">
-                                <img src="/assets/img/icon/phone-contact.svg" alt="" class="phone-icon">
+                                <img src="assets/img/icon/phone-contact.svg" alt="" class="phone-icon">
                                 </a>
                                 <a class="phone-link" href="tel:89895201212">8 989 520 12 12</a>
                             </div>
                             <div class="social-contact">
                                 <a target="_blank" href="https://wa.me/79895201212">
-                                <img src="/assets/img/icon/whatsapp-contact.svg" alt="" class="social-contact-img">
+                                <img src="assets/img/icon/whatsapp-contact.svg" alt="" class="social-contact-img">
                                 </a>
                                 <a target="_blank" href="https://t.me/ksksks161">
-                                <img src="/assets/img/icon/tg-contact.svg" alt="" class="social-contact-img">
+                                <img src="assets/img/icon/tg-contact.svg" alt="" class="social-contact-img">
                                 </a>
                                 <a target="_blank" href="https://www.avito.ru/user/231c414734af85a44e2f2cded0a59b2a/profile">
-                                <img src="/assets/img/icon/avito-contact.svg" alt="" class="social-contact-img">
+                                <img src="assets/img/icon/avito-contact.svg" alt="" class="social-contact-img">
                                 </a>
                             </div>
                             <div class="phone-contact-wrap">
-                                <img src="/assets/img/icon/geo.svg" alt="" class="phone-icon">
+                                <img src="assets/img/icon/geo.svg" alt="" class="phone-icon">
                                 <p class="phone-txt">г. Пенза, ул. Гагарина 11А</p>
                             </div>
                             <div class="phone-contact-wrap phone-contact-wrap2">
                                 <a href="mailto:goncharavto@yandex.ru">
-                                <img src="/assets/img/icon/mail.svg" alt="" class="phone-icon">
+                                <img src="assets/img/icon/mail.svg" alt="" class="phone-icon">
                                 </a>
                                 <a href="mailto:goncharovcarstudio@yandex.ru" class="phone-txt">goncharovcarstudio@yandex.ru</a>
                             </div>
@@ -1032,7 +1032,7 @@
                         <input required placeholder="Телефон" class="tel-form mask-tel" name="phonemain" class="" type="tel">
                         <button class="btn-form btn-hov btn-footer">
                             <p class="btn-txt-form">Оставить заявку</p>
-                            <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                            <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                         </button>
                     </form>
                 </div>
@@ -1040,7 +1040,7 @@
             <div v-show="showPopap" class="popap">
                 <div class="shadow"></div>
                     <div class="popap-body popap-discount">
-                        <button @click="showBtn" class="close-popap"><img src="/assets/img/icon/close.svg" alt=""></button>
+                        <button @click="showBtn" class="close-popap"><img src="assets/img/icon/close.svg" alt=""></button>
                         <h4 class="title-popap">Оставьте заявку</h4>
                         <p class="txt-popap">И&nbsp;наш менеджер отправит вам фото</p>
                         <form class="form-popap form-popap-discount sendform" action="">
@@ -1059,7 +1059,7 @@
                             <input placeholder="Телефон" required class="tel-form sel-form-discount mask-tel" name="phonemain" value="" class="" type="tel">
                             <button class="btn-form btn-hov btn-form-discount">
                                 <p class="btn-txt-form">Оставить заявку</p>
-                                <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button>
                         </form>
                         <p class="minitxt-popap">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку ваших данных</p>
@@ -1077,7 +1077,7 @@
             <div v-show="showPopapCalc" class="popap">
                 <div class="shadow"></div>
                     <div class="popap-body popap-discount">
-                        <button @click="showPopapCalc = !showPopapCalc" class="close-popap"><img src="/assets/img/icon/close.svg" alt=""></button>
+                        <button @click="showPopapCalc = !showPopapCalc" class="close-popap"><img src="assets/img/icon/close.svg" alt=""></button>
                         <h4 class="title-popap">Оставьте заявку</h4>
                         <p class="txt-popap">И&nbsp;наш менеджер отправит вам фото</p>
                         <form id="calcform" class="form-popap form-popap-discount" action="">
@@ -1099,7 +1099,7 @@
                             <input type="hidden" name="fromprice" :value="calculatingPriceTotal">
                             <button class="btn-form btn-hov btn-form-discount">
                                 <p class="btn-txt-form">Оставить заявку</p>
-                                <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button>
                         </form>
                         <p class="minitxt-popap">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку ваших данных</p>
@@ -1108,7 +1108,7 @@
             <div v-if="thanks" class="popap">
                 <div class="shadow"></div>
                     <div class="popap-body popap-discount">
-                        <button @click="thanks = !thanks" class="close-popap"><img src="/assets/img/icon/close.svg" alt=""></button>
+                        <button @click="thanks = !thanks" class="close-popap"><img src="assets/img/icon/close.svg" alt=""></button>
                         <h4 class="title-popap title-thanks">Спасибо. Ваша заявка отправлена</h4>
                     </div>
             </div>
@@ -1118,7 +1118,7 @@
                 <div class="footer-wrap">
                     <div class="footer-logo-wrap">
                         <a href="https://goncharovcar.ru/">
-                        <img class="footer-logo" src="/assets/img/icon/logo.svg" alt="">
+                        <img class="footer-logo" src="assets/img/icon/logo.svg" alt="">
                         </a>
                         <p class="copyright">Copyright © 2021-2022</p>
                     </div>
@@ -2813,10 +2813,10 @@
             }
 		}).mount('#wraper-main');
 </script>
-<script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/hamburger.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/hamburger.js"></script>
     <script src="assets/js/jquery.fancybox.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
