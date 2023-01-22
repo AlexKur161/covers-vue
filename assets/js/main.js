@@ -23,7 +23,7 @@ arrowBtn.forEach(item => {
         })
 })
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper3', {
     loop: true,
     slidesPerView: 2,
     spaceBetween: 20,
@@ -35,7 +35,7 @@ const swiper = new Swiper('.swiper', {
         },
         // when window width is >= 480px
         920: {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 60
         },
         // when window width is >= 640px
@@ -57,6 +57,40 @@ const swiper = new Swiper('.swiper', {
         type: 'bullets',
       }
   });
+  const swiper2 = new Swiper('.swiper2', {
+    loop: true,
+    slidesPerView: 2,
+    spaceBetween: 20,
+    breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+        // when window width is >= 480px
+        920: {
+          slidesPerView: 1,
+          spaceBetween: 60
+        },
+        // when window width is >= 640px
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        1320: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          }
+      },
+    navigation: {
+        nextEl: '.swiperNext2',
+        prevEl: '.swiperPrev2',
+    },
+    pagination: {
+        el: '.swiper-pagination2',
+        type: 'bullets',
+      }
+  });
   const swiperPrev = document.getElementById('swiperPrev')
 const swiperNext = document.getElementById('swiperNext')
 
@@ -66,13 +100,8 @@ swiperPrev.addEventListener('click', () => {
 swiperNext.addEventListener('click', () => {
     swiper.slideNext();
 })
-
-
-// const specifications = document.querySelectorAll('.wrap-eko')
-// const arrow = document.querySelectorAll('.accordion-btn')
-// specifications.forEach(spec => {
-//         spec.classList.toggle('wrap-eko-full');
-// })
-// specifications.forEach(spec => {
-//     spec.classList.toggle('wrap-eko-full');
-// })
+let selector = document.querySelectorAll(".mask-tel");
+let im = new Inputmask("+7(999)999-99-99");
+selector.forEach( inp => {
+  im.mask(inp)
+})

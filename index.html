@@ -1,33 +1,36 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goncharov</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link  href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <script src="/assets/js/vue.js"></script>
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/inputmask.min.js"></script>
 </head>
+
 <body>
-    <div id="wraper-main">
+<div id="wraper-main">
         <header>
             <div class="header-bg">
                 <div class="container container-header">
     
                     <div class="header-flex">
                             <div class="wrap-logo">
-                                <a href="/index.html">
+                                <a href="https://goncharovcar.ru/">
                                 <img src="assets/img/icon/logo.svg" alt="">
                                 </a>
                             </div>
                             <nav class="nav diz-nav">
                                 <ul class="menu-list">
-                                    <li><a href="" class="link-nav">Онлайн Конструктор</a></li>
-                                    <li><a href="" class="link-nav">Магазин на Avito</a></li>
-                                    <li><a href="" class="link-nav">FAQ</a></li>
-                                    <li><a href="" class="link-nav">Контакты</a></li>
+                                    <li><a href="#calc" class="link-nav smoothScroll">Онлайн Конструктор</a></li>
+                                    <li><a href="#car" class="link-nav smoothScroll">Магазин на Avito</a></li>
+                                    <li><a href="#delivery" class="link-nav smoothScroll">FAQ</a></li>
+                                    <li><a href="#contact" class="link-nav smoothScroll">Контакты</a></li>
                                 </ul>
                             </nav>
     
@@ -48,26 +51,26 @@
                     <div class="phone-wrap contact-wrap">
                         <div class="phone-wrap-mini">
                             <a href="https://wa.me/79895201212" target="_blank" class="wrap-whatsapp btn-hov-green">
-                                <img class="img-wrap-whatsapp" src="/assets/img/icon/whatsapp.svg" alt="">
+                                <img class="img-wrap-whatsapp" src="assets/img/icon/whatsapp.svg" alt="">
                                 <p class="txt-wrap-whatsapp">Whatsapp</p>
                             </a>
                         </div>
                         <div class="phone-wrap-mini phone-mobil-mini">
                             <a href="https://wa.me/79895201212" target="_blank" class="wrap-whatsapp btn-hov-green">
-                                <img class="img-wrap-whatsapp" src="/assets/img/icon/whatsapp.svg" alt="">
+                                <img class="img-wrap-whatsapp" src="assets/img/icon/whatsapp.svg" alt="">
                             </a>
                         </div>
                     
                 </div>
             </div>
             <nav class="diz-nav diz-mobil">
-                <a href="#calc" class="link-menu link-arrow move-center">Онлайн Конструктор</a>
-                <a href="#project2" class="link-menu link-arrow move-start">Магазин на Avito</a>
-                <a href="#ar" class="link-menu link-arrow move-center">FAQ</a>
-                <a href="#tariff" class="link-menu link-arrow move-start">Контакты</a>
+                <a href="#calc" class="link-menu link-arrow move-center smoothScroll">Онлайн Конструктор</a>
+                <a href="#car" class="link-menu link-arrow move-start smoothScroll">Магазин на Avito</a>
+                <a href="#delivery" class="link-menu link-arrow move-center smoothScroll">FAQ</a>
+                <a href="#contact" class="link-menu link-arrow move-start smoothScroll">Контакты</a>
                 <div class="phone-wrap-mini free-whatsapp">
                     <a href="https://wa.me/79895201212" target="_blank" class="wrap-whatsapp btn-hov-green free-whatsapp-link">
-                        <img class="img-wrap-whatsapp" src="/assets/img/icon/whatsapp.svg" alt="">
+                        <img class="img-wrap-whatsapp" src="assets/img/icon/whatsapp.svg" alt="">
                         <p class="txt-wrap-whatsapp">Whatsapp</p>
                     </a>
                 </div>
@@ -75,7 +78,7 @@
            
 
         </header>
-        <main>
+	<main>
             <section id="main-block" class="main-bg">
                 <div class="container">
                     <h1 class="main-title">Пошив модельных авточехлов
@@ -86,41 +89,41 @@
                     <p class="mobile-main-txt">под&nbsp;заказ для&nbsp;вашего автомобиля</p>
                     <div class="wrap-garant">
                             <div class="mini-garant">
-                                <img class="img-garant" src="/assets/img/icon/konst.svg" alt="konst">
+                                <img class="img-garant" src="assets/img/icon/konst.svg" alt="konst">
                                 <p class="txt-garant">Выберите дизайн на конструкторе</p>
                             </div>
                             <div class="mini-garant">
-                                <img class="img-garant" src="/assets/img/icon/star.svg" alt="star">
+                                <img class="img-garant" src="assets/img/icon/star.svg" alt="star">
                                 <p class="txt-garant txt-garant2">Гарантия 5&nbsp;лет</p>
                             </div>
                     </div>
                     <div class="photo-whatsapp">
-                        <img class="photo-whatsapp-img" src="/assets/img/icon/line-sapp.svg" alt="">
+                        <img class="photo-whatsapp-img" src="assets/img/icon/line-sapp.svg" alt="">
                         <p class="photo-whatsapp-txt">Получите фотографии чехлов
                             именно на&nbsp;вашем автомобиле на&nbsp;WhatsApp, заполнив форму ниже</p>
                     </div>
-                    <form class="main-form" action="">
+                    <form class="main-form sendform" action="">
                         <div class="wrap-select-form wrap-formsel-mobil">
-                        <select @change="modelAuto('static')" v-model="selected" class="sel-form sel-form-mobil1" name="" id="">
+                        <select required @change="modelAuto('static')" v-model="selected" class="sel-form sel-form-mobil1" name="markmain" id="">
                             <option disabled selected value="">Марка</option>
                             <option v-for="brand in brandAuto" class="opt-form" :value="brand.title">{{brand.title}}</option>
                         </select>
                         </div>
                         <div class="wrap-select-form wrap-formsel-mobil">
-                        <select class="sel-form sel-form-mobil1" name="" id="">
-                            <option disabled selected class="opt-form" value="">модель</option>
+                        <select required class="sel-form sel-form-mobil1" name="modelmain" id="" v-model="sendModelValue">
+                            <option disabled selected class="opt-form" value="">Модель</option>
                             <option v-for="model in selected2.modelAuto" class="opt-form" :value="model">{{model}}</option>
                         </select>
                         </div>
-                        <input placeholder="Телефон" class="tel-form" class="" type="tel">
+                        <input required placeholder="Телефон" class="tel-form mask-tel" class="" name="phonemain" type="tel">
                         <button class="btn-form btn-hov">
                             <p class="btn-txt-form">Получить фото</p>
-                            <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                            <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                         </button>
                     </form>
                 </div>
             </section>
-            <section class="sec-calculator">
+            <section id="calc" class="sec-calculator">
                 <div class="container">
                     <h2 class="mini-main-title gallery-main-title">3D онлайн-конструктор чехлов</h2>
                     <div class="model-auto-wrap">
@@ -131,7 +134,7 @@
                                 </select>
                                 </div>
                                 <div class="wrap-select-form model-select-form">
-                                <select class="sel-form sel-form-model" name="" id="">
+                                <select class="sel-form sel-form-model" v-model="calculatorMod" name="" id="">
                                     <option disabled selected class="opt-form" value="">Выберите модель авто</option>
                                     <option v-for="model in calcModel2.modelAuto" class="opt-form" :value="model">{{model}}</option>
                                 </select>
@@ -140,7 +143,7 @@
                     <div class="wrap-calculator">
                         <div class="mini-wrap-calculator">
                             <div class="wrap-eko">
-                                <button @click="accordion('centr')" class="accordion-btn"><img src="/assets/img/icon/select-arrow.svg" alt=""></button>
+                                <button class="accordion-btn"></button>
                                 <div class="wrap-number-step">
                                     <p class="number-step-txt">01</p>
                                     <p class="number-step-tipe">Выберите тип экокожи</p>
@@ -218,7 +221,7 @@
                                 </div>
                             </div>
                             <div class="wrap-eko">
-                                <button class="accordion-btn"><img src="/assets/img/icon/select-arrow.svg" alt=""></button>
+                                <button class="accordion-btn"></button>
                                 <div class="wrap-number-step">
                                     <p class="number-step-txt">02</p>
                                     <p class="number-step-tipe">Центральная вставка</p>
@@ -327,7 +330,7 @@
                                 
                             </div>
                             <div class="wrap-eko">
-                                <button class="accordion-btn"><img src="/assets/img/icon/select-arrow.svg" alt=""></button>
+                                <button class="accordion-btn"></button>
                                 <div class="wrap-number-step">
                                     <p class="number-step-txt">03</p>
                                     <p class="number-step-tipe">Горизонтальная строчка</p>
@@ -370,7 +373,7 @@
                                 <div class="check-wrap check-wrap2">
                                     <div class="check-mini-wrap">
                                         <div class="check-feik">
-                                            <input v-model="imgStitchesShow" class="check-insert" type="checkbox" name="" id="strin">
+                                            <input @change="dubleline" v-model="imgStitchesShow" class="check-insert" type="checkbox" name="" id="strin">
                                             <label class="check-insert-lbl" for="strin"></label>
                                         </div>
                                         <p class="check-wrap-txt">Добавить двойную строчку сбоку</p>
@@ -406,29 +409,29 @@
                         <div class="constructor-img-calculator">
                             
                                 <div class="images-calculator">
-                                    <img src="/assets/img/calculator/default.png" alt="" class="calc-img">
-                                    <img :src="`/assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertOne & smooth" :src="`/assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertTu & smooth" :src="`/assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertOne & convex" :src="`/assets/img/calculator/convexOne/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertTu & convex" :src="`/assets/img/calculator/convexTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertOne & perforation" :src="`/assets/img/calculator/perforation/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertTu & perforation" :src="`/assets/img/calculator/perforation-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertOne & convex & perforation" :src="`/assets/img/calculator/perforation-convex/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertTu & convex & perforation" :src="`/assets/img/calculator/perforation-convex-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="imgStitchesShow" :src="`/assets/img/calculator/stitches/stitches-${imgStitches}.png`" alt="" class="calc-img-body">
-                                    <img v-if="showAdditionally" :src="`/assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertOne & smooth & alkantara & dopAlk" :src="`/assets/img/calculator/alkantara-smoth/${alkantaraSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertTu & smooth & alkantara & dopAlk" :src="`/assets/img/calculator/alkantara-smoth-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertOne & convex & alkantara & dopAlk" :src="`/assets/img/calculator/alkantara-convex/${alkantaraSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="insertTu & convex & alkantara & dopAlk" :src="`/assets/img/calculator/alkantara-convex-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
+                                    <img src="assets/img/calculator/default.png" alt="" class="calc-img">
+                                    <img :src="`assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertOne & smooth" :src="`assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertTu & smooth" :src="`assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertOne & convex" :src="`assets/img/calculator/convexOne/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertTu & convex" :src="`assets/img/calculator/convexTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertOne & perforation" :src="`assets/img/calculator/perforation/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertTu & perforation" :src="`assets/img/calculator/perforation-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertOne & convex & perforation" :src="`assets/img/calculator/perforation-convex/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertTu & convex & perforation" :src="`assets/img/calculator/perforation-convex-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="imgStitchesShow" :src="`assets/img/calculator/stitches/stitches-${imgStitches}.png`" alt="" class="calc-img-body">
+                                    <img v-if="showAdditionally" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertOne & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth/${alkantaraSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertTu & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertOne & convex & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-convex/${alkantaraSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="insertTu & convex & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-convex-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                 </div>
                             
                         </div>
                         </div>
                         <div class="mini-wrap-calculator mini-wrap-dop ">
                             <div class="wrap-eko">
-                                <button class="accordion-btn"><img src="/assets/img/icon/select-arrow.svg" alt=""></button>
+                                <button class="accordion-btn"></button>
                                 <div class="wrap-number-step">
                                     <p class="number-step-txt">04</p>
                                     <p class="number-step-tipe">Дополнительно</p>
@@ -508,22 +511,22 @@
                                 <div class="constructor-img-calculator">
                                     
                                         <div class="images-calculator">
-                                            <img src="/assets/img/calculator/default.png" alt="" class="calc-img">
-                                            <img :src="`/assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertOne & smooth" :src="`/assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertTu & smooth" :src="`/assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertOne & convex" :src="`/assets/img/calculator/convexOne/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertTu & convex" :src="`/assets/img/calculator/convexTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertOne & perforation" :src="`/assets/img/calculator/perforation/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertTu & perforation" :src="`/assets/img/calculator/perforation-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertOne & convex & perforation" :src="`/assets/img/calculator/perforation-convex/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertTu & convex & perforation" :src="`/assets/img/calculator/perforation-convex-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="imgStitchesShow" :src="`/assets/img/calculator/stitches/stitches-${imgStitches}.png`" alt="" class="calc-img-body">
-                                            <img v-if="showAdditionally" :src="`/assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertOne & smooth & alkantara & dopAlk" :src="`/assets/img/calculator/alkantara-smoth/${alkantaraSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertTu & smooth & alkantara & dopAlk" :src="`/assets/img/calculator/alkantara-smoth-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertOne & convex & alkantara & dopAlk" :src="`/assets/img/calculator/alkantara-convex/${alkantaraSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertTu & convex & alkantara & dopAlk" :src="`/assets/img/calculator/alkantara-convex-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
+                                            <img src="assets/img/calculator/default.png" alt="" class="calc-img">
+                                            <img :src="`assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertOne & smooth" :src="`assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertTu & smooth" :src="`assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertOne & convex" :src="`assets/img/calculator/convexOne/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertTu & convex" :src="`assets/img/calculator/convexTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertOne & perforation" :src="`assets/img/calculator/perforation/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertTu & perforation" :src="`assets/img/calculator/perforation-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertOne & convex & perforation" :src="`assets/img/calculator/perforation-convex/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertTu & convex & perforation" :src="`assets/img/calculator/perforation-convex-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="imgStitchesShow" :src="`assets/img/calculator/stitches/stitches-${imgStitches}.png`" alt="" class="calc-img-body">
+                                            <img v-if="showAdditionally" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertOne & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth/${alkantaraSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertTu & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertOne & convex & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-convex/${alkantaraSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertTu & convex & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-convex-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                         </div>
                                     
                                 </div>
@@ -532,7 +535,7 @@
                                 <p class="txt-price">Цена за комплект - 5 мест</p>
                                 <p class="final-price">{{calculatingPriceTotal}} ₽</p>
                             </div>
-                            <button class="btn-form btn-hov btn-form-calc"><p class="btn-txt-form">Оставить заявку</p><img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt=""></button>
+                            <button @click="showPopapCalc = !showPopapCalc" class="btn-form btn-hov btn-form-calc"><p class="btn-txt-form">Оставить заявку</p><img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt=""></button>
                         </div>
                     </div>
                     <div class="wrap-buyer">
@@ -547,7 +550,7 @@
                         <div class="mini-wrap-skin">
                                 <div class="bg-wrap-skin bg-wrap-skin1">
                                     <div class="choice-skin">
-                                        <img src="/assets/img/icon/choice-line.svg" alt="choice">
+                                        <img src="assets/img/icon/choice-line.svg" alt="choice">
                                         <p class="txt-choice-skin">ткань Жаккард</p>
                                     </div>
                                     <div class="price-skin">
@@ -556,7 +559,7 @@
                                         </p>
                                         <div class="price-skin-mini">
                                             <p class="txt-skin-mini">Характеристики</p>
-                                            <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                            <button class="btn-skin-mini"><img src="assets/img/icon/arrow-skin.svg" alt=""></button>
                                         </div>
                                     </div>
                                 </div>
@@ -580,7 +583,7 @@
                             <div class="btn-wrap-skin">
                                 <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
                                     <p class="challenge-popup-txt">Оставить заявку</p>
-                                    <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                    <img class="challenge-popup-img" src="assets/img/icon/arrow-photo.svg" alt="">
                                 </button >
                             </div>
                         </div>
@@ -588,7 +591,7 @@
                         <div class="mini-wrap-skin">
                             <div class="bg-wrap-skin bg-wrap-skin2">
                                 <div class="choice-skin">
-                                    <img src="/assets/img/icon/choice-yellow.svg" alt="choice">
+                                    <img src="assets/img/icon/choice-line.svg" alt="choice">
                                     <p class="txt-choice-skin">Classic</p>
                                 </div>
                                 <div class="price-skin">
@@ -597,7 +600,7 @@
                                     </p>
                                     <div class="price-skin-mini">
                                         <p class="txt-skin-mini">Характеристики</p>
-                                        <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                        <button class="btn-skin-mini"><img src="assets/img/icon/arrow-skin.svg" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -621,7 +624,7 @@
                         <div class="btn-wrap-skin">
                             <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
                                 <p class="challenge-popup-txt">Оставить заявку</p>
-                                <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="challenge-popup-img" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button >
                         </div>
                     </div>
@@ -630,7 +633,7 @@
                         <div class="mini-wrap-skin">
                             <div class="bg-wrap-skin bg-wrap-skin3">
                                 <div class="choice-skin">
-                                    <img src="/assets/img/icon/choice-line.svg" alt="choice">
+                                    <img src="assets/img/icon/choice-line.svg" alt="choice">
                                     <p class="txt-choice-skin">Premium</p>
                                 </div>
                                 <div class="price-skin">
@@ -639,7 +642,7 @@
                                     </p>
                                     <div class="price-skin-mini">
                                         <p class="txt-skin-mini">Характеристики</p>
-                                        <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                        <button class="btn-skin-mini"><img src="assets/img/icon/arrow-skin.svg" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -663,7 +666,7 @@
                         <div class="btn-wrap-skin">
                             <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
                                 <p class="challenge-popup-txt">Оставить заявку</p>
-                                <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="challenge-popup-img" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button >
                         </div>
                     </div>
@@ -672,7 +675,7 @@
                         <div class="mini-wrap-skin">
                             <div class="bg-wrap-skin bg-wrap-skin4">
                                 <div class="choice-skin">
-                                    <img src="/assets/img/icon/choice-line.svg" alt="choice">
+                                    <img src="assets/img/icon/choice-line.svg" alt="choice">
                                     <p class="txt-choice-skin">Exclusive</p>
                                 </div>
                                 <div class="price-skin">
@@ -681,7 +684,7 @@
                                     </p>
                                     <div class="price-skin-mini">
                                         <p class="txt-skin-mini">Характеристики</p>
-                                        <button class="btn-skin-mini"><img src="/assets/img/icon/arrow-skin.svg" alt=""></button>
+                                        <button class="btn-skin-mini"><img src="assets/img/icon/arrow-skin.svg" alt=""></button>
                                     </div>
                                 </div>
                             </div>
@@ -705,7 +708,7 @@
                         <div class="btn-wrap-skin">
                             <button @click="showBtn" class="btn-skin-form popup-btn btn-hov">
                                 <p class="challenge-popup-txt">Оставить заявку</p>
-                                <img class="challenge-popup-img" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="challenge-popup-img" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button>
                         </div>
                     </div>
@@ -714,7 +717,7 @@
                     </div>
                 </div>
             </section>
-            <section class="car-studio">
+            <section id="car" class="car-studio">
                 <div class="container">
                     <h2 class="mini-main-title main-studio-title">О&nbsp;Goncharov car studio</h2>
                     <div class="car-studio-wrap">
@@ -745,29 +748,77 @@
                                     <p class="avito-studio-txt">Магазин</p>
                                     <div class="avito-wrap-mini">
                                         <p class="avito-studio-txt">на</p>
-                                        <img src="/assets/img/icon/avito.svg" alt="" class="avito-studio-img">
+                                        <img src="assets/img/icon/avito.svg" alt="" class="avito-studio-img">
                                     </div>
                                     
                                 </div>
                             </a>
                         </div>
                         <div class="studio-mini-wrap2">
-                                <img class="women-img" src="/assets/img/bg/women.png" alt="">
+                                <img class="women-img" src="assets/img/bg/women.png" alt="">
                         </div>
                     </div>
                 </div>
             </section>
             <section class="our-works">
                 <div class="container">
-                <div class="swiper">
+                <h2 class="mini-main-title gallery-main-title">Фото наших работ</h2>
+                <div class="swiper swiper3">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                            <img class="img-swipe" src="/assets/img/bg/main-work.png">
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work1big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work1.png">
+                            </a>
                     </div>
                     <div class="swiper-slide">
-                            <img class="img-swipe" src="/assets/img/bg/main-work2.png">
+                            
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work2big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work2.png">
+                            </a>
+                    </div>
+                    <div class="swiper-slide">
+                            
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work3big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work3.png">
+                            </a>
+                    </div>
+                    <div class="swiper-slide">
+                            
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work4big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work4.png">
+                            </a>
+                    </div>
+                    <div class="swiper-slide">
+                            
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work5big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work5.png">
+                            </a>
+                    </div>
+                    <div class="swiper-slide">
+                            
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work6big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work6.png">
+                            </a>
+                    </div>
+                    <div class="swiper-slide">
+                            
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work7big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work7.png">
+                            </a>
+                    </div>
+                    <div class="swiper-slide">
+                            
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work8big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work8.png">
+                            </a>
+                    </div>
+                    <div class="swiper-slide">
+                            
+                            <a data-fancybox="gallery" href="assets/img/bg/slider-work9big.jpg">
+                            <img class="mobil-gallery" src="assets/img/bg/slider-work9.png">
+                            </a>
                     </div>
                     </div>
                     <!-- If we need pagination -->
@@ -782,7 +833,7 @@
                     </div>
                 
                     <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
+                    
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-navigation">
@@ -802,7 +853,7 @@
                   </div>
                 <button @click="showYoutube = !showYoutube" class="btn-form btn-hov btn-youtube">
                     <p class="btn-txt-form">Смотреть видео-отзыв</p>
-                    <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                    <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                 </button>
             </div>
             </section>
@@ -825,6 +876,62 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="swiper swiper2">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery1.jpg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery1.jpg">
+                        </a>
+                        </div>
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery2.jpg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery2.jpg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery3.jpeg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery3.jpg">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="assets/img/gallery/gallery4.jpeg">
+                            <img class="mobil-gallery" src="assets/img/gallery/mini-gallery4.jpg">
+                        </a>
+                    </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    
+                
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev">
+                        
+                    </div>
+                    <div class="swiper-button-next">
+                       
+                    </div>
+                
+                    <!-- If we need scrollbar -->
+                </div>
+                <div class="swiper-pagination2"></div>
+                <div class="swiper-navigation swiper-navigation-gal">
+                    <button class="swiperPrev2" id="swiperPrev"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <g clip-path="url(#clip0_950_864)">
+                        <path d="M9 3L11.1 5.175L5.775 10.5L24 10.5L24 13.5L5.775 13.5L11.1 18.825L9 21L-7.86805e-07 12L9 3Z" fill="black"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_950_864">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                        </svg></button>
+                    <button class="swiperNext2" id="swiperNext"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18" fill="none">
+                        <path d="M15 18L12.9 15.825L18.225 10.5H0V7.5H18.225L12.9 2.175L15 0L24 9L15 18Z" fill="black"/>
+                        </svg></button>
+                  </div>
+
             </div>
             </section>
             <section class="discount-sec">
@@ -832,75 +939,75 @@
                     <div class="wrap-discount">
                         <div class="mini-wrap-dissount">
                             <h3 class="title-discount">Скидка 5%</h3>
-                            <p class="txt-wrap-discount">при заказе с&nbsp;сайта до&nbsp;27 ноября</p>
+                            <p class="txt-wrap-discount">при заказе с&nbsp;сайта до&nbsp;{{time}}</p>
                         </div>
                         <div class="mini-wrap-dissount">
                             <button @click="showBtn" class="btn-form dissount-btn btn-hov">
                                 <p class="btn-txt-form">Оставить заявку</p>
-                                <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="delivery-sec">
+            <section id="delivery" class="delivery-sec">
                 <div class="container">
-                    <h2 class="mini-main-title">Условия оплаты и доставки</h2>
+                    <h2 class="mini-main-title">Условия оплаты и&nbsp;доставки</h2>
                     <div class="delivery-wrap">
                         <div class="delivery-wrap-mini">
-                            <img src="/assets/img/icon/cd.svg" alt="" class="delivery-img">
+                            <img src="assets/img/icon/cd.svg" alt="" class="delivery-img">
                             <p class="delivery-txt delivery-txt1">Доставка СДЭК или&nbsp;Почта России</p>
                         </div>
                         <div class="delivery-wrap-mini">
-                            <img src="/assets/img/icon/pred.svg" alt="" class="delivery-img">
+                            <img src="assets/img/icon/pred.svg" alt="" class="delivery-img">
                             <p class="delivery-txt delivery-txt2">50% предоплата, далее&nbsp;50% по&nbsp;факту получения чехла (наложенный платёж)</p>
                         </div>
                         <div class="delivery-wrap-mini">
-                            <img src="/assets/img/icon/cal.svg" alt="" class="delivery-img">
+                            <img src="assets/img/icon/cal.svg" alt="" class="delivery-img">
                             <p class="delivery-txt delivery-txt3">Максимальный срок готовности товара - 14 дней</p>
                         </div>
                         <div class="delivery-wrap-mini">
-                            <img src="/assets/img/icon/contact.svg" alt="" class="delivery-img">
+                            <img src="assets/img/icon/contact.svg" alt="" class="delivery-img">
                             <p class="delivery-txt delivery-txt4">Предоставляем контакты установщиков по&nbsp;всем городам&nbsp;РФ</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="contact-sec">
+            <section id="contact" class="contact-sec">
                 <div class="container">
                     <div class="wrap-contact">
                         <div class="wrap-mini-contact">
                             <h2 class="mini-main-title">Контакты</h2>
                             <div class="phone-contact-wrap">
                                 <a href="tel:89895201212">
-                                <img src="/assets/img/icon/phone-contact.svg" alt="" class="phone-icon">
+                                <img src="assets/img/icon/phone-contact.svg" alt="" class="phone-icon">
                                 </a>
                                 <a class="phone-link" href="tel:89895201212">8 989 520 12 12</a>
                             </div>
                             <div class="social-contact">
                                 <a target="_blank" href="https://wa.me/79895201212">
-                                <img src="/assets/img/icon/whatsapp-contact.svg" alt="" class="social-contact-img">
+                                <img src="assets/img/icon/whatsapp-contact.svg" alt="" class="social-contact-img">
                                 </a>
                                 <a target="_blank" href="https://t.me/ksksks161">
-                                <img src="/assets/img/icon/tg-contact.svg" alt="" class="social-contact-img">
+                                <img src="assets/img/icon/tg-contact.svg" alt="" class="social-contact-img">
                                 </a>
                                 <a target="_blank" href="https://www.avito.ru/user/231c414734af85a44e2f2cded0a59b2a/profile">
-                                <img src="/assets/img/icon/avito-contact.svg" alt="" class="social-contact-img">
+                                <img src="assets/img/icon/avito-contact.svg" alt="" class="social-contact-img">
                                 </a>
                             </div>
                             <div class="phone-contact-wrap">
-                                <img src="/assets/img/icon/geo.svg" alt="" class="phone-icon">
+                                <img src="assets/img/icon/geo.svg" alt="" class="phone-icon">
                                 <p class="phone-txt">г. Пенза, ул. Гагарина 11А</p>
                             </div>
                             <div class="phone-contact-wrap phone-contact-wrap2">
                                 <a href="mailto:goncharavto@yandex.ru">
-                                <img src="/assets/img/icon/mail.svg" alt="" class="phone-icon">
+                                <img src="assets/img/icon/mail.svg" alt="" class="phone-icon">
                                 </a>
-                                <a href="mailto:goncharavto@yandex.ru" class="phone-txt">goncharavto@yandex.ru</a>
+                                <a href="mailto:goncharovcarstudio@yandex.ru" class="phone-txt">goncharovcarstudio@yandex.ru</a>
                             </div>
                         </div>
                         <div class="wrap-mini-contact2">
-                            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7b9f2eee0e834886c7cbd3bcfde46c389c0ab6e3d9ba77a4508eff7bd14bff28&amp;source=constructor" width="100%" height="430" frameborder="0"></iframe>
+                               <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7b9f2eee0e834886c7cbd3bcfde46c389c0ab6e3d9ba77a4508eff7bd14bff28&amp;source=constructor" width="100%" height="430" frameborder="0"></iframe>
                         </div>
                     </div>
                     
@@ -909,50 +1016,50 @@
             <section class="form-sec">
                 <div class="container">
                     <h3 class="form-sec-title">Или оставьте заявку и наш менеджер свяжется с вами</h3>
-                    <form class="main-form" action="">
+                    <form class="main-form sendform" action="">
                         <div class="wrap-select-form wrap-formsel-mobil">
-                            <select @change="modelAuto('static')" v-model="selected" class="sel-form sel-form-mobil1" name="" id="">
+                            <select required @change="modelAuto('static')" v-model="selected" class="sel-form sel-form-mobil1" name="markmain" id="">
                                 <option disabled selected value="">Марка</option>
                                 <option v-for="brand in brandAuto" class="opt-form" :value="brand.title">{{brand.title}}</option>
                             </select>
                             </div>
-                            <div class="wrap-select-form">
-                            <select class="sel-form sel-form-mobil1" name="" id="">
-                                <option disabled selected class="opt-form" value="">модель</option>
+                            <div class="wrap-select-form wrap-formsel-mobil">
+                            <select required class="sel-form sel-form-mobil1" name="modelmain" id="" v-model="sendModelValue">
+                                <option disabled selected class="opt-form" value="">Модель</option>
                                 <option v-for="model in selected2.modelAuto" class="opt-form" :value="model">{{model}}</option>
                             </select>
                             </div>
-                        <input placeholder="Телефон" class="tel-form" class="" type="tel">
-                        <button class="btn-form btn-hov">
+                        <input required placeholder="Телефон" class="tel-form mask-tel" name="phonemain" class="" type="tel">
+                        <button class="btn-form btn-hov btn-footer">
                             <p class="btn-txt-form">Оставить заявку</p>
-                            <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                            <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                         </button>
                     </form>
                 </div>
             </section>
-            <div v-if="showPopap" class="popap">
+            <div v-show="showPopap" class="popap">
                 <div class="shadow"></div>
-                    <div class="popap-body">
-                        <button @click="showBtn" class="close-popap"><img src="/assets/img/icon/close.svg" alt=""></button>
+                    <div class="popap-body popap-discount">
+                        <button @click="showBtn" class="close-popap"><img src="assets/img/icon/close.svg" alt=""></button>
                         <h4 class="title-popap">Оставьте заявку</h4>
-                        <p class="txt-popap">И&nbsp;наш менеджер отправит вам фото в&nbsp;течение 20&nbsp;минут</p>
-                        <form class="form-popap" action="">
-                            <div class="wrap-select-form">
-                                <select @change="modelAuto('formstatic')" v-model="formstatic" class="sel-form" name="" id="">
+                        <p class="txt-popap">И&nbsp;наш менеджер отправит вам фото</p>
+                        <form class="form-popap form-popap-discount sendform" action="">
+                            <div class="wrap-select-form sel-form-discount">
+                                <select required @change="modelAuto('formstatic')" v-model="formstatic" class="sel-form" name="markmain" id="">
                                     <option disabled selected value="">Марка</option>
                                     <option v-for="brand in brandAuto" class="opt-form" :value="brand.title">{{brand.title}}</option>
                                 </select>
                                 </div>
-                                <div class="wrap-select-form">
-                                <select class="sel-form" name="" id="">
-                                    <option disabled selected class="opt-form" value="">модель</option>
+                                <div class="wrap-select-form sel-form-discount">
+                                <select required class="sel-form" name="modelmain" id="" v-model="sendModelValue">
+                                    <option disabled selected class="opt-form" value="">Модель</option>
                                     <option v-for="model in formstatic2.modelAuto" class="opt-form" :value="model">{{model}}</option>
                                 </select>
                                 </div>
-                            <input placeholder="Телефон" class="tel-form" class="" type="tel">
-                            <button class="btn-form btn-hov">
+                            <input placeholder="Телефон" required class="tel-form sel-form-discount mask-tel" name="phonemain" value="" class="" type="tel">
+                            <button class="btn-form btn-hov btn-form-discount">
                                 <p class="btn-txt-form">Оставить заявку</p>
-                                <img class="btn-img-form" src="/assets/img/icon/arrow-photo.svg" alt="">
+                                <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                             </button>
                         </form>
                         <p class="minitxt-popap">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку ваших данных</p>
@@ -967,18 +1074,57 @@
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7XVZLjg01UU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
             </div>
+            <div v-show="showPopapCalc" class="popap">
+                <div class="shadow"></div>
+                    <div class="popap-body popap-discount">
+                        <button @click="showPopapCalc = !showPopapCalc" class="close-popap"><img src="assets/img/icon/close.svg" alt=""></button>
+                        <h4 class="title-popap">Оставьте заявку</h4>
+                        <p class="txt-popap">И&nbsp;наш менеджер отправит вам фото</p>
+                        <form id="calcform" class="form-popap form-popap-discount" action="">
+                            <input name="name" placeholder="Имя" required class="tel-form sel-form-discount" class="" type="text" v-model="namecalc">
+                            <input name="phone" placeholder="Телефон" required class="tel-form sel-form-discount mask-tel" class="" type="tel" v-model="telcalc">
+                            <input type="hidden" name="mark" :value="calcModel">
+                            <input type="hidden" name="mod" :value="calculatorMod">
+                            <input type="hidden" name="type" :value="typeFormCalc">
+                            <input type="hidden" name="colorBody" :value="sendFormBody">
+                            <input type="hidden" name="center" :value="centrFormCalc">
+                            <input type="hidden" name="colorCenter" :value="sendColorCenter">
+                            <input type="hidden" name="alkantara" :value="sendAlkantara">
+                            <input type="hidden" name="colorAlkantara" :value="sendColorAlkantara">
+                            <input type="hidden" name="lines" :value="sendNumberLines">
+                            <input type="hidden" name="dublelinesside" :value="sendDoubleStitches">
+                            <input type="hidden" name="additi" :value="sendAdditionally">
+                            <input type="hidden" name="additicolor" :value="sendAdditionallyColor">
+                            <input type="hidden" name="embro" :value="sendEmbroidery">
+                            <input type="hidden" name="fromprice" :value="calculatingPriceTotal">
+                            <button class="btn-form btn-hov btn-form-discount">
+                                <p class="btn-txt-form">Оставить заявку</p>
+                                <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
+                            </button>
+                        </form>
+                        <p class="minitxt-popap">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку ваших данных</p>
+                    </div>
+            </div>
+            <div v-if="thanks" class="popap">
+                <div class="shadow"></div>
+                    <div class="popap-body popap-discount">
+                        <button @click="thanks = !thanks" class="close-popap"><img src="assets/img/icon/close.svg" alt=""></button>
+                        <h4 class="title-popap title-thanks">Спасибо. Ваша заявка отправлена</h4>
+                    </div>
+            </div>
         </main>
-        <footer class="footer">
+<footer id="footer-scroll" class="footer">
             <div class="container">
                 <div class="footer-wrap">
                     <div class="footer-logo-wrap">
-                        <a href="/index.html">
-                        <img class="footer-logo" src="/assets/img/icon/logo.svg" alt="">
+                        <a href="https://goncharovcar.ru/">
+                        <img class="footer-logo" src="assets/img/icon/logo.svg" alt="">
                         </a>
                         <p class="copyright">Copyright © 2021-2022</p>
                     </div>
+                   
                     <div class="wrap-footer-btn">
-                        <a href="#main-block" class="footer-btn">
+                        <a @click.prevent="smoothScroll($event)" href="#main-block" class="footer-btn smoothScroll">
                             <p class="footer-btn-txt">наверх</p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="25" viewBox="0 0 18 25" fill="none">
                                 <path class="pat-col" d="M18 9.8457L15.825 11.9457L10.5 6.6207L10.5 24.8457L7.5 24.8457L7.5 6.6207L2.175 11.9457L-6.55671e-07 9.8457L9 0.845703L18 9.8457Z" fill="white"/>
@@ -992,14 +1138,20 @@
 <script>
     Vue.createApp({
 			data: () => ({
+                thanks: false,
+                showPopapCalc: false,
 				showPopap: false,
                 showYoutube: false,
                 selected: '',
                 selected2: '',
                 formstatic: '',
                 formstatic2: '',
+                sendModelValue: '',
                 calcModel: '',
+                calculatorMod: '',
                 calcModel2: '',
+                namecalc: '',
+                telcalc: '',
                 brandAuto: [
                                 {
                                     title: 'Audi',
@@ -1641,61 +1793,71 @@
                                     title: 'black',
                                     background: '#111111',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'черный'
                                 },
                                 {
                                     title: 'grey',
                                     background: '#BFBFBF',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'серый'
                                 },
                                 {
                                     title: 'grey-black',
                                     background: '#7F7F7F',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'темно-серый'
                                 },
                                 {
                                     title: 'bord',
                                     background: '#653334',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'бордовый'
                                 },
                                 {
                                     title: 'brown',
                                     background: '#996639',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'коричневый'
                                 },
                                 {
                                     title: 'blue',
                                     background: '#1068C9',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'синий'
                                 },
                                 {
                                     title: 'red',
                                     background: '#CA3537',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'красный'
                                 },
                                 {
                                     title: 'white',
                                     background: '#FFFFFF',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'белый'
                                 },
                                 {
                                     title: 'white-orange',
                                     background: '#FECB9C',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'персиковый'
                                 },
                                 {
                                     title: 'orange',
                                     background: '#EB6A47',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'оранжевый'
                                 }
                             ],
                             bodyColorsExclusive: [
@@ -1763,6 +1925,7 @@
                 centralInsert: [
                                 {
                                     title: 'black',
+                                    sendColor: 'черный',
                                     background: '#111111',
                                     selected: false,
                                     disabled: false
@@ -1771,199 +1934,234 @@
                                     title: 'grey',
                                     background: '#BFBFBF',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'серый'
                                 },
                                 {
                                     title: 'grey-black',
                                     background: '#7F7F7F',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'темно-серый'
                                 },
                                 {
                                     title: 'bord',
                                     background: '#653334',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'бордовый'
                                 },
                                 {
                                     title: 'brown',
                                     background: '#996639',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'коричневый'
                                 },
                                 {
                                     title: 'blue',
                                     background: '#1068C9',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'синий'
                                 },
                                 {
                                     title: 'red',
                                     background: '#CA3537',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'красный'
                                 },
                                 {
                                     title: 'white',
                                     background: '#FFFFFF',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'белый'
                                 },
                                 {
                                     title: 'white-orange',
                                     background: '#FECB9C',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'персиковый'
                                 },
                                 {
                                     title: 'orange',
                                     background: '#EB6A47',
                                     selected: false,
-                                    disabled: false
+                                    disabled: false,
+                                    sendColor: 'оранжевый'
                                 }
                             ],
             doubleStitches: [
                                 {
                                     title: 'black',
                                     background: '#111111',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'черная',
                                 },
                                 {
                                     title: 'grey',
                                     background: '#BFBFBF',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'серая'
                                 },
                                 {
                                     title: 'grey-black',
                                     background: '#7F7F7F',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'темно-серая'
                                 },
                                 {
                                     title: 'bord',
                                     background: '#653334',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'бордовая'
                                 },
                                 {
                                     title: 'brown',
                                     background: '#996639',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'коричневая'
                                 },
                                 {
                                     title: 'blue',
                                     background: '#1068C9',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'синяя'
                                 },
                                 {
                                     title: 'red',
                                     background: '#CA3537',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'красная'
                                 },
                                 {
                                     title: 'white',
                                     background: '#FFFFFF',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'белая'
                                 },
                                 {
                                     title: 'white-orange',
                                     background: '#FECB9C',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'персиковая'
                                 },
                                 {
                                     title: 'orange',
                                     background: '#EB6A47',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'оранжевая'
                                 },
                                 {
                                     title: 'green',
                                     background: '#008001',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'зеленая'
                                 },
                                 {
                                     title: 'yellow',
                                     background: '#FFFF00',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'желтая'
                                 }
                             ],
                             additionallyColor: [
                                 {
                                     title: 'black',
                                     background: '#111111',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'черный'
                                 },
                                 {
                                     title: 'grey',
                                     background: '#BFBFBF',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'серый'
                                 },
                                 {
                                     title: 'grey-black',
                                     background: '#7F7F7F',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'темно-серый'
                                 },
                                 {
                                     title: 'bord',
                                     background: '#653334',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'бордовый'
                                 },
                                 {
                                     title: 'brown',
                                     background: '#996639',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'коричневый'
                                 },
                                 {
                                     title: 'blue',
                                     background: '#1068C9',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'синий'
                                 },
                                 {
                                     title: 'red',
                                     background: '#CA3537',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'красный'
                                 },
                                 {
                                     title: 'white',
                                     background: '#FFFFFF',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'белый'
                                 },
                                 {
                                     title: 'white-orange',
                                     background: '#FECB9C',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'персиковый'
                                 },
                                 {
                                     title: 'orange',
                                     background: '#EB6A47',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'оранжевый'
                                 },
                                 {
                                     title: 'green',
                                     background: '#008001',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'зеленый'
                                 },
                                 {
                                     title: 'yellow',
                                     background: '#FFFF00',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'желтый'
                                 }
                             ],
             alcantaraArray: [
                                 {
                                     title: 'black',
                                     background: '#111111',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'черный'
                                 },
                                 {
                                     title: 'grey',
                                     background: '#BFBFBF',
-                                    selected: false
+                                    selected: false,
+                                    sendColor: 'серый'
                                 },
                             ],
             additionally:[
                                 {
                                     title: 'rhomb2d',
                                     name: 'До центра 2D ромб',
-                                    centr: 'centralInsert',
-                                    centrAlkantara: 'centralInsert',
+                                    centr: '2d',
+                                    centrAlkantara: '2dalk',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
                                     tooltipTxt: [
@@ -1985,8 +2183,8 @@
                                 {
                                     title: 'rhomb2dfull',
                                     name: 'Полностью 2D ромб',
-                                    centr: 'centralInsert',
-                                    centrAlkantara: 'centralInsert',
+                                    centr: '2dfull',
+                                    centrAlkantara: '2dalkfull',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
                                     tooltipTxt: [
@@ -2121,6 +2319,7 @@
                                     price: 3000
                                 },
             ],
+            months: ['Января','Февраля','Марта','Апреля','Мая','Июня','Июля','Августа','Сентября','Октября','Ноября','Декабря'],
             smooth: true,
             convex: false,
             perforation: false,
@@ -2140,7 +2339,13 @@
             premiumPerf: false,
             alkantara: false,
             alkantaraClassic: false,
-            dopAlk: true
+            dopAlk: true,
+            sendFormBody: 'черный',
+            sendColorCenter: 'черный',
+            sendColorAlkantara: 'черный',
+            sendDoubleStitches: '',
+            sendAdditionally: '',
+            sendAdditionallyColor: 'черный'
 			}),
             methods:{
                 showBtn() {
@@ -2149,16 +2354,18 @@
                 showSelected (bodyColor) {
                     console.log(bodyColor)
                     this.bodyColors.forEach( item => {
-                        item.selected = false
+                        item.selected = false 
                     });
                     bodyColor.selected = true
                     this.imgBodySrc = bodyColor.title
+                    this.sendFormBody = bodyColor.sendColor
                 },
                 showStitches (stitches) {
                     this.doubleStitches.forEach( item => {
                         item.selected = false
                     });
                     stitches.selected = true
+                    this.sendDoubleStitches = stitches.sendColor
                     this.imgStitches = stitches.title
                     this.imgStitchesShow = true
                 },
@@ -2168,6 +2375,7 @@
                     });
                     alcantara.selected = true
                     this.alkantara = true
+                    this.sendColorAlkantara = alcantara.sendColor
                     this.alkantaraSrc = alcantara.title
                     this.centralInsertSrc = alcantara.title
                     if(this.classic.show == true){
@@ -2182,6 +2390,7 @@
                     });
                     insert.selected = true
                     this.centralInsertSrc = insert.title
+                    this.sendColorCenter = insert.sendColor
                 },
                 insertOneTu (btnNumber) {
                     if(btnNumber == 'one'){
@@ -2242,6 +2451,7 @@
                     });
                     additional.selected = true
                     this.additColorSrc = additional.title
+                    this.sendAdditionallyColor = additional.sendColor
                 },
                 additionallyTipe (addit) {
                     this.insertOne = true
@@ -2257,6 +2467,7 @@
                         this.additionallyCentr = 'centralInsert'
                         this.showAdditionally = false
                         this.additionallyItem = {}
+                        this.sendAdditionally = 'не выбрано'
                     }
                     else{
                         addit.selected = true
@@ -2264,6 +2475,7 @@
                         this.showAdditionally = true
                         this.additionallyCentr = addit.centr
                         this.additionallyItem = addit
+                        this.sendAdditionally = addit.name
                     }
                     
                 },
@@ -2358,9 +2570,9 @@
                         this.alkantaraSrc = 'black'
                         this.centralInsertSrc = 'black'
                         this.additionallyCentr = 'centralInsert'
+                        this.sendAdditionally = 'не выбрано'
                 },
                 alkantaraDop (addit) {
-                    console.log('test')
                         this.insertOne = true
                         this.insertTu = false
                         this.smooth = true,
@@ -2375,6 +2587,8 @@
                         this.showAdditionally = false
                         this.additionallyItem = {}
                         this.dopAlk = true
+                        this.sendAdditionally = 'не выбрано'
+                        console.log('test')
                         }
                         else{
                             addit.selected = true
@@ -2383,20 +2597,149 @@
                             this.additionallyCentr = addit.centrAlkantara
                             this.additionallyItem = addit
                             this.dopAlk = false
+                            this.sendAdditionally = addit.name
+                            
                         }
                 },
-                accordion (e) {
-                    console.log(e)
+                smoothScroll() {
+                const anchors = document.querySelectorAll('.smoothScroll')
+                anchors.forEach( anchor =>{
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault()
+                    const blockID = anchor.getAttribute('href').substring(1)
+                    document.getElementById(blockID).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                    })
+                })
+                })
+                },
+                calcAccordion () {
+                    const arrowMobCalc = document.querySelectorAll('.accordion-btn')
                     const specifications = document.querySelectorAll('.wrap-eko')
                     specifications.forEach(spec => {
-                        
-                            // console.log(spec)
-                            spec.classList.toggle('wrap-eko-full');
-                        
+                            spec.addEventListener('click', e => {
+                                arrowMobCalc.forEach(mobArrow => {
+                                    if(e.target == mobArrow){
+                                        spec.classList.toggle('wrap-eko-full');
+                                        mobArrow.classList.toggle('rot-mobile-arrow');
+                                    }
+                                    
+                                }) 
+                                
+                        })
                     })
+                },
+                sendFormCalc() {
+                    const formCalc = document.getElementById('calcform')
+                    formCalc.onsubmit = async (e) => {
+                        e.preventDefault();
+
+                        let response = await fetch('https://goncharovcar.ru/wp-content/themes/goncharov/send.php', {
+                        method: 'POST',
+                        body: new FormData(formCalc)
+                        });
+
+                        let result = await response.json();
+                        this.namecalc = ''
+                        this.telcalc = ''
+                        this.thanks = true
+                    };
+                },
+                sendForm() {
+                    const formMain = document.querySelectorAll('.sendform')
+                    formMain.forEach(sendform => {
+                        sendform .onsubmit = async (e) => {
+                        e.preventDefault();
+                        
+                        let response = await fetch('https://goncharovcar.ru/wp-content/themes/goncharov/sendmodel.php', {
+                        method: 'POST',
+                        body: new FormData(sendform)
+                        });
+
+                        let result = await response.json();
+                        this.formstatic = ''
+                        this.selected = ''
+                        this.sendModelValue = ''
+                        e.target.reset(); 
+                        this.thanks = true
+                    };
+                    })
+                    
+                },
+                dubleline () {
+                    if(this.imgStitchesShow) {
+                        return this.sendDoubleStitches = 'черная'
+                    }
+                    if(this.imgStitchesShow === false) {
+                        return this.sendDoubleStitches = 'Не выбрана'
+                    }
+                },
+                clearField (e) {
+                    
+                    // const clearTel = document.querySelectorAll('.mask-tel')
+                    // clearTel.forEach(tel => {
+                    //     console.log(tel)
+                    //     tel.setAttribute('value', '');
+                    // })
                 }
             },
             computed: {
+                time () {
+                    let now = new Date()
+                    let addDays = 3
+                    now.setTime(now.getTime() + (addDays * 24 * 60 * 60 * 1000))
+                    return now.getDate() + ' ' + this.months[now.getMonth()]
+                },
+                // передаем в форму тип кожи
+                typeFormCalc() {
+                    if(this.classic.show){
+                        return this.classic.title
+                    }
+                    if(this.premium.show){
+                        return this.premium.title
+                    }
+                    if(this.exclusive.show){
+                        return this.exclusive.title
+                    }
+                },
+                // передаем в форму центральную вставку
+                centrFormCalc () {
+                    if(this.smooth){
+                        return 'Гладкая'
+                    }
+                    if(this.convex & this.perforation === false){
+                        return 'Выпуклая'
+                    }
+                    if(this.perforation & this.convex === false){
+                        return 'Перфорация'
+                    }
+                    if(this.perforation & this.convex){
+                        return 'Перфорация выпуклая'
+                    }
+                },
+                // передаем в форму алкантару
+                sendAlkantara () {
+                    return this.alkantara ? 'Выбрана' : 'Не выбрана'
+                },
+                // передаем количество строчек
+                sendNumberLines () {
+                    if(this.insertOne){
+                        return 'одна'
+                    }
+                    if(this.insertTu){
+                        return 'две'
+                    }
+                },
+                // проверка для отправки формы выбрана ли своя вышивка
+                sendEmbroidery () {
+                    if(this.ownEmbroidery){
+                        return 'выбрана'
+                    }
+                    if(this.ownEmbroidery ==  false){
+                        return 'не выбрана'
+                    }
+                },
                 // рассчитывание цены поля тип кожи
                 calcPriceType () {
                     if(this.classic.show){
@@ -2461,14 +2804,19 @@
                     calculatingPriceTotal () {
                         return this.calcPriceType + this.calculatingPriceDop + this.calculatingPriceCentr + this.calculatingPriceInsert + this.calculatingDubleInsert + this.calcOwnEmbroidery +this.alcantaraCalc
                     }
+            },
+            mounted() {
+               this.smoothScroll()
+               this.calcAccordion()
+               this.sendFormCalc()
+               this.sendForm()
             }
 		}).mount('#wraper-main');
 </script>
-
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/hamburger.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/hamburger.js"></script>
     <script src="assets/js/jquery.fancybox.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

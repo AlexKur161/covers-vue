@@ -699,6 +699,13 @@ height: 100%;
 }
 .swiper{
     max-width: 1172px;
+    border-radius: 20px;
+}
+.mobil-gallery{
+    border-radius: 10px;
+}
+.gallery-mini-wrap a {
+    border-radius: 10px;
 }
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
     display: none;
@@ -901,6 +908,7 @@ max-width: 420px;
     width: 150px;
     height: 60px;
     cursor: pointer;
+    background: none;
     transition:  0.3s;
 }
 .footer-btn:hover{
@@ -1355,6 +1363,10 @@ border: 2px solid #FAC300;
 }
 .tooltip-wrap{
     position: relative;
+    margin-top: 2px;
+}
+.swiper-scrollbar{
+    display: none;
 }
 .tooltip{
     position: absolute;
@@ -1504,7 +1516,9 @@ border: 2px solid #FAC300;
   .hamburger-wrap{
     position: absolute;
   }
-  
+  .swiper-navigation-gal{
+    display: none;
+}
   @media(max-width:1300px){
       .header__menu{
           flex-basis: 100%;
@@ -1667,7 +1681,6 @@ border: 2px solid #FAC300;
             background: #fff;
             border-radius: 10px;
             width: 630px;
-            padding: 126px 35px 36px 30px;
             display: flex;
         }
         .mirrow-height{
@@ -1690,6 +1703,12 @@ border: 2px solid #FAC300;
             display: none;
           }
           .swiper-pagination{
+            display: none;
+          }
+          .swiper2{
+            display: none;
+          }
+          .swiper-pagination2{
             display: none;
           }
   @media(max-width:1320px){
@@ -1875,8 +1894,39 @@ border: 2px solid #FAC300;
     .swiper{
         max-width: 836px;
     }
+    .popap-body-youtube {
+        width: 900px;
+        height: 510px;
+    }
 }
   @media(max-width:1023px){
+    .popap-discount{
+        background: #FFFFFF;
+        border-radius: 10px;
+        width: 380px;
+        padding: 40px 38px;
+    }
+    .title-popap{
+        font-size: 28px;
+        line-height: 140%;
+    }
+    .form-popap-discount {
+        align-items: center;
+        gap: 10px;
+    }
+    .sel-form-discount{
+        width: 305px;
+    }
+    .txt-popap{
+        font-size: 16px;
+        line-height: 140%;
+        margin-bottom: 30px;
+    }
+
+    .popap-body-youtube {
+        width: 300px;
+        height: 170px;
+    }
     .container{
         max-width: 380px;
     }
@@ -2053,20 +2103,21 @@ border: 2px solid #FAC300;
     .wrap-eko{
         width: 380px;
         position: relative;
-        padding: 14px 20px 10px 20px;
+        padding: 14px 20px 20px 20px;
         border-radius: 10px;
-        height: 50px;
+        max-height: 50px;
         overflow: hidden;
         transition: 1s;
     }
     .wrap-eko-full{
         overflow: initial;
-        height: auto;
+        max-height: 800px;
         transition: 1s;
     }
     .wrap-eko-final{
         overflow: initial;
         height: auto;
+        max-height: initial;
     }
     .accordion-btn{
         display: block;
@@ -2074,7 +2125,12 @@ border: 2px solid #FAC300;
         border: none;
         right: 20px;
         position: absolute;
-        top: 19px;
+        top: 23px;
+        background-image: url('../img/icon/select-arrow.svg');
+        height: 9px;
+        width: 15px;
+        rotate: 0;
+        transition: 1s;
     }
     .number-step-txt{
         font-size: 16px;
@@ -2159,12 +2215,14 @@ border: 2px solid #FAC300;
     }
     .delivery-wrap{
         flex-direction: column;
+        gap: 50px;
     }
     .wrap-contact{
         flex-direction: column;
     }
     .wrap-mini-contact2{
         width: 100%;
+        margin-top: 60px;
     }
     .mobile-studio-aft1::after{
         right: 27px;
@@ -2235,4 +2293,142 @@ border: 2px solid #FAC300;
        gap: 60px;
        background-position-x: center;
       }
+      .swiper-pagination2{
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+      }
+      .swiper2{
+        display: block;
+      }
+      .mobil-gallery {
+        width: 100%;
+        height: 100%;
+    }
+    .sec-gallery{
+        padding-bottom: 70px;
+    }
+    .delivery-wrap-mini {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    .delivery-img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0px;
+    }
+    .delivery-txt1{
+        font-size: 18px;
+        line-height: 140%;
+    }
+    .delivery-sec{
+        padding-bottom: 100px;
+    }
+    .wrap-mini-contact{
+        width: 100%;
+    }
+    .phone-contact-wrap{
+        margin-top: 50px;
+    }
+    .phone-link{
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 140%;
+    }
+    .social-contact {
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+    .phone-txt {
+        font-size: 18px;
+        line-height: 140%;
+    }
+    .phone-contact-wrap {
+        margin-top: 40px;
+    }
+    .form-sec-title{
+        margin-bottom: 30px;
+    }
+    .btn-footer{
+        padding: 30px 60px 30px 78px;
+        gap: 78px;
+    }
+    .form-sec {
+        padding-bottom: 100px;
+    }
+    .footer-wrap{
+        flex-direction: column;
+        gap: 50px;
+        height: auto;
+    }
+    .footer{
+        padding: 60px 0;
+    }
+    .rot-mobile-arrow{
+        rotate: 180deg;
+        transition: 1s;
+    }
+    .sel-form-discount{
+        width: 305px;
+    }
+    .btn-form-discount{
+        width: 305px;
+        font-size: 16px;
+        line-height: 140%;
+        padding: 30px 50px 30px 46px;
+        gap: 45px;
+    }
+    .sel-form-discount::after{
+        right: 20px;
+        top: 40px;
+    }
+    .tooltip {
+        left: 0px;
+        width: 100%;
+    }
+    .tooltip-wrap {
+        position: initial;
+    }
+    .wrap-eko-embroidery{
+        max-height: initial;
+        overflow: initial;
+    }
+    .swiper-scrollbar{
+        display: none;
+    }
+    .swiper-navigation-gal{
+        display: flex;
+    }
+    .model-auto-wrap{
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    .mini-wrap-calculator{
+        gap: 10px;
+    }
+    .mini-wrap-dop{
+        margin-top: 10px;
+    }
+    .header-bg{
+        align-items: flex-start;
+        padding-top: 20px;
+        justify-content: center;
+    }
+    .container-header{
+        margin: initial;
+    }
+    .diz-mobil{
+        opacity: 0;
+    }
+    .mobil-nav{
+        opacity: 0;
+        animation: menu 1s forwards;
+    }
+    @keyframes menu {
+            40%{opacity: 0.1;}
+            60%{opacity: 0.1;}
+            80%{opacity: 0.3;}
+            100%{opacity: 1;}
+        }
 }
