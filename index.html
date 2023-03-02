@@ -146,8 +146,8 @@
                                     <p class="number-step-tipe">Выберите тип экокожи</p>
                                 </div>
                                 <div class="wrap-eko-tipe">
-                                    <button :disabled="alkantara" @click="skinshow(classic)" class="eko-tipe" :class="{active: classic.show}">
-                                        <p class="eko-tipe-txt">Classic</p>
+                                    <button @click="skinshow(classic)" class="eko-tipe" :class="{active: classic.show}">
+                                        <p class="eko-tipe-txt">Arigon</p>
                                         <div class="tooltip-wrap">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">Ы
                                             <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
@@ -241,7 +241,7 @@
                                         </div>
                                     </div>
                                     </button>
-                                    <button @click="skinType('convex')" class="eko-tipe" :class="{active: convex}">
+                                    <button :disabled="classic.show" @click="skinType('convex')" class="eko-tipe" :class="{active: convex}">
                                         <p class="eko-tipe-txt">Выпуклая</p>
                                         <div class="tooltip-wrap">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -403,6 +403,8 @@
                             </div>
                         </div>
                         <div class="sticky-img-calculator">
+                            <p v-if="lux && classic.show" class="comment-img">На фото пример, центральная часть
+                                вашего чехла может отличаться</p>
                         <div class="constructor-img-calculator">
                             
                                 <div class="images-calculator">
@@ -427,7 +429,59 @@
                         </div>
                         </div>
                         <div class="mini-wrap-calculator mini-wrap-dop ">
-                            <div class="wrap-eko">
+                            <!-- блок дополнительно arigon кожи -->
+                            <div v-if="classic.show" class="wrap-eko">
+                                <button class="accordion-btn"><img src="/assets/img/icon/select-arrow.svg" alt=""></button>
+                                <div class="wrap-number-step">
+                                    <p class="number-step-txt">04</p>
+                                    <p class="number-step-tipe">Дополнительно</p>
+                                </div>
+                                <div v-if="alkantara" class="wrap-additionally">
+                                    <button @click="alkantaraDop(addit)" v-for="addit in additionallyArigon" class="eko-tipe" :class="{ active: addit.selected }">
+                                        <p class="eko-tipe-txt">{{addit.name}}</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">{{addit.tooltipTitle}}</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p v-for="tooltip in addit.tooltipTxt" class="txt-mini-tooltip">{{tooltip.title}}</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> {{addit.price}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+
+                                </div>
+                                <div v-else="alkantara" class="wrap-additionally">
+                                    <button @click="additionallyTipe(addit)" v-for="addit in additionallyArigon" class="eko-tipe" :class="{ active: addit.selected }">
+                                        <p class="eko-tipe-txt">{{addit.name}}</p>
+                                        <div class="tooltip-wrap">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path class="eko-tipe-path" d="M8 12C8.22667 12 8.4168 11.9232 8.5704 11.7696C8.72347 11.6165 8.8 11.4267 8.8 11.2V7.98C8.8 7.75333 8.72347 7.56667 8.5704 7.42C8.4168 7.27333 8.22667 7.2 8 7.2C7.77333 7.2 7.58347 7.27653 7.4304 7.4296C7.2768 7.5832 7.2 7.77333 7.2 8V11.22C7.2 11.4467 7.2768 11.6333 7.4304 11.78C7.58347 11.9267 7.77333 12 8 12ZM8 5.6C8.22667 5.6 8.4168 5.5232 8.5704 5.3696C8.72347 5.21653 8.8 5.02667 8.8 4.8C8.8 4.57333 8.72347 4.3832 8.5704 4.2296C8.4168 4.07653 8.22667 4 8 4C7.77333 4 7.58347 4.07653 7.4304 4.2296C7.2768 4.3832 7.2 4.57333 7.2 4.8C7.2 5.02667 7.2768 5.21653 7.4304 5.3696C7.58347 5.5232 7.77333 5.6 8 5.6ZM8 16C6.89333 16 5.85333 15.7899 4.88 15.3696C3.90667 14.9499 3.06 14.38 2.34 13.66C1.62 12.94 1.05013 12.0933 0.6304 11.12C0.210133 10.1467 0 9.10667 0 8C0 6.89333 0.210133 5.85333 0.6304 4.88C1.05013 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.04987 4.88 0.6296C5.85333 0.209867 6.89333 0 8 0C9.10667 0 10.1467 0.209867 11.12 0.6296C12.0933 1.04987 12.94 1.62 13.66 2.34C14.38 3.06 14.9499 3.90667 15.3696 4.88C15.7899 5.85333 16 6.89333 16 8C16 9.10667 15.7899 10.1467 15.3696 11.12C14.9499 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.9499 11.12 15.3696C10.1467 15.7899 9.10667 16 8 16Z" fill="#FAC300"/>
+                                        </svg>
+                                        <div class="tooltip">
+                                            <h3 class="tooltip-title">{{addit.tooltipTitle}}</h3>
+                                            <div class="wrap-mini-tooltip">
+                                                <p v-for="tooltip in addit.tooltipTxt" class="txt-mini-tooltip">{{tooltip.title}}</p>
+                                                <p class="txt-mini-tooltip"><span>Стоимость опции:</span> {{addit.price}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+
+                                </div>
+                                <div class="color-step">
+                                    <button @click="additionallyColorSwitch(additional)" v-for="additional in additionallyColor" :style=" { background: additional.background } " class="col-auto black">
+                                        <svg v-if="additional.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                                            <rect width="10" height="10" rx="5" fill="#FAC300"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- блок дополнительно премиум и эсклюзив кожи -->
+                            <div v-else class="wrap-eko">
                                 <button class="accordion-btn"><img src="/assets/img/icon/select-arrow.svg" alt=""></button>
                                 <div class="wrap-number-step">
                                     <p class="number-step-txt">04</p>
@@ -477,7 +531,8 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="wrap-eko wrap-eko-embroidery">
+
+                            <div v-if="!classic.show" class="wrap-eko wrap-eko-embroidery">
                                 <div class="check-wrap embroidery-check">
                                     <div class="check-mini-wrap">
                                         <div class="check-feik">
@@ -1966,6 +2021,7 @@
                                     centrAlkantara: 'centralInsert',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
+                                    arigon: false,
                                     tooltipTxt: [
                                                 {
                                                     title:'На центральные части сидений переднего и заднего ряда. Наносятся строчки в виде ромбов, нитью средней толщины'
@@ -2121,6 +2177,129 @@
                                     price: 3000
                                 },
             ],
+            additionallyArigon:[
+                                {
+                                    title: 'lux',
+                                    name: 'Люкс',
+                                    centr: 'luxIns',
+                                    centrAlkantara: 'centralInsert',
+                                    selected: false,
+                                    tooltipTitle: 'Дополнительная опция',
+                                    tooltipTxt: [
+                                                {
+                                                    title:'Люкс'
+                                                },
+                                                {
+                                                    title:'Добавляет эстетический внешний вид и&nbsp;дополнительную прочность'
+                                                },
+                                                {
+                                                    title:'Спинки отстрочены ромбом на 2/3 высоты сиденья'
+                                                },
+                                                {
+                                                    title:'Отстрочку ромбом подголовника можно убрать по запросу'
+                                                }
+                                                ],
+                                    price: 2800               
+                                },
+                                {
+                                    title: 'rhomb2d',
+                                    name: 'До центра 2D ромб',
+                                    centr: 'centralInsert',
+                                    centrAlkantara: 'centralInsert',
+                                    selected: false,
+                                    tooltipTitle: 'Дополнительная опция',
+                                    tooltipTxt: [
+                                                {
+                                                    title:'На центральные части сидений переднего и заднего ряда. Наносятся строчки в виде ромбов, нитью средней толщины'
+                                                },
+                                                {
+                                                    title:'Добавляет эстетический внешний вид и&nbsp;дополнительную прочность'
+                                                },
+                                                {
+                                                    title:'Спинки отстрочены ромбом на 2/3 высоты сиденья'
+                                                },
+                                                {
+                                                    title:'Отстрочку ромбом подголовника можно убрать по запросу'
+                                                }
+                                                ],
+                                    price: 2800               
+                                },
+                                {
+                                    title: 'rhomb2dfull',
+                                    name: 'Полностью 2D ромб',
+                                    centr: 'centralInsert',
+                                    centrAlkantara: 'centralInsert',
+                                    selected: false,
+                                    tooltipTitle: 'Дополнительная опция',
+                                    tooltipTxt: [
+                                                {
+                                                    title:'На центральные части сидений переднего и заднего ряда. Наносятся строчки в виде ромбов, нитью средней толщины'
+                                                },
+                                                {
+                                                    title:'Добавляет эстетический внешний вид и дополнительную прочность'
+                                                },
+                                                {
+                                                    title:'Спинки отстрочены ромбом на всю высоту сиденья до подголовников'
+                                                },
+                                                {
+                                                    title:'Отстрочку ромбом подголовника можно убрать по запросу'
+                                                }
+                                                ],
+                                    price: 3000
+                                },
+                                {
+                                    title: 'rhomb2d',
+                                    name: 'До центра 3D ромб',
+                                    centr: 'rhomb3d',
+                                    centrAlkantara: 'alkantara-rhomb3d',
+                                    selected: false,
+                                    tooltipTitle: 'Дополнительная опция',
+                                    tooltipTxt: [
+                                                {
+                                                    title:'На центральные части сидений переднего и заднего ряда добавляется поролон 10 мм'
+                                                },
+                                                {
+                                                    title:'Наносятся строчки в виде ромбов толстой нитью'
+                                                },
+                                                {
+                                                    title:'Добавляет роскошный внешний вид, эффект 3 и дополнительную прочность'
+                                                },
+                                                {
+                                                    title:'Спинки отстрочены ромбом на 2/3 высоты сиденья '
+                                                },
+                                                {
+                                                    title:'Отстрочку ромбом подголовника можно убрать по запросу'
+                                                }
+                                                ],
+                                    price: 3800
+                                },
+                                {
+                                    title: 'rhomb2dfull',
+                                    name: 'Полностью 3D ромб',
+                                    centr: 'rhomb3dfull',
+                                    centrAlkantara: 'alkantara-rhomb3d-full',
+                                    selected: false,
+                                    tooltipTitle: 'Дополнительная опция',
+                                    tooltipTxt: [
+                                                {
+                                                    title:'На центральные части сидений переднего и заднего ряда добавляется поролон 10 мм'
+                                                },
+                                                {
+                                                    title:'Наносятся строчки в виде ромбов толстой нитью'
+                                                },
+                                                {
+                                                    title:'Добавляет роскошный внешний вид, эффект 3D и дополнительную прочность'
+                                                },
+                                                {
+                                                    title:'Спинки отстрочены ромбом на всю ширину сиденья до подголовников'
+                                                },
+                                                {
+                                                    title:'Отстрочку ромбом подголовника можно убрать по запросу'
+                                                }
+                                                ],
+                                    price: 4000
+                                }
+            ],
             smooth: true,
             convex: false,
             perforation: false,
@@ -2140,6 +2319,7 @@
             premiumPerf: false,
             alkantara: false,
             alkantaraClassic: false,
+            lux: false,
             dopAlk: true
 			}),
             methods:{
@@ -2170,11 +2350,6 @@
                     this.alkantara = true
                     this.alkantaraSrc = alcantara.title
                     this.centralInsertSrc = alcantara.title
-                    if(this.classic.show == true){
-                        this.classic.show = false
-                        this.premium.show = true
-                        this.premiumPerf = true
-                    }
                 },
                 centralInsertShow (insert) {
                     this.centralInsert.forEach( item => {
@@ -2249,6 +2424,11 @@
                     this.smooth = true,
                     this.convex = false,
                     this.perforation = false
+                    this.lux = true
+                    this.additionallyArigon.forEach( item => {
+                    item.selected = false
+                    });
+                        
                     this.additionally.forEach( item => {
                         item.selected = false
                     });
@@ -2277,6 +2457,10 @@
                         this.premiumPerf = false
                         this.alkantara = false
                         if(this.smooth == false & this.convex == false){
+                            this.smooth = true
+                        }
+                        if(this.convex === true){
+                            this.convex = false
                             this.smooth = true
                         }
                     }
@@ -2343,11 +2527,6 @@
                     
                 },
                 alkantaraShow () {
-                    if(this.classic.show == true){
-                        this.classic.show = false
-                        this.premium.show = true
-                        this.premiumPerf = true
-                    }
                         this.additionally.forEach( item => {
                             item.selected = false
                         });
@@ -2366,6 +2545,9 @@
                         this.smooth = true,
                         this.convex = false,
                         this.perforation = false
+                        this.additionallyArigon.forEach( item => {
+                        item.selected = false
+                        });
                         this.additionally.forEach( item => {
                             item.selected = false
                         });
@@ -2397,6 +2579,15 @@
                 }
             },
             computed: {
+                // комментарий к люксу
+                // luxComment() {
+                //     if(this.additionallyArigon[0].selected){
+                //         return this.lux = true
+                //     }else {
+                //         return this.lux = false
+                //     }
+                    
+                // },
                 // рассчитывание цены поля тип кожи
                 calcPriceType () {
                     if(this.classic.show){

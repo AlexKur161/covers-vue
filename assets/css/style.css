@@ -1071,6 +1071,9 @@ max-width: 420px;
     height: 30px;
     cursor: pointer;
 }
+.eko-tipe:disabled{
+    opacity: 0.5;
+}
 .eko-tipe-path{
     fill:#FAC300;
     transition: 0.3s;
@@ -1115,6 +1118,9 @@ border: 2px solid #FAC300;
     height: 34px;
     border-radius: 8px;
     cursor: pointer;
+}
+.col-auto:disabled{
+    opacity: 0.5;
 }
 .col-auto.black {
     background: #111111;
@@ -1669,6 +1675,22 @@ border: 2px solid #FAC300;
             width: 630px;
             padding: 126px 35px 36px 30px;
             display: flex;
+            position: relative;
+        }
+        .comment-img{
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 130%;
+            color: #1E1E1E;
+            position: absolute;
+            padding: 0 30px;
+            top: 60px;
+            margin: auto;
+            text-align: center;
+            width: 100%;
+            left: 0;
         }
         .mirrow-height{
             height: 490px;
