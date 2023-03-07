@@ -221,14 +221,14 @@
                                     </div>
                                     </button>
                                 </div>
-                                <div v-if="classic.show || premium.show" class="color-step">
+                                <div v-if="premium.show" class="color-step">
                                     <button :disabled="bodyColor.disabled" @click="showSelected(bodyColor)" v-for="bodyColor in bodyColors" :style=" { background: bodyColor.background } " class="col-auto black">
                                         <svg v-if="bodyColor.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                                             <rect width="10" height="10" rx="5" fill="#FAC300"/>
                                         </svg>
                                     </button>
                                 </div>
-                                <div v-if="exclusive.show" class="color-step">
+                                <div v-if="classic.show || exclusive.show" class="color-step">
                                     <button :disabled="bodyColor.disabled" @click="showSelected(bodyColor)" v-for="bodyColor in bodyColorsExclusive" :style=" { background: bodyColor.background } " class="col-auto black">
                                         <svg v-if="bodyColor.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                                             <rect width="10" height="10" rx="5" fill="#FAC300"/>
@@ -352,7 +352,7 @@
                                     <p class="number-step-tipe">Горизонтальная строчка</p>
                                 </div>
                                 <div class="wrap-eko-tipe">
-                                    <button @click="insertOneTu('one')" class="eko-tipe" :class="{ active: insertOne }">
+                                    <button :disabled="classic.show" @click="insertOneTu('one')" class="eko-tipe" :class="{ active: insertOne }">
                                         <p class="eko-tipe-txt">Одна</p>
                                         <div class="tooltip-wrap">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -368,7 +368,7 @@
                                         </div>
                                     </div>
                                 </button>
-                                    <button @click="insertOneTu('tu')" class="eko-tipe" :class="{ active: insertTu }">
+                                    <button :disabled="classic.show" @click="insertOneTu('tu')" class="eko-tipe" :class="{ active: insertTu }">
                                         <p class="eko-tipe-txt">Две</p>
                                         <div class="tooltip-wrap">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -389,7 +389,7 @@
                                 <div class="check-wrap check-wrap2">
                                     <div class="check-mini-wrap">
                                         <div class="check-feik">
-                                            <input v-model="imgStitchesShow" class="check-insert" type="checkbox" name="" id="strin">
+                                            <input :disabled="classic.show && arigonSide" v-model="imgStitchesShow" class="check-insert" type="checkbox" name="" id="strin">
                                             <label class="check-insert-lbl" for="strin"></label>
                                         </div>
                                         <p class="check-wrap-txt">Добавить двойную строчку сбоку</p>
@@ -412,7 +412,7 @@
                                     
                                 </div>
                                 <div class="color-step">
-                                    <button @click="showStitches(stitches)" v-for="stitches in doubleStitches" :style=" { background: stitches.background } " class="col-auto black">
+                                    <button :disabled="classic.show && arigonSide" @click="showStitches(stitches)" v-for="stitches in doubleStitches" :style=" { background: stitches.background } " class="col-auto black">
                                         <svg v-if="stitches.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                                             <rect width="10" height="10" rx="5" fill="#FAC300"/>
                                         </svg>
@@ -428,7 +428,8 @@
                             
                                 <div class="images-calculator">
                                     <img src="assets/img/calculator/default.png" alt="" class="calc-img">
-                                    <img :src="`assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="classic.show" :src="`assets/img/calculator/body-lux/${centralInsertSrc}.png`" alt="" class="calc-img">
+                                    <img v-if="!classic.show" :src="`assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertOne & smooth" :src="`assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertTu & smooth" :src="`assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertOne & convex" :src="`assets/img/calculator/convexOne/${centralInsertSrc}.png`" alt="" class="calc-img-body">
@@ -3215,9 +3216,9 @@
             ],
             additionallyArigon:[
                                 {
-                                    title: 'lux',
+                                    title: '',
                                     name: 'Люкс',
-                                    centr: 'luxIns',
+                                    centr: 'lux-arigon',
                                     centrAlkantara: 'centralInsert',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
@@ -3238,9 +3239,9 @@
                                     price: 2800               
                                 },
                                 {
-                                    title: 'rhomb2d',
+                                    title: 'arigon-2dw',
                                     name: 'До центра 2D ромб',
-                                    centr: 'centralInsert',
+                                    centr: 'arigon-2d',
                                     centrAlkantara: 'centralInsert',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
@@ -3261,10 +3262,10 @@
                                     price: 2800               
                                 },
                                 {
-                                    title: 'rhomb2dfull',
+                                    title: 'arigon-2dw',
                                     name: 'Полностью 2D ромб',
-                                    centr: 'centralInsert',
-                                    centrAlkantara: 'centralInsert',
+                                    centr: '',
+                                    centrAlkantara: 'arigon-2dfull',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
                                     tooltipTxt: [
@@ -3284,9 +3285,9 @@
                                     price: 3000
                                 },
                                 {
-                                    title: 'rhomb2d',
+                                    title: '',
                                     name: 'До центра 3D ромб',
-                                    centr: 'rhomb3d',
+                                    centr: 'arigon-3d',
                                     centrAlkantara: 'alkantara-rhomb3d',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
@@ -3310,9 +3311,9 @@
                                     price: 3800
                                 },
                                 {
-                                    title: 'rhomb2dfull',
+                                    title: '',
                                     name: 'Полностью 3D ромб',
-                                    centr: 'rhomb3dfull',
+                                    centr: 'arigon-3dfull',
                                     centrAlkantara: 'alkantara-rhomb3d-full',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
@@ -3352,10 +3353,11 @@
             additionallyItem: {},
             showAdditionally: false,
             additionallyCentr: '/centralInsert',
-            premiumPerf: false,
+            premiumPerf: true,
             alkantara: false,
             alkantaraClassic: false,
             lux: false,
+            arigonSide: true,
             dopAlk: true
 			}),
             methods:{
@@ -3455,6 +3457,7 @@
                     this.additColorSrc = additional.title
                 },
                 additionallyTipe (addit) {
+                    this.arigonSide = false
                     this.insertOne = true
                     this.insertTu = false
                     this.smooth = true,
@@ -3469,6 +3472,8 @@
                         item.selected = false
                     });
                     if(this.additionallyItem == addit){
+                        this.arigonSide = true
+                        this.imgStitchesShow = false
                         addit.selected = false
                         this.additionallyCentr = 'centralInsert'
                         this.showAdditionally = false
@@ -3487,10 +3492,14 @@
                     this.greyDisabled()
                     this.itemFirstSelect()
                     if(skin.title == this.classic.title){
+                        this.additionally.forEach( item => {
+                        item.selected = false
+                        });
+                        this.additionallyCentr = 'centralInsert'
+                        this.showAdditionally = false
                         this.premium.show = false
                         this.exclusive.show = false
                         this.perforation = false
-                        this.premiumPerf = false
                         this.alkantara = false
                         if(this.smooth == false & this.convex == false){
                             this.smooth = true
@@ -3501,11 +3510,19 @@
                         }
                     }
                     if(skin.title == this.premium.title){
+                        this.additionallyCentr = 'centralInsert'
+                        this.additionallyArigon.forEach( item => {
+                        item.selected = false
+                        });
                         this.classic.show = false
                         this.exclusive.show = false
                         this.premiumPerf = true
                     }
                     if(skin.title == this.exclusive.title){
+                        this.additionallyCentr = 'centralInsert'
+                        this.additionallyArigon.forEach( item => {
+                        item.selected = false
+                        });
                         this.premium.show = false
                         this.classic.show = false
                         this.perforation = false
@@ -3619,14 +3636,13 @@
                 }
             },
             computed: {
-                // комментарий к люксу
-                // luxComment() {
-                //     if(this.additionallyArigon[0].selected){
-                //         return this.lux = true
-                //     }else {
-                //         return this.lux = false
-                //     }
-                    
+                // показывать строчку сбоку в аригон или нет
+                // arigonStroke () {
+                //     let LuxDop = this.additionallyArigon.find (item => {
+                //        return item.selected == true
+                //     })
+                //     this.arigonSide = LuxDop.selected
+                //     return this.arigonSide
                 // },
                 // рассчитывание цены поля тип кожи
                 calcPriceType () {

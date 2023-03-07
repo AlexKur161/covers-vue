@@ -1381,6 +1381,9 @@ border: 2px solid #FAC300;
 .tooltip-wrap:hover .tooltip{
     display: block;
 }
+.eko-tipe:disabled .tooltip-wrap:hover .tooltip{
+    display: none;
+}
 .tooltip-title {
     font-family: 'Gilroy';
     font-style: normal;
