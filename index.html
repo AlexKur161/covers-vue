@@ -3219,7 +3219,7 @@
                                     title: '',
                                     name: 'Люкс',
                                     centr: 'lux-arigon',
-                                    centrAlkantara: 'centralInsert',
+                                    centrAlkantara: 'lux-arigonalk',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
                                     tooltipTxt: [
@@ -3242,7 +3242,7 @@
                                     title: 'arigon-2dw',
                                     name: 'До центра 2D ромб',
                                     centr: 'arigon-2d',
-                                    centrAlkantara: 'centralInsert',
+                                    centrAlkantara: 'arigon-2dalk',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
                                     tooltipTxt: [
@@ -3288,7 +3288,7 @@
                                     title: '',
                                     name: 'До центра 3D ромб',
                                     centr: 'arigon-3d',
-                                    centrAlkantara: 'alkantara-rhomb3d',
+                                    centrAlkantara: 'arigon-3dalk',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
                                     tooltipTxt: [
@@ -3314,7 +3314,7 @@
                                     title: '',
                                     name: 'Полностью 3D ромб',
                                     centr: 'arigon-3dfull',
-                                    centrAlkantara: 'alkantara-rhomb3d-full',
+                                    centrAlkantara: 'arigon-3dfullalk',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
                                     tooltipTxt: [
@@ -3585,6 +3585,9 @@
                 },
                 alkantaraShow () {
                         this.additionally.forEach( item => {
+                            item.selected = false
+                        });
+                        this.additionallyArigon.forEach( item => {
                             item.selected = false
                         });
                         this.dopAlk = true
