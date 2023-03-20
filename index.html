@@ -94,7 +94,8 @@
                                 <p class="txt-garant txt-garant2">Гарантия 5&nbsp;лет</p>
                             </div>
                     </div>
-                    <div class="photo-whatsapp">
+                    <!-- Пока скрыл форму -->
+                    <!-- <div class="photo-whatsapp">
                         <img class="photo-whatsapp-img" src="assets/img/icon/line-sapp.svg" alt="">
                         <p class="photo-whatsapp-txt">Получите фотографии чехлов
                             именно на&nbsp;вашем автомобиле на&nbsp;WhatsApp, заполнив форму ниже</p>
@@ -117,7 +118,7 @@
                             <p class="btn-txt-form">Получить фото</p>
                             <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                         </button>
-                    </form>
+                    </form> -->
                 </div>
             </section>
             <section class="sec-calculator">
@@ -221,14 +222,14 @@
                                     </div>
                                     </button>
                                 </div>
-                                <div v-if="premium.show" class="color-step">
+                                <div v-if="premium.show || bodylux" class="color-step">
                                     <button :disabled="bodyColor.disabled" @click="showSelected(bodyColor)" v-for="bodyColor in bodyColors" :style=" { background: bodyColor.background } " class="col-auto black">
                                         <svg v-if="bodyColor.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                                             <rect width="10" height="10" rx="5" fill="#FAC300"/>
                                         </svg>
                                     </button>
                                 </div>
-                                <div v-if="classic.show || exclusive.show" class="color-step">
+                                <div v-if="classic.show && !bodylux || exclusive.show" class="color-step">
                                     <button :disabled="bodyColor.disabled" @click="showSelected(bodyColor)" v-for="bodyColor in bodyColorsExclusive" :style=" { background: bodyColor.background } " class="col-auto black">
                                         <svg v-if="bodyColor.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                                             <rect width="10" height="10" rx="5" fill="#FAC300"/>
@@ -428,7 +429,7 @@
                             
                                 <div class="images-calculator">
                                     <img src="assets/img/calculator/default.png" alt="" class="calc-img">
-                                    <img v-if="classic.show" :src="`assets/img/calculator/body-lux/${centralInsertSrc}.png`" alt="" class="calc-img">
+                                    <img v-if="bodylux" :src="`assets/img/calculator/body-lux/${colorArigonimg}.png`" alt="" class="calc-img">
                                     <img v-if="!classic.show" :src="`assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertOne & smooth" :src="`assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertTu & smooth" :src="`assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
@@ -983,7 +984,8 @@
             </section>
             <section class="form-sec">
                 <div class="container">
-                    <h3 class="form-sec-title">Или оставьте заявку и наш менеджер свяжется с вами</h3>
+                    <!-- скрыл форму -->
+                    <!-- <h3 class="form-sec-title">Или оставьте заявку и наш менеджер свяжется с вами</h3>
                     <form class="main-form" action="">
                         <div class="wrap-select-form wrap-formsel-mobil">
                             <select @change="modelAuto('static')" v-model="selected" class="sel-form sel-form-mobil1" name="" id="">
@@ -1002,7 +1004,7 @@
                             <p class="btn-txt-form">Оставить заявку</p>
                             <img class="btn-img-form" src="assets/img/icon/arrow-photo.svg" alt="">
                         </button>
-                    </form>
+                    </form> -->
                 </div>
             </section>
             <div v-if="showPopap" class="popap">
@@ -3236,7 +3238,9 @@
                                                     title:'Отстрочку ромбом подголовника можно убрать по запросу'
                                                 }
                                                 ],
-                                    price: 2800               
+                                    arigon: true,
+                                    priceBodyblack: 2700,
+                                    priceBodyflow:  2150          
                                 },
                                 {
                                     title: 'arigon-2dw',
@@ -3259,13 +3263,15 @@
                                                     title:'Отстрочку ромбом подголовника можно убрать по запросу'
                                                 }
                                                 ],
-                                    price: 2800               
+                                    arigon: true,
+                                    priceBodyblack: 1600,
+                                    priceBodyflow:  2100               
                                 },
                                 {
                                     title: 'arigon-2dw',
                                     name: 'Полностью 2D ромб',
-                                    centr: '',
-                                    centrAlkantara: 'arigon-2dfull',
+                                    centr: 'arigon-2dfull',
+                                    centrAlkantara: 'arigon-2dfullalk',
                                     selected: false,
                                     tooltipTitle: 'Дополнительная опция',
                                     tooltipTxt: [
@@ -3282,7 +3288,9 @@
                                                     title:'Отстрочку ромбом подголовника можно убрать по запросу'
                                                 }
                                                 ],
-                                    price: 3000
+                                    arigon: true,
+                                    priceBodyblack: 2500,
+                                    priceBodyflow:  3100 
                                 },
                                 {
                                     title: '',
@@ -3308,7 +3316,9 @@
                                                     title:'Отстрочку ромбом подголовника можно убрать по запросу'
                                                 }
                                                 ],
-                                    price: 3800
+                                    arigon: true,
+                                    priceBodyblack: 1800,
+                                    priceBodyflow:  2300 
                                 },
                                 {
                                     title: '',
@@ -3334,7 +3344,9 @@
                                                     title:'Отстрочку ромбом подголовника можно убрать по запросу'
                                                 }
                                                 ],
-                                    price: 4000
+                                    arigon: true,
+                                    priceBodyblack: 2800,
+                                    priceBodyflow:  3500 
                                 }
             ],
             smooth: true,
@@ -3358,14 +3370,23 @@
             alkantaraClassic: false,
             lux: false,
             arigonSide: true,
-            dopAlk: true
+            dopAlk: true,
+            bodylux:false,
+            colorlux: 'black',
+            colorArigonimg: 'black',
+            colorArigon: null
 			}),
             methods:{
                 showBtn() {
                     this.showPopap = !this.showPopap
                 },
                 showSelected (bodyColor) {
-                    console.log(bodyColor)
+                    if(this.bodylux){
+                        if(this.colorArigon === 'Полностью 2D ромб' || this.colorArigon === 'Люкс' || this.colorArigon === 'До центра 2D ромб'){
+                            this.colorlux = bodyColor.title
+                        }
+                    }
+                    this.colorArigonimg = bodyColor.title
                     this.bodyColors.forEach( item => {
                         item.selected = false
                     });
@@ -3390,6 +3411,11 @@
                     this.centralInsertSrc = alcantara.title
                 },
                 centralInsertShow (insert) {
+                    if(this.bodylux){
+                        if(this.colorArigon === 'До центра 3D ромб' || this.colorArigon === 'Полностью 3D ромб'){
+                            this.colorlux = insert.title
+                        }
+                    }
                     this.centralInsert.forEach( item => {
                         item.selected = false
                     });
@@ -3464,14 +3490,23 @@
                     this.convex = false,
                     this.perforation = false
                     this.lux = true
+                    this.colorArigon = addit.name
                     this.additionallyArigon.forEach( item => {
                     item.selected = false
                     });
-                        
+                    console.log(addit.arigon)
+                    if(addit.arigon){
+                        this.bodylux = true
+                        console.log('test')
+                    }else{
+                        this.bodylux = false
+                        console.log('test2')
+                    }
                     this.additionally.forEach( item => {
                         item.selected = false
                     });
                     if(this.additionallyItem == addit){
+                        this.bodylux = false
                         this.arigonSide = true
                         this.imgStitchesShow = false
                         addit.selected = false
@@ -3510,6 +3545,7 @@
                         }
                     }
                     if(skin.title == this.premium.title){
+                        this.bodylux = false
                         this.additionallyCentr = 'centralInsert'
                         this.additionallyArigon.forEach( item => {
                         item.selected = false
@@ -3519,6 +3555,7 @@
                         this.premiumPerf = true
                     }
                     if(skin.title == this.exclusive.title){
+                        this.bodylux = false
                         this.additionallyCentr = 'centralInsert'
                         this.additionallyArigon.forEach( item => {
                         item.selected = false
@@ -3650,7 +3687,7 @@
                 // рассчитывание цены поля тип кожи
                 calcPriceType () {
                     if(this.classic.show){
-                            return 7440
+                            return 6650
                         }
                         if(this.premium.show){
                             return  9690
@@ -3659,11 +3696,31 @@
                             return  20350
                         }
                 },
+                // рассчитывание стоимости от цвета
+                calcColor () {
+                    let dopArigon = this.additionallyArigon.find( item => {
+                        return item.selected == true
+                        });
+                        if(this.bodylux){
+                        if(dopArigon  === 'undefined'){
+                            return 0
+                        }
+                        if(this.colorlux === 'black'){
+                            return dopArigon.priceBodyblack
+                        }
+                        else{
+                            return dopArigon.priceBodyflow
+                        }
+                    }else{
+                        return 0
+                    }
+                },
                 // рассчитывание цены поля дополнительно
                     calculatingPriceDop () {
                         let dop = this.additionally.find( item => {
                         return item.selected == true
                         });
+                        
                         if(typeof dop  === 'undefined'){
                             return 0
                         }else{
@@ -3709,7 +3766,7 @@
                     },
                     // итоговая цена
                     calculatingPriceTotal () {
-                        return this.calcPriceType + this.calculatingPriceDop + this.calculatingPriceCentr + this.calculatingPriceInsert + this.calculatingDubleInsert + this.calcOwnEmbroidery +this.alcantaraCalc
+                        return this.calcPriceType + this.calculatingPriceDop + this.calculatingPriceCentr + this.calculatingPriceInsert + this.calculatingDubleInsert + this.calcOwnEmbroidery +this.alcantaraCalc + this.calcColor
                     }
             }
 		}).mount('#wraper-main');
