@@ -3268,7 +3268,7 @@
                                     priceBodyflow:  2100               
                                 },
                                 {
-                                    title: 'arigon-2dw',
+                                    title: '',
                                     name: 'Полностью 2D ромб',
                                     centr: 'arigon-2dfull',
                                     centrAlkantara: 'arigon-2dfullalk',
@@ -3293,7 +3293,7 @@
                                     priceBodyflow:  3100 
                                 },
                                 {
-                                    title: '',
+                                    title: 'arigon-2dw',
                                     name: 'До центра 3D ромб',
                                     centr: 'arigon-3d',
                                     centrAlkantara: 'arigon-3dalk',
@@ -3494,13 +3494,10 @@
                     this.additionallyArigon.forEach( item => {
                     item.selected = false
                     });
-                    console.log(addit.arigon)
                     if(addit.arigon){
                         this.bodylux = true
-                        console.log('test')
                     }else{
                         this.bodylux = false
-                        console.log('test2')
                     }
                     this.additionally.forEach( item => {
                         item.selected = false
@@ -3545,6 +3542,10 @@
                         }
                     }
                     if(skin.title == this.premium.title){
+                        this.additionallyArigon.forEach(ar => {
+                            ar.selected = false
+                        })
+                        this.showAdditionally = false
                         this.bodylux = false
                         this.additionallyCentr = 'centralInsert'
                         this.additionallyArigon.forEach( item => {
@@ -3555,6 +3556,10 @@
                         this.premiumPerf = true
                     }
                     if(skin.title == this.exclusive.title){
+                        this.additionallyArigon.forEach(ar => {
+                            ar.selected = false
+                        })
+                        this.showAdditionally = false
                         this.bodylux = false
                         this.additionallyCentr = 'centralInsert'
                         this.additionallyArigon.forEach( item => {
@@ -3577,7 +3582,6 @@
                         let greyBodyColor = this.bodyColors.find( grey => {
                             return grey.title === 'grey'
                          })
-                        console.log(greyColor)
                     if(this.premium.show == true){
                        return [ greyColor.background = '#BFBFBF', greyColor.disabled = false, greyBodyColor.background = '#BFBFBF', greyBodyColor.disabled = false ]
                                 
@@ -3600,7 +3604,6 @@
                     this.imgBodySrc = 'black'
                 },
                 modelAuto(tipForm) {
-                    console.log(tipForm)
                     if(tipForm == 'formstatic'){
                         this.formstatic2 = this.brandAuto.find( item => {
                         return item.title == this.formstatic
@@ -3629,14 +3632,12 @@
                         });
                         this.dopAlk = true
                         this.showAdditionally = false
-                        console.log( this.alcantaraArray[0])
                         this.alcantaraArray[0].selected = ! this.alcantaraArray[0].selected
                         this.alkantaraSrc = 'black'
                         this.centralInsertSrc = 'black'
                         this.additionallyCentr = 'centralInsert'
                 },
                 alkantaraDop (addit) {
-                    console.log('test')
                         this.insertOne = true
                         this.insertTu = false
                         this.smooth = true,
@@ -3665,11 +3666,8 @@
                         }
                 },
                 accordion (e) {
-                    console.log(e)
                     const specifications = document.querySelectorAll('.wrap-eko')
                     specifications.forEach(spec => {
-                        
-                            // console.log(spec)
                             spec.classList.toggle('wrap-eko-full');
                         
                     })
@@ -3701,14 +3699,15 @@
                     let dopArigon = this.additionallyArigon.find( item => {
                         return item.selected == true
                         });
+                        console.log(dopArigon)
                         if(this.bodylux){
-                        if(dopArigon  === 'undefined'){
+                        if(typeof dopArigon  == 'undefined'){
                             return 0
                         }
                         if(this.colorlux === 'black'){
                             return dopArigon.priceBodyblack
                         }
-                        else{
+                        if(this.colorlux != 'black'){
                             return dopArigon.priceBodyflow
                         }
                     }else{
@@ -3759,7 +3758,7 @@
                         if(this.alkantara & this.convex) {
                             return 1400
                         }else if (this.alkantara & this.smooth){
-                            return 550
+                            return 500
                         }else{
                             return 0
                         }
