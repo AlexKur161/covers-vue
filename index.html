@@ -440,7 +440,8 @@
                                     <img v-if="insertOne & convex & perforation" :src="`assets/img/calculator/perforation-convex/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertTu & convex & perforation" :src="`assets/img/calculator/perforation-convex-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="imgStitchesShow" :src="`assets/img/calculator/stitches/stitches-${imgStitches}.png`" alt="" class="calc-img-body">
-                                    <img v-if="showAdditionally" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="showAdditionally && !bodylux" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="showAdditionally && bodylux && stichArigon" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertOne & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertTu & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertOne & convex & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-convex/${alkantaraSrc}.png`" alt="" class="calc-img-body">
@@ -3239,6 +3240,7 @@
                                                 }
                                                 ],
                                     arigon: true,
+                                    stich: false,
                                     priceBodyblack: 2700,
                                     priceBodyflow:  2150          
                                 },
@@ -3264,6 +3266,7 @@
                                                 }
                                                 ],
                                     arigon: true,
+                                    stich: true,
                                     priceBodyblack: 1600,
                                     priceBodyflow:  2100               
                                 },
@@ -3289,6 +3292,7 @@
                                                 }
                                                 ],
                                     arigon: true,
+                                    stich: false,
                                     priceBodyblack: 2500,
                                     priceBodyflow:  3100 
                                 },
@@ -3317,6 +3321,7 @@
                                                 }
                                                 ],
                                     arigon: true,
+                                    stich: true,
                                     priceBodyblack: 1800,
                                     priceBodyflow:  2300 
                                 },
@@ -3345,6 +3350,7 @@
                                                 }
                                                 ],
                                     arigon: true,
+                                    stich: false,
                                     priceBodyblack: 2800,
                                     priceBodyflow:  3500 
                                 }
@@ -3374,6 +3380,7 @@
             bodylux:false,
             colorlux: 'black',
             colorArigonimg: 'black',
+            stichArigon: false,
             colorArigon: null
 			}),
             methods:{
@@ -3496,8 +3503,10 @@
                     });
                     if(addit.arigon){
                         this.bodylux = true
+                        this.stichArigon = addit.stich
                     }else{
                         this.bodylux = false
+                        this.stichArigon = false
                     }
                     this.additionally.forEach( item => {
                         item.selected = false
@@ -3643,6 +3652,13 @@
                         this.smooth = true,
                         this.convex = false,
                         this.perforation = false
+                        if(addit.arigon){
+                        this.bodylux = true
+                        this.stichArigon = addit.stich
+                        }else{
+                        this.bodylux = false
+                        this.stichArigon = false
+                        }
                         this.additionallyArigon.forEach( item => {
                         item.selected = false
                         });
