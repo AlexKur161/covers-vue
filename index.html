@@ -582,10 +582,13 @@
                                 </div>
                             </div>
                             <div class="sticky-img-calculator sticky-mobile-calculator">
+                                <p v-if="lux && classic.show" class="comment-img">На фото пример, центральная часть
+                                    вашего чехла может отличаться</p>
                                 <div class="constructor-img-calculator">
                                     
                                         <div class="images-calculator">
                                             <img src="assets/img/calculator/default.png" alt="" class="calc-img">
+                                            <img v-if="bodylux" :src="`assets/img/calculator/body-lux/${colorArigonimg}.png`" alt="" class="calc-img">
                                             <img :src="`assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertOne & smooth" :src="`assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertTu & smooth" :src="`assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
@@ -596,7 +599,8 @@
                                             <img v-if="insertOne & convex & perforation" :src="`assets/img/calculator/perforation-convex/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertTu & convex & perforation" :src="`assets/img/calculator/perforation-convex-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="imgStitchesShow" :src="`assets/img/calculator/stitches/stitches-${imgStitches}.png`" alt="" class="calc-img-body">
-                                            <img v-if="showAdditionally" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="showAdditionally && !bodylux" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
+                                    <img v-if="showAdditionally && bodylux && stichArigon" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertOne & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertTu & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertOne & convex & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-convex/${alkantaraSrc}.png`" alt="" class="calc-img-body">

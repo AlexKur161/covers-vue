@@ -1694,6 +1694,7 @@ border: 2px solid #FAC300;
             text-align: center;
             width: 100%;
             left: 0;
+            z-index: 2;
         }
         .mirrow-height{
             height: 490px;
@@ -1902,6 +1903,16 @@ border: 2px solid #FAC300;
     }
 }
   @media(max-width:1023px){
+    .calc-img{
+        top: 40px;
+    }
+    .calc-img-body{
+        top: 40px;
+    }
+    .comment-img{
+        font-size: 16px;
+        top: 20px;
+    }
     .container{
         max-width: 380px;
     }
@@ -2127,12 +2138,12 @@ border: 2px solid #FAC300;
     }
     .sticky-img-calculator{
         width: 380px;
-        height: 530px;
+        height: 570px;
     }
     .constructor-img-calculator{
         padding: 0;
         width: 380px;
-        height: 530px;
+        height: 570px;
         padding: 22px 0;
     }
     .images-calculator{
