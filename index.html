@@ -222,14 +222,14 @@
                                     </div>
                                     </button>
                                 </div>
-                                <div v-if="premium.show || bodylux" class="color-step">
+                                <div v-if="premium.show || classic.show" class="color-step">
                                     <button :disabled="bodyColor.disabled" @click="showSelected(bodyColor)" v-for="bodyColor in bodyColors" :style=" { background: bodyColor.background } " class="col-auto black">
                                         <svg v-if="bodyColor.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                                             <rect width="10" height="10" rx="5" fill="#FAC300"/>
                                         </svg>
                                     </button>
                                 </div>
-                                <div v-if="classic.show && !bodylux || exclusive.show" class="color-step">
+                                <div v-if="exclusive.show" class="color-step">
                                     <button :disabled="bodyColor.disabled" @click="showSelected(bodyColor)" v-for="bodyColor in bodyColorsExclusive" :style=" { background: bodyColor.background } " class="col-auto black">
                                         <svg v-if="bodyColor.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                                             <rect width="10" height="10" rx="5" fill="#FAC300"/>
@@ -429,7 +429,7 @@
                             
                                 <div class="images-calculator">
                                     <img src="assets/img/calculator/default.png" alt="" class="calc-img">
-                                    <img v-if="bodylux" :src="`assets/img/calculator/body-lux/${colorArigonimg}.png`" alt="" class="calc-img">
+                                    <img v-if="classic.show" :src="`assets/img/calculator/body-lux/${colorArigonimg}.png`" alt="" class="calc-img">
                                     <img v-if="!classic.show" :src="`assets/img/calculator/body/body-${imgBodySrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertOne & smooth" :src="`assets/img/calculator/${additionallyCentr}/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="insertTu & smooth" :src="`assets/img/calculator/centralInsertTu/${centralInsertSrc}.png`" alt="" class="calc-img-body">
@@ -3392,10 +3392,8 @@
                     this.showPopap = !this.showPopap
                 },
                 showSelected (bodyColor) {
-                    if(this.bodylux){
-                        if(this.colorArigon === 'Полностью 2D ромб' || this.colorArigon === 'Люкс' || this.colorArigon === 'До центра 2D ромб'){
-                            this.colorlux = bodyColor.title
-                        }
+                    if(this.classic.show){
+                        this.colorlux = bodyColor.title
                     }
                     this.colorArigonimg = bodyColor.title
                     this.bodyColors.forEach( item => {
@@ -3422,11 +3420,7 @@
                     this.centralInsertSrc = alcantara.title
                 },
                 centralInsertShow (insert) {
-                    if(this.bodylux){
-                        if(this.colorArigon === 'До центра 3D ромб' || this.colorArigon === 'Полностью 3D ромб'){
-                            this.colorlux = insert.title
-                        }
-                    }
+                    
                     this.centralInsert.forEach( item => {
                         item.selected = false
                     });
@@ -3512,6 +3506,12 @@
                         this.bodylux = false
                         this.stichArigon = false
                     }
+                    console.log(addit.arigon)
+                    console.log(addit.arigon)
+                    if(addit.arigon && addit.name === 'До центра 3D ромб' || addit.arigon && addit.name === 'До центра 2D ромб'){
+                        this.arigonSide = true
+                        this.imgStitchesShow = false
+                    }
                     this.additionally.forEach( item => {
                         item.selected = false
                     });
@@ -3555,6 +3555,8 @@
                         }
                     }
                     if(skin.title == this.premium.title){
+                        this.arigonSide = true
+                        this.colorlux = 'black'
                         this.additionallyArigon.forEach(ar => {
                             ar.selected = false
                         })
@@ -3569,6 +3571,8 @@
                         this.premiumPerf = true
                     }
                     if(skin.title == this.exclusive.title){
+                        this.arigonSide = true
+                        this.colorlux = 'black'
                         this.additionallyArigon.forEach(ar => {
                             ar.selected = false
                         })
@@ -3704,7 +3708,14 @@
                 // },
                 // рассчитывание цены поля тип кожи
                 calcPriceType () {
-                    if(this.classic.show){
+                        if(this.classic.show && !this.bodylux){
+                            if(this.colorlux === 'black'){
+                                return 6650
+                            }else{
+                                return 8150
+                            }
+                        }
+                        if(this.classic.show && this.bodylux){
                             return 6650
                         }
                         if(this.premium.show){
@@ -3769,7 +3780,11 @@
                     },
                      // рассчитывание цены поля двойная строчка сбоку
                     calculatingDubleInsert () {
+                        if(this.classic.show){
+                            return this.imgStitchesShow = 0
+                        }else{
                         return this.imgStitchesShow ? 1500 :  0 
+                        }
                     },
                     calcOwnEmbroidery () {
                         return this.ownEmbroidery ? 2100 :  0 
