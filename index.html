@@ -601,7 +601,7 @@
                                             <img v-if="imgStitchesShow" :src="`assets/img/calculator/stitches/stitches-${imgStitches}.png`" alt="" class="calc-img-body">
                                             <img v-if="showAdditionally && !bodylux" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
                                     <img v-if="showAdditionally && bodylux && stichArigon" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
-                                            <img v-if="insertOne & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth/${alkantaraSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="insertOne & smooth & alkantara & dopAlk & !showAdditionally" :src="`assets/img/calculator/alkantara-smoth/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertTu & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertOne & convex & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-convex/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertTu & convex & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-convex-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
@@ -3418,6 +3418,10 @@
                     this.alkantara = true
                     this.alkantaraSrc = alcantara.title
                     this.centralInsertSrc = alcantara.title
+                    if(this.showAdditionally){
+                        this.dopAlk = false
+                    }
+                    this.showAdditionally = false
                 },
                 centralInsertShow (insert) {
                     
@@ -3506,8 +3510,6 @@
                         this.bodylux = false
                         this.stichArigon = false
                     }
-                    console.log(addit.arigon)
-                    console.log(addit.arigon)
                     if(addit.arigon && addit.name === 'До центра 3D ромб' || addit.arigon && addit.name === 'До центра 2D ромб'){
                         this.arigonSide = true
                         this.imgStitchesShow = false
@@ -3537,6 +3539,7 @@
                     this.greyDisabled()
                     this.itemFirstSelect()
                     if(skin.title == this.classic.title){
+                        this.arigonSide = true
                         this.additionally.forEach( item => {
                         item.selected = false
                         });
