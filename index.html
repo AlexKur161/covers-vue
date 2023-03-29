@@ -3223,7 +3223,7 @@
             ],
             additionallyArigon:[
                                 {
-                                    title: '',
+                                    title: 'arigon-2dwfull',
                                     name: 'Люкс',
                                     centr: 'lux-arigon',
                                     centrAlkantara: 'lux-arigonalk',
@@ -3244,7 +3244,7 @@
                                                 }
                                                 ],
                                     arigon: true,
-                                    stich: false,
+                                    stich: true,
                                     priceBodyblack: 2700,
                                     priceBodyflow:  2150          
                                 },
@@ -3275,7 +3275,7 @@
                                     priceBodyflow:  2100               
                                 },
                                 {
-                                    title: '',
+                                    title: 'arigon-2dwfull',
                                     name: 'Полностью 2D ромб',
                                     centr: 'arigon-2dfull',
                                     centrAlkantara: 'arigon-2dfullalk',
@@ -3296,7 +3296,7 @@
                                                 }
                                                 ],
                                     arigon: true,
-                                    stich: false,
+                                    stich: true,
                                     priceBodyblack: 2500,
                                     priceBodyflow:  3100 
                                 },
@@ -3330,7 +3330,7 @@
                                     priceBodyflow:  2300 
                                 },
                                 {
-                                    title: '',
+                                    title: 'arigon-2dwfull',
                                     name: 'Полностью 3D ромб',
                                     centr: 'arigon-3dfull',
                                     centrAlkantara: 'arigon-3dfullalk',
@@ -3354,7 +3354,7 @@
                                                 }
                                                 ],
                                     arigon: true,
-                                    stich: false,
+                                    stich: true,
                                     priceBodyblack: 2800,
                                     priceBodyflow:  3500 
                                 }
@@ -3509,10 +3509,6 @@
                     }else{
                         this.bodylux = false
                         this.stichArigon = false
-                    }
-                    if(addit.arigon && addit.name === 'До центра 3D ромб' || addit.arigon && addit.name === 'До центра 2D ромб'){
-                        this.arigonSide = true
-                        this.imgStitchesShow = false
                     }
                     this.additionally.forEach( item => {
                         item.selected = false
