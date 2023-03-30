@@ -222,6 +222,7 @@
                                     </div>
                                     </button>
                                 </div>
+
                                 <div v-if="premium.show || classic.show" class="color-step">
                                     <button :disabled="bodyColor.disabled" @click="showSelected(bodyColor)" v-for="bodyColor in bodyColors" :style=" { background: bodyColor.background } " class="col-auto black">
                                         <svg v-if="bodyColor.selected" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -237,6 +238,7 @@
                                     </button>
                                 </div>
                             </div>
+
                             <div class="wrap-eko">
                                 <button class="accordion-btn"><img src="assets/img/icon/select-arrow.svg" alt=""></button>
                                 <div class="wrap-number-step">
@@ -450,6 +452,7 @@
                             
                         </div>
                         </div>
+
                         <div class="mini-wrap-calculator mini-wrap-dop ">
                             <!-- блок дополнительно arigon кожи -->
                             <div v-if="classic.show" class="wrap-eko">
@@ -502,6 +505,7 @@
                                     </button>
                                 </div>
                             </div>
+
                             <!-- блок дополнительно премиум и эсклюзив кожи -->
                             <div v-else class="wrap-eko">
                                 <button class="accordion-btn"><img src="assets/img/icon/select-arrow.svg" alt=""></button>
@@ -581,6 +585,8 @@
                                     
                                 </div>
                             </div>
+
+
                             <div class="sticky-img-calculator sticky-mobile-calculator">
                                 <p v-if="lux && classic.show" class="comment-img">На фото пример, центральная часть
                                     вашего чехла может отличаться</p>
@@ -600,11 +606,12 @@
                                             <img v-if="insertTu & convex & perforation" :src="`assets/img/calculator/perforation-convex-2lines/${centralInsertSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="imgStitchesShow" :src="`assets/img/calculator/stitches/stitches-${imgStitches}.png`" alt="" class="calc-img-body">
                                             <img v-if="showAdditionally && !bodylux" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
-                                    <img v-if="showAdditionally && bodylux && stichArigon" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
+                                            <img v-if="showAdditionally && bodylux && stichArigon" :src="`assets/img/calculator/${additionallySrc}/${additColorSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertOne & smooth & alkantara & dopAlk & !showAdditionally" :src="`assets/img/calculator/alkantara-smoth/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertTu & smooth & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-smoth-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertOne & convex & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-convex/${alkantaraSrc}.png`" alt="" class="calc-img-body">
                                             <img v-if="insertTu & convex & alkantara & dopAlk" :src="`assets/img/calculator/alkantara-convex-2lines/${alkantaraSrc}.png`" alt="" class="calc-img-body">
+                                        
                                         </div>
                                     
                                 </div>
@@ -1084,6 +1091,7 @@
                 calcModel2: '',
                 arigonModel: '',
                 arigonModel2: '',
+                arigonMarkmodel: '',
                 brandAuto: [
                                 {
                                     title: 'Audi',
@@ -3551,6 +3559,7 @@
                         this.premium.show = false
                         this.exclusive.show = false
                         this.perforation = false
+
                         this.alkantara = false
                         if(this.smooth == false & this.convex == false){
                             this.smooth = true
