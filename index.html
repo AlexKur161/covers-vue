@@ -3223,7 +3223,7 @@
             ],
             additionallyArigon:[
                                 {
-                                    title: 'arigon-2dwfull',
+                                    title: 'lux',
                                     name: 'Люкс',
                                     centr: 'lux-arigon',
                                     centrAlkantara: 'lux-arigonalk',
@@ -3244,7 +3244,7 @@
                                                 }
                                                 ],
                                     arigon: true,
-                                    stich: true,
+                                    stich: false,
                                     priceBodyblack: 2700,
                                     priceBodyflow:  2150          
                                 },
@@ -3503,6 +3503,13 @@
                     this.additionallyArigon.forEach( item => {
                     item.selected = false
                     });
+                    
+                    // if(addit.title === 'lux'){
+                    //     console.log(addit.title === 'lux')
+                    //     this.stichArigon = false
+                    // }else{
+                    //     this.stichArigon = true
+                    // }
                     if(addit.arigon){
                         this.bodylux = true
                         this.stichArigon = addit.stich
@@ -3665,6 +3672,11 @@
                         }else{
                         this.bodylux = false
                         this.stichArigon = false
+                        }
+                        if(addit.title === 'lux'){
+                        this.imgStitchesShow = false
+                        }else{
+                        this.imgStitchesShow = true
                         }
                         this.additionallyArigon.forEach( item => {
                         item.selected = false
